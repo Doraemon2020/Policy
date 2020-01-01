@@ -17,13 +17,12 @@ custom_proxy_group=🌍 国际网站/影音平台`select`[]⚡ 【自动】全�
 custom_proxy_group=🇭🇰 香港媒体`select`[]🇭🇰 【自动】香港`(HKT|HKBN|WTT|HGC|TVB)
 custom_proxy_group=🐟 漏网之鱼`select`[]⚡ 【自动】全部`[]🇭🇰 【自动】香港`[]🇹🇼 【自动】台湾`[]🇸🇬 【自动】新加坡`[]🇯🇵 【自动】日本`[]🇺🇸 【自动】美国`[]📌 【手动】全部`[]DIRECT
 custom_proxy_group=🎥 Netflix`select`[]⚡ 【自动】全部`[]🇭🇰 【自动】香港`[]🇹🇼 【自动】台湾`[]🇸🇬 【自动】新加坡`[]🇯🇵 【自动】日本`[]🇺🇸 【自动】美国`[]📌 【手动】全部`[]DIRECT
-custom_proxy_group=⚡ 【自动】全部`url-test`^((?!中国)(?!回国)(?!游戏)(?!限速)(?!IPLC)(?!CN).)*$`http://www.gstatic.com/generate_204`500
-
-custom_proxy_group=🇭🇰 【自动】香港`url-test`(HKT|HKBN|WTT|HGC)`http://www.gstatic.com/generate_204`500
-custom_proxy_group=🇹🇼 【自动】台湾`url-test`(台湾|TW|Hinet|湾|疯动画)`http://www.gstatic.com/generate_204`500
-custom_proxy_group=🇸🇬 【自动】新加坡`url-test`(新加坡|SG)`http://www.gstatic.com/generate_204`500
-custom_proxy_group=🇯🇵 【自动】日本`url-test`(日本|JP)((?!.*(沪日).*))`http://www.gstatic.com/generate_204`500
-custom_proxy_group=🇺🇸 【自动】美国`url-test`(美国|US)`http://www.gstatic.com/generate_204`500
-custom_proxy_group=📌 【手动】全部`select`.*
+custom_proxy_group=⚡ 全部【自动】`url-test`^((?!中国)(?!回国)(?!游戏)(?!限速)(?!IPLC)(?!CN).)*$`http://www.gstatic.com/generate_204`500
+custom_proxy_group=🇭🇰 香港【自动】`url-test`(HKT|HKBN|WTT|HGC)`http://www.gstatic.com/generate_204`500
+custom_proxy_group=🇹🇼 台湾【自动】`url-test`(台湾|TW|Hinet|湾|疯动画)`http://www.gstatic.com/generate_204`500
+custom_proxy_group=🇸🇬 新加坡【自动】`url-test`(新加坡|SG)`http://www.gstatic.com/generate_204`500
+custom_proxy_group=🇯🇵 日本【自动】`url-test`(日本|JP)((?!.*(沪日).*))`http://www.gstatic.com/generate_204`500
+custom_proxy_group=🇺🇸 美国【自动】`url-test`(美国|US)`http://www.gstatic.com/generate_204`500
+custom_proxy_group=📌 全部【手动】`select`.*
 custom_proxy_group=🛑 拦截连接`select`[]REJECT`[]DIRECT
 ;设置分组标志位
