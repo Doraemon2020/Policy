@@ -25,6 +25,6 @@ custom_proxy_group=🇸🇬 【自动】新加坡`url-test`(新加坡|SG)`http:/
 custom_proxy_group=🇯🇵 【自动】日本`url-test`(日本|JP)((?!.*(沪日).*))`http://www.gstatic.com/generate_204`500
 custom_proxy_group=🇺🇸 【自动】美国`url-test`(美国|US)`http://www.gstatic.com/generate_204`500
 custom_proxy_group=📌 【手动】全部`select`.*
-custom_proxy_group=📌 【TEST】全部`select`.*
+custom_proxy_group=📌 【TEST】测试`select`.*
 custom_proxy_group=🛑 拦截连接`select`[]REJECT`[]DIRECT
 ;设置分组标志位
