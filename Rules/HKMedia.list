@@ -1,0 +1,42 @@
+# > myTV SUPER
+USER-AGENT,mytv*
+DOMAIN-SUFFIX,mytvsuper.com
+DOMAIN-SUFFIX,tvb.com
+# > 有线电视
+USER-AGENT,i-cable*
+DOMAIN-SUFFIX,utvhk.com
+DOMAIN-SUFFIX,hkott.hk
+DOMAIN-SUFFIX,i-cable.com
+# > ViuTV
+USER-AGENT,Viu*
+USER-AGENT,ViuTV*
+DOMAIN-SUFFIX,viu.com
+DOMAIN-SUFFIX,viu.tv
+DOMAIN-SUFFIX,nowe.com
+DOMAIN,api.viu.now.com
+DOMAIN-SUFFIX,akamaihd.net
+DOMAIN,d1k2us671qcoau.cloudfront.net
+DOMAIN,d2anahhhmp1ffz.cloudfront.net
+DOMAIN,dfp6rglgjqszk.cloudfront.net
+# > NowTV
+DOMAIN-KEYWORD,nowtv
+DOMAIN-SUFFIX,nowtv.com
+# > RTHK
+DOMAIN-KEYWORD,rthklive
+DOMAIN-KEYWORD,rthk
+DOMAIN-SUFFIX,rthk.hk
+# > KKBOX
+DOMAIN-SUFFIX,kkbox.com
+DOMAIN-SUFFIX,kkbox.com.tw
+DOMAIN-SUFFIX,kfs.io
+# > JOOX
+USER-AGENT,WeMusic*
+USER-AGENT,JOOX*
+DOMAIN-SUFFIX,joox.com
+# > Spotify
+USER-AGENT,Spotify*
+DOMAIN-SUFFIX,pscdn.co
+DOMAIN-SUFFIX,scdn.co
+DOMAIN-SUFFIX,spotify.com
+DOMAIN-SUFFIX,spoti.fi
+
