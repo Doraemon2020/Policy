@@ -678,9 +678,6 @@ DOMAIN,kktv-theater.kk.stream
 USER-AGENT,LINE%20TV*
 DOMAIN-SUFFIX,linetv.tw
 DOMAIN,d3c7rimkq79yfu.cloudfront.net
-# > LiTV
-DOMAIN-SUFFIX,litv.tv
-DOMAIN,litvfreemobile-hichannel.cdn.hinet.net
 # > My5
 USER-AGENT,My5*
 DOMAIN-SUFFIX,channel5.com
