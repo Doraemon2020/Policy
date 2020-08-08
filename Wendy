@@ -1,5 +1,5 @@
 ;设置规则标志位
-surge_ruleset=🧒 萧绮雯，对，说的就是你，看啥呢！=DIRECT,https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Baidu.list
+surge_ruleset=🧒 萧绮雯，对，说的就是你，看啥呢！,https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Baidu.list
 surge_ruleset=DIRECT,https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Direct.list
 surge_ruleset=DIRECT,https://raw.githubusercontent.com/tindy2013/subconverter/master/base/rules/ACL4SSR/Clash/LocalAreaNetwork.list
 surge_ruleset=DIRECT,https://raw.githubusercontent.com/tindy2013/subconverter/master/base/rules/ConnersHua/Surge/Ruleset/Unbreak.list
