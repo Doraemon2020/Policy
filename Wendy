@@ -1,4 +1,5 @@
 ;设置规则标志位
+surge_ruleset=🧒 萧绮雯，对，说的就是你，看啥呢！=DIRECT,https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Baidu.list
 surge_ruleset=DIRECT,https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Direct.list
 surge_ruleset=DIRECT,https://raw.githubusercontent.com/tindy2013/subconverter/master/base/rules/ACL4SSR/Clash/LocalAreaNetwork.list
 surge_ruleset=DIRECT,https://raw.githubusercontent.com/tindy2013/subconverter/master/base/rules/ConnersHua/Surge/Ruleset/Unbreak.list
@@ -13,11 +14,10 @@ surge_ruleset=DIRECT,rules/ConnersHua/Surge/Ruleset/China.list
 surge_ruleset=DIRECT,rules/NobyDa/Surge/Download.list
 surge_ruleset=DIRECT,[]GEOIP,CN
 surge_ruleset=🐟 漏网之鱼,[]FINAL
-surge_ruleset=🧒🏻萧绮雯，对，说的就是你，看什么看，再看就收钱💰
 ;设置规则标志位
 
 ;设置分组标志位
-custom_proxy_group=🧒🏻萧绮雯，对，说的就是你，看什么看，再看就收钱💰`select`[]REJECT`[]DIRECT
+custom_proxy_group=🧒 萧绮雯，对，说的就是你，看啥呢！`select`[]DIRECT
 custom_proxy_group=🌍 国际网站`select`[]🇭🇰 香港节点`[]🇹🇼 台湾节点`[]🇸🇬 星国节点`[]🇯🇵 日本节点`[]🇺🇸 美国节点`[]⚡ 全部节点`[]🔰 故障转移`[]📌 全部节点`[]DIRECT
 custom_proxy_group=🗺️ 香港网站`select`[]🇭🇰 香港节点`[]📌 全部节点`(?=.*(香港|HK|HGC))(?=.*(IPLC|IEPL|中继|HKT|HKBN|HGC|TVB|NF)).*
 custom_proxy_group=💠 微软网站`select`[]🌍 国际网站`[]🇭🇰 香港节点`[]🇹🇼 台湾节点`[]📌 全部节点`[]DIRECT
