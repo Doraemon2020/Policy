@@ -13,6 +13,7 @@ USER-AGENT,Viu*
 USER-AGENT,ViuTV*
 DOMAIN-SUFFIX,viu.com
 DOMAIN-SUFFIX,viu.tv
+DOMAIN-SUFFIX,now.com
 DOMAIN-SUFFIX,nowe.com
 DOMAIN,api.viu.now.com
 DOMAIN-SUFFIX,akamaihd.net
