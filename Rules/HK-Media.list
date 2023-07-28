@@ -1,4 +1,6 @@
 # > myTV SUPER
+USER-AGENT,mytv*
+DOMAIN-SUFFIX,mytvsuper.com
 DOMAIN-SUFFIX,tvb.com
 DOMAIN-SUFFIX,omtrdc.net
 # > 有线电视
