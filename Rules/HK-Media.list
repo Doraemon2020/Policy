@@ -9,10 +9,6 @@ DOMAIN-SUFFIX,utvhk.com
 DOMAIN-SUFFIX,hkott.hk
 DOMAIN-SUFFIX,i-cable.com
 # > ViuTV
-USER-AGENT,Viu*
-USER-AGENT,ViuTV*
-DOMAIN-SUFFIX,viu.com
-DOMAIN-SUFFIX,viu.tv
 DOMAIN-SUFFIX,now.com
 DOMAIN-SUFFIX,nowe.com
 DOMAIN,api.viu.now.com
