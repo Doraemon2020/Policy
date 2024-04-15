@@ -7,17 +7,6 @@ USER-AGENT,i-cable*
 DOMAIN-SUFFIX,utvhk.com
 DOMAIN-SUFFIX,hkott.hk
 DOMAIN-SUFFIX,i-cable.com
-# > ViuTV
-DOMAIN-SUFFIX,now.com
-DOMAIN-SUFFIX,nowe.com
-DOMAIN,api.viu.now.com
-DOMAIN-SUFFIX,akamaihd.net
-DOMAIN,d1k2us671qcoau.cloudfront.net
-DOMAIN,d2anahhhmp1ffz.cloudfront.net
-DOMAIN,dfp6rglgjqszk.cloudfront.net
-# > NowTV
-DOMAIN-KEYWORD,nowtv
-DOMAIN-SUFFIX,nowtv.com
 # > RTHK
 DOMAIN-KEYWORD,rthklive
 DOMAIN-KEYWORD,rthk
