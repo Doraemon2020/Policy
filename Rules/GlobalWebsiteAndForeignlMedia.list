@@ -1,4 +1,6 @@
 # (DNS Cache Pollution Protection)
+# > HKJC
+DOMAIN-SUFFIX,hkjc.com
 # > Google
 DOMAIN-SUFFIX,appspot.com
 DOMAIN-SUFFIX,blogger.com
