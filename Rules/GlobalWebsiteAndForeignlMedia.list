@@ -1,4 +1,6 @@
 # (DNS Cache Pollution Protection)
+# > Octopus
+DOMAIN-SUFFIX,octopus.com.hk
 # > HKJC
 DOMAIN-SUFFIX,hkjc.com
 # > Google
