@@ -25,7 +25,7 @@ ruleset=🐟 漏网之鱼,[]MATCH
 
 ;设置分组标志位
 custom_proxy_group=🌍 环球网络`select`[]♻️ 自动选择`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国`[]⚡ 全部节点`[]📌 全部节点`[]DIRECT`[]REJECT
-custom_proxy_group=📺 Netflix`select`[]🌍 环球网络`[]♻️ 自动选择`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国、[]DIRECT`[]REJECT
+custom_proxy_group=📺 Netflix`select`[]🌍 环球网络`[]♻️ 自动选择`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国`[]DIRECT`[]REJECT
 custom_proxy_group=🛑 拦截连接`select`[]DIRECT`[]REJECT
 custom_proxy_group=🐟 漏网之鱼`select`[]🌍 环球网络`[]♻️ 自动选择`[]⚡ 全部节点`[]📌 全部节点`[]DIRECT`[]REJECT`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国
 custom_proxy_group=📨 Telegram`select`[]🌍 环球网络`[]♻️ 自动选择`[]⚡ 全部节点`[]📌 全部节点`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国
