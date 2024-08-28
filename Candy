@@ -25,14 +25,14 @@ ruleset=🐟 漏网之鱼,[]MATCH
 
 ;设置分组标志位
 custom_proxy_group=🌍 环球网络`select`[]♻️ 自动选择`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国`[]⚡ 全部节点`[]📌 全部节点`[]DIRECT`[]REJECT
-custom_proxy_group=📺 Netflix`select`[]🌍 环球网络`[]♻️ 自动选择`[]🇭🇰 Ex香港`[]🇭🇰 香港`[]🇹🇼 Ex台湾`[]🇹🇼 台湾`[]🇸🇬 Ex星国`[]🇸🇬 星国`[]🇯🇵 Ex日本`[]🇯🇵 日本`[]🇺🇸 Ex美国`[]🇺🇸 美国`[]⚡ 全部节点`[]📌 全部节点`[]DIRECT`[]REJECT
+custom_proxy_group=📺 Netflix`select`[]🌍 环球网络`[]♻️ 自动选择`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国、[]DIRECT`[]REJECT
 custom_proxy_group=🛑 拦截连接`select`[]DIRECT`[]REJECT
 custom_proxy_group=🐟 漏网之鱼`select`[]🌍 环球网络`[]♻️ 自动选择`[]⚡ 全部节点`[]📌 全部节点`[]DIRECT`[]REJECT`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国
 custom_proxy_group=📨 Telegram`select`[]🌍 环球网络`[]♻️ 自动选择`[]⚡ 全部节点`[]📌 全部节点`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国
 custom_proxy_group=🍎 苹果服务`select`[]🌍 环球网络`[]♻️ 自动选择`[]⚡ 全部节点`[]📌 全部节点`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国
 custom_proxy_group=Ⓜ️ 微软服务`select`[]🌍 环球网络`[]♻️ 自动选择`[]⚡ 全部节点`[]📌 全部节点`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国
 custom_proxy_group=📈 SpeedTest`select`[]DIRECT`[]🌍 环球网络`[]📺 Netflix`[]📌 全部节点
-custom_proxy_group=👾 AI`select`[]🇹🇼 Ex台湾`[]🇹🇼 台湾`[]🇸🇬 Ex星国`[]🇸🇬 星国`[]🇯🇵 Ex日本`[]🇯🇵 日本`[]🇺🇸 Ex美国`[]🇺🇸 美国
+custom_proxy_group=👾 AI`select`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国
 custom_proxy_group=♻️ 自动选择`url-test`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国`http://www.gstatic.com/generate_204`60,,100
 custom_proxy_group=🇭🇰 香港串流验证`select`[]🇭🇰 香港原生`[]📌 全部节点
 custom_proxy_group=🇭🇰 EdgeWare`select`[]DIRECT`[]🌍 环球网络`[]⚡ 全部节点`[]📌 全部节点`[]♻️ 自动选择`[]🇭🇰 香港`[]🇹🇼 台湾`[]🇸🇬 星国`[]🇯🇵 日本`[]🇺🇸 美国
