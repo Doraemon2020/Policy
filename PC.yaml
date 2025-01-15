@@ -7,13 +7,13 @@ proxy-groups:
       - ZHS香港
       - ZHS台湾
       - ZHS星国
-      - ZHS 日本
-      - ZHS 美国
+      - ZHS日本
+      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
-      - Ex 日本
-      - Ex 美国
+      - Ex日本
+      - Ex美国
       - 手动选择
       
   - name: Telegram
@@ -25,13 +25,13 @@ proxy-groups:
       - ZHS香港
       - ZHS台湾
       - ZHS星国
-      - ZHS 日本
-      - ZHS 美国
+      - ZHS日本
+      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
-      - Ex 日本
-      - Ex 美国
+      - Ex日本
+      - Ex美国
       
   - name: AI
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Bot.png
@@ -39,12 +39,12 @@ proxy-groups:
     proxies:
       - ZHS台湾
       - ZHS星国
-      - ZHS 日本
-      - ZHS 美国
+      - ZHS日本
+      - ZHS美国
       - Ex台湾
       - Ex星国
-      - Ex 日本
-      - Ex 美国
+      - Ex日本
+      - Ex美国
       - 手动选择
       - DIRECT
       
@@ -57,13 +57,13 @@ proxy-groups:
       - ZHS香港
       - ZHS台湾
       - ZHS星国
-      - ZHS 日本
-      - ZHS 美国
+      - ZHS日本
+      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
-      - Ex 日本
-      - Ex 美国
+      - Ex日本
+      - Ex美国
       
   - name: 谷歌FCM
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
@@ -74,13 +74,13 @@ proxy-groups:
       - ZHS香港
       - ZHS台湾
       - ZHS星国
-      - ZHS 日本
-      - ZHS 美国
+      - ZHS日本
+      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
-      - Ex 日本
-      - Ex 美国
+      - Ex日本
+      - Ex美国
       - DIRECT
       
   - name: 微软服务
@@ -93,13 +93,13 @@ proxy-groups:
       - ZHS香港
       - ZHS台湾
       - ZHS星国
-      - ZHS 日本
-      - ZHS 美国
+      - ZHS日本
+      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
-      - Ex 日本
-      - Ex 美国
+      - Ex日本
+      - Ex美国
   
   - name: 苹果服务
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
@@ -111,13 +111,13 @@ proxy-groups:
       - ZHS香港
       - ZHS台湾
       - ZHS星国
-      - ZHS 日本
-      - ZHS 美国
+      - ZHS日本
+      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
-      - Ex 日本
-      - Ex 美国
+      - Ex日本
+      - Ex美国
       
   - name: 全球直连
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
@@ -151,13 +151,13 @@ proxy-groups:
       - ZHS香港
       - ZHS台湾
       - ZHS星国
-      - ZHS 日本
-      - ZHS 美国
+      - ZHS日本
+      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
-      - Ex 日本
-      - Ex 美国
+      - Ex日本
+      - Ex美国
       
   - name: ZHS香港
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
@@ -175,7 +175,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
 
-    - name: ZHS星国
+  - name: ZHS星国
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
     include-all: true
     filter: (?=.*(SG)(?!.*(游戏))).*
@@ -215,7 +215,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
 
-    - name: Ex星国
+  - name: Ex星国
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
     include-all: true
     filter: .*(?<!(更))(新加坡)(?!.*游戏).*
@@ -246,7 +246,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
     
-  - name: 手动切换
+  - name: 手动选择
     icon: https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png
     include-all: true
     type: select
@@ -323,8 +323,8 @@ rule-providers:
     format: text
     type: http
   AI:
-    url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAi.list
-    path: ./ruleset/OpenAi.list
+    url: https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/AI.list
+    path: ./ruleset/AI.list
     behavior: classical
     interval: 86400
     format: text
@@ -373,18 +373,16 @@ rule-providers:
     type: http
 
 rules:
-  - "RULE-SET,GlobalWebsiteAndForeignlMedia.list,环球网络"
+  - "RULE-SET,GlobalWebsiteAndForeignlMedia,环球网络"
   - "RULE-SET,LocalAreaNetwork,全球直连"
   - "RULE-SET,UnBan,全球直连"
   - "RULE-SET,BanAD,广告拦截"
   - "RULE-SET,BanProgramAD,应用净化"
   - "RULE-SET,GoogleFCM,谷歌FCM"
   - "RULE-SET,GoogleCN,全球直连"
-  - "RULE-SET,SteamCN,全球直连"
   - "RULE-SET,Apple,苹果服务"
   - "RULE-SET,Telegram,Telegram"
-  - "RULE-SET,OpenAi,AI"
-  - "RULE-SET,ProxyGFWlist,节点选择"
+  - "RULE-SET,AI,AI"
   - "RULE-SET,ChinaDomain,全球直连"
   - "RULE-SET,ChinaCompanyIp,全球直连"
   - "RULE-SET,Download,全球直连"
