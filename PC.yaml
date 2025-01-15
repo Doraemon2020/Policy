@@ -118,6 +118,36 @@ proxy-groups:
       - Ex星国
       - Ex日本
       - Ex美国
+
+  - name: 香港串流验证
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/myTV_SUPER.png
+    type: select
+    proxies:
+      - 香港原生
+
+  - name: EdgeWare
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TVB.png
+    type: select
+    proxies:
+      - DIRECT
+      - 手动选择
+      - 环球网络
+      - ZHS香港
+      - ZHS台湾
+      - ZHS星国
+      - ZHS日本
+      - ZHS美国
+      - Ex香港
+      - Ex台湾
+      - Ex星国
+      - Ex日本
+      - Ex美国
+
+  - name: ViuTV
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ViuTV.png
+    type: select
+    proxies:
+      - 香港原生
       
   - name: 全球直连
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
@@ -235,6 +265,14 @@ proxy-groups:
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png
     include-all: true
     filter: (?=.*(美国)(?!.*(游戏))).*
+    type: url-test
+    interval: 300
+    tolerance: 50
+    
+  - name: 香港原生
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
+    include-all: true
+    filter: (HKT|九龙|铠甲|天机|契约|TVB)
     type: url-test
     interval: 300
     tolerance: 50
