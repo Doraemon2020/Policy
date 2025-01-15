@@ -170,6 +170,13 @@ proxy-groups:
     proxies:
       - REJECT
       - DIRECT
+
+  - name: TVB广告
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
       
   - name: 漏网之鱼
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
@@ -450,7 +457,7 @@ rules:
   - "RULE-SET,LocalAreaNetwork,全球直连"
   - "RULE-SET,UnBan,全球直连"
   - "RULE-SET,BanAD,广告拦截"
-  - "RULE-SET,BanProgramAD,应用净化"
+  - "RULE-SET,BanProgramAD,广告拦截"
   - "RULE-SET,GoogleFCM,谷歌FCM"
   - "RULE-SET,GoogleCN,全球直连"
   - "RULE-SET,Apple,苹果服务"
