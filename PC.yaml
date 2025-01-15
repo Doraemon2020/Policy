@@ -102,7 +102,7 @@ proxy-groups:
       - Ex美国
   
   - name: 苹果服务
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple.png
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple_2.png
     type: select
     proxies:
       - DIRECT
