@@ -164,20 +164,6 @@ proxy-groups:
       - REJECT
       - DIRECT
       
-  - name: 应用净化
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-
-  - name: TVB广告
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hijacking.png
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-      
   - name: 漏网之鱼
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
     type: select
@@ -409,6 +395,14 @@ rule-providers:
     format: text
     type: http
 
+  TVB-AD:
+    url: https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/TVB-AD.list
+    path: ./ruleset/EdgeWare.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+
   ViuTV:
     url: https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/ViuTV.list
     path: ./ruleset/ViuTV.list
@@ -450,13 +444,16 @@ rule-providers:
     type: http
 
 rules:
+  
+  - "RULE-SET,LocalAreaNetwork,全球直连"
+  - "RULE-SET,UnBan,全球直连"
   - "RULE-SET,HK-Media,香港串流验证"
   - "RULE-SET,EdgeWare,EdgeWare"
   - "RULE-SET,ViuTV,ViuTV"
   - "RULE-SET,GlobalWebsiteAndForeignlMedia,环球网络"
-  - "RULE-SET,LocalAreaNetwork,全球直连"
-  - "RULE-SET,UnBan,全球直连"
+  - "RULE-SET,BanProgramAD,广告拦截"
   - "RULE-SET,BanAD,广告拦截"
+  - "RULE-SET,TVB-AD,广告拦截"
   - "RULE-SET,BanProgramAD,广告拦截"
   - "RULE-SET,GoogleFCM,谷歌FCM"
   - "RULE-SET,GoogleCN,全球直连"
