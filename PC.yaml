@@ -286,137 +286,137 @@ rule-providers:
   GlobalWebsiteAndForeignlMedia:
     url: https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/GlobalWebsiteAndForeignlMedia.list
     path: ./GlobalWebsiteAndForeignlMedia.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   LocalAreaNetwork:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list
     path: ./ruleset/LocalAreaNetwork.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   UnBan:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list
     path: ./ruleset/UnBan.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   BanAD:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list
     path: ./ruleset/BanAD.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   BanProgramAD:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list
     path: ./ruleset/BanProgramAD.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   GoogleFCM:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list
     path: ./ruleset/GoogleFCM.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   GoogleCN:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list
     path: ./ruleset/GoogleCN.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   Microsoft:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list
     path: ./ruleset/Microsoft.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   Apple:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list
     path: ./ruleset/Apple.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   Telegram:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list
     path: ./ruleset/Telegram.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   AI:
     url: https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/AI.list
     path: ./ruleset/AI.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   Netflix:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list
     path: ./ruleset/Netflix.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   HK-Media:
     url: https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/HK-Media.list
     path: ./ruleset/HK-Media.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
 
   EdgeWare:
     url: https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/EdgeWare.list
     path: ./ruleset/EdgeWare.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
 
   TVB-AD:
     url: https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/TVB-AD.list
     path: ./ruleset/EdgeWare.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
 
   ViuTV:
     url: https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/ViuTV.list
     path: ./ruleset/ViuTV.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   ProxyGFWlist:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list
     path: ./ruleset/ProxyGFWlist.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   ChinaDomain:
@@ -424,7 +424,7 @@ rule-providers:
     path: ./ruleset/ChinaDomain.list
     behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   ChinaCompanyIp:
@@ -432,15 +432,15 @@ rule-providers:
     path: ./ruleset/ChinaCompanyIp.list
     behavior: ipcidr
     interval: 86400
-    format: text
+    format: yaml
     type: http
     
   Download:
     url: https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list
     path: ./ruleset/Download.list
-    behavior: classical
+    behavior: domain
     interval: 86400
-    format: text
+    format: yaml
     type: http
 
 rules:
