@@ -394,7 +394,7 @@ rule-providers:
     format: text
     type: http
 
-    EdgeWare:
+  EdgeWare:
     url: https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/EdgeWare.list
     path: ./ruleset/EdgeWare.list
     behavior: classical
@@ -402,7 +402,7 @@ rule-providers:
     format: text
     type: http
 
-    ViuTV:
+  ViuTV:
     url: https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/ViuTV.list
     path: ./ruleset/ViuTV.list
     behavior: classical
