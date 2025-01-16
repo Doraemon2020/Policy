@@ -203,7 +203,7 @@ proxy-groups:
       - DIRECT
       
   - name: 漏网之鱼
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final.png
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final_1.png
     type: select
     proxies:
       - 环球网络
@@ -302,7 +302,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
       
-    - name: 香港原生
+  - name: 香港原生
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
     include-all: true
     filter: (HKT|九龙|铠甲|天机|契约|TVB)
