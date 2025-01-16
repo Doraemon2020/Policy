@@ -1,87 +1,101 @@
 proxy-groups:
   - name: 环球网络
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png
-    include-all: true
     type: select
     proxies:
-      - ZHS香港
-      - ZHS台湾
-      - ZHS星国
-      - ZHS日本
-      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
       - Ex日本
       - Ex美国
+      - ZHS香港
+      - ZHS台湾
+      - ZHS星国
+      - ZHS日本
+      - ZHS美国
+      - 自动选择
       - 手动选择
+      - DIRECT
+      - REJECT
       
   - name: Telegram
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png
     type: select
     proxies:
       - 环球网络
-      - 手动选择
-      - ZHS香港
-      - ZHS台湾
-      - ZHS星国
-      - ZHS日本
-      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
       - Ex日本
       - Ex美国
+      - ZHS香港
+      - ZHS台湾
+      - ZHS星国
+      - ZHS日本
+      - ZHS美国
+      - 自动选择
+      - 手动选择
+      - DIRECT
+      - REJECT
       
   - name: AI
     icon: https://mirror.ghproxy.com/https://raw.githubusercontent.com/Orz-3/mini/master/Color/OpenAI.png
     type: select
     proxies:
-      - ZHS台湾
-      - ZHS星国
-      - ZHS日本
-      - ZHS美国
       - Ex台湾
       - Ex星国
       - Ex日本
       - Ex美国
+      - ZHS香港
+      - ZHS台湾
+      - ZHS星国
+      - ZHS日本
+      - ZHS美国
+      - 环球网络
+      - 自动选择
       - 手动选择
       - DIRECT
+      - REJECT
       
   - name: Netflix
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png
     type: select
     proxies:
       - 环球网络
-      - 手动选择
-      - ZHS香港
-      - ZHS台湾
-      - ZHS星国
-      - ZHS日本
-      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
       - Ex日本
       - Ex美国
+      - ZHS香港
+      - ZHS台湾
+      - ZHS星国
+      - ZHS日本
+      - ZHS美国
+      - 自动选择
+      - 手动选择
+      - DIRECT
+      - REJECT
       
   - name: 谷歌FCM
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png
     type: select
     proxies:
       - 环球网络
-      - 手动选择
-      - ZHS香港
-      - ZHS台湾
-      - ZHS星国
-      - ZHS日本
-      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
       - Ex日本
       - Ex美国
+      - ZHS香港
+      - ZHS台湾
+      - ZHS星国
+      - ZHS日本
+      - ZHS美国
+      - 自动选择
+      - 手动选择
       - DIRECT
+      - REJECT
       
   - name: 微软服务
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png
@@ -89,35 +103,38 @@ proxy-groups:
     proxies:
       - DIRECT    
       - 环球网络
-      - 手动选择
-      - ZHS香港
-      - ZHS台湾
-      - ZHS星国
-      - ZHS日本
-      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
       - Ex日本
       - Ex美国
+      - ZHS香港
+      - ZHS台湾
+      - ZHS星国
+      - ZHS日本
+      - ZHS美国
+      - 自动选择
+      - 手动选择
   
   - name: 苹果服务
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple_1.png
     type: select
     proxies:
       - DIRECT
-      - 手动选择
       - 环球网络
-      - ZHS香港
-      - ZHS台湾
-      - ZHS星国
-      - ZHS日本
-      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
       - Ex日本
       - Ex美国
+      - ZHS香港
+      - ZHS台湾
+      - ZHS星国
+      - ZHS日本
+      - ZHS美国
+      - 自动选择
+      - 手动选择
+      - REJECT
 
   - name: 香港串流验证
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/myTV_SUPER.png
@@ -130,18 +147,20 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 手动选择
       - 环球网络
-      - ZHS香港
-      - ZHS台湾
-      - ZHS星国
-      - ZHS日本
-      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
       - Ex日本
       - Ex美国
+      - ZHS香港
+      - ZHS台湾
+      - ZHS星国
+      - ZHS日本
+      - ZHS美国
+      - 自动选择
+      - 手动选择
+      - REJECT
 
   - name: ViuTV
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ViuTV.png
@@ -154,9 +173,20 @@ proxy-groups:
     type: select
     proxies:
       - DIRECT
-      - 手动选择
+      - 环球网络
+      - Ex香港
+      - Ex台湾
+      - Ex星国
+      - Ex日本
+      - Ex美国
+      - ZHS香港
+      - ZHS台湾
+      - ZHS星国
+      - ZHS日本
+      - ZHS美国
       - 自动选择
-      
+      - 手动选择
+          
   - name: 广告拦截
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AdBlack.png
     type: select
@@ -169,18 +199,20 @@ proxy-groups:
     type: select
     proxies:
       - 环球网络
-      - ZHS香港
-      - ZHS台湾
-      - ZHS星国
-      - ZHS日本
-      - ZHS美国
       - Ex香港
       - Ex台湾
       - Ex星国
       - Ex日本
       - Ex美国
+      - ZHS香港
+      - ZHS台湾
+      - ZHS星国
+      - ZHS日本
+      - ZHS美国
+      - 自动选择
       - 手动选择
       - DIRECT
+      - REJECT
       
   - name: ZHS香港
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
