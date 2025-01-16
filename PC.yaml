@@ -141,6 +141,10 @@ proxy-groups:
     type: select
     proxies:
       - 香港原生
+      - ZHS九龙
+      - ZHS铠甲
+      - ZHS契约
+      - HKT
 
   - name: EdgeWare
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TVB.png
@@ -167,6 +171,10 @@ proxy-groups:
     type: select
     proxies:
       - 香港原生
+      - ZHS九龙
+      - ZHS铠甲
+      - ZHS契约
+      - HKT
       
   - name: 全球直连
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png
@@ -214,6 +222,46 @@ proxy-groups:
       - DIRECT
       - REJECT
       
+  - name: Ex香港
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
+    include-all: true
+    filter: ^(?!.*(深圳))(?=.*(?:香港)).*$
+    type: url-test
+    interval: 300
+    tolerance: 50
+ 
+  - name: Ex台湾
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png
+    include-all: true
+    filter: (?=.*(台湾)(?!.*(动画))).*
+    type: url-test
+    interval: 300
+    tolerance: 50
+
+  - name: Ex星国
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
+    include-all: true
+    filter: .*(?<!(更))(新加坡)(?!.*游戏).*
+    type: url-test
+    interval: 300
+    tolerance: 50
+    
+  - name: Ex日本
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png
+    include-all: true
+    filter: (?=.*(日本)(?!.*(游戏))).*
+    type: url-test
+    interval: 300
+    tolerance: 50
+    
+  - name: Ex美国
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png
+    include-all: true
+    filter: (?=.*(美国)(?!.*(游戏))).*
+    type: url-test
+    interval: 300
+    tolerance: 50
+      
   - name: ZHS香港
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
     include-all: true
@@ -254,47 +302,7 @@ proxy-groups:
     interval: 300
     tolerance: 50
       
-  - name: Ex香港
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
-    include-all: true
-    filter: ^(?!.*(深圳))(?=.*(?:香港)).*$
-    type: url-test
-    interval: 300
-    tolerance: 50
- 
-  - name: Ex台湾
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png
-    include-all: true
-    filter: (?=.*(台湾)(?!.*(动画))).*
-    type: url-test
-    interval: 300
-    tolerance: 50
-
-  - name: Ex星国
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png
-    include-all: true
-    filter: .*(?<!(更))(新加坡)(?!.*游戏).*
-    type: url-test
-    interval: 300
-    tolerance: 50
-    
-  - name: Ex日本
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png
-    include-all: true
-    filter: (?=.*(日本)(?!.*(游戏))).*
-    type: url-test
-    interval: 300
-    tolerance: 50
-    
-  - name: Ex美国
-    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png
-    include-all: true
-    filter: (?=.*(美国)(?!.*(游戏))).*
-    type: url-test
-    interval: 300
-    tolerance: 50
-    
-  - name: 香港原生
+    - name: 香港原生
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
     include-all: true
     filter: (HKT|九龙|铠甲|天机|契约|TVB)
