@@ -302,6 +302,54 @@ proxy-groups:
     interval: 300
     tolerance: 50
 
+  - name: ZHS九龙
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
+    include-all: true
+    filter: (九龙)
+    type: url-test
+    interval: 300
+    tolerance: 50
+
+  - name: ZHS天机
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
+    include-all: true
+    filter: (天机)
+    type: url-test
+    interval: 300
+    tolerance: 50
+
+  - name: ZHS铠甲
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
+    include-all: true
+    filter: (铠甲)
+    type: url-test
+    interval: 300
+    tolerance: 50
+
+  - name: ZHS契约
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
+    include-all: true
+    filter: (契约)
+    type: url-test
+    interval: 300
+    tolerance: 50
+
+  - name: HKT
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
+    include-all: true
+    filter: (HKT)
+    type: url-test
+    interval: 300
+    tolerance: 50
+
+  - name: TVB
+    icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png
+    include-all: true
+    filter: (TVB)
+    type: url-test
+    interval: 300
+    tolerance: 50
+
   - name: 自动选择
     icon: https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png
     type: url-test
