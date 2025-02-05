@@ -1,0 +1,583 @@
+rules = [
+  "RULE-SET,LocalAreaNetwork,全球直连",
+  "RULE-SET,UnBan,全球直连",
+  "RULE-SET,HK-Media,香港串流验证",
+  "RULE-SET,EdgeWare,EdgeWare",
+  "RULE-SET,ViuTV,ViuTV",
+  "RULE-SET,GlobalWebsiteAndForeignlMedia,环球网络",
+  "RULE-SET,BanProgramAD,广告拦截",
+  "RULE-SET,BanAD,广告拦截",
+  "RULE-SET,TVB-AD,广告拦截",
+  "RULE-SET,BanProgramAD,广告拦截",
+  "RULE-SET,GoogleFCM,谷歌FCM",
+  "RULE-SET,GoogleCN,全球直连",
+  "RULE-SET,Apple,苹果服务",
+  "RULE-SET,Telegram,Telegram",
+  "RULE-SET,AI,AI",
+  "RULE-SET,Chinaclassical,全球直连",
+  "RULE-SET,ChinaCompanyIp,全球直连",
+  "RULE-SET,Download,全球直连",
+  "GEOIP,CN,全球直连",
+  "MATCH,漏网之鱼"
+]
+
+[[proxy-groups]]
+name = "环球网络"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Global.png"
+type = "select"
+proxies = [
+  "Ex香港",
+  "Ex台湾",
+  "Ex星国",
+  "Ex日本",
+  "Ex美国",
+  "ZHS香港",
+  "ZHS台湾",
+  "ZHS星国",
+  "ZHS日本",
+  "ZHS美国",
+  "自动选择",
+  "手动选择",
+  "DIRECT",
+  "REJECT"
+]
+
+[[proxy-groups]]
+name = "Telegram"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Telegram.png"
+type = "select"
+proxies = [
+  "环球网络",
+  "Ex香港",
+  "Ex台湾",
+  "Ex星国",
+  "Ex日本",
+  "Ex美国",
+  "ZHS香港",
+  "ZHS台湾",
+  "ZHS星国",
+  "ZHS日本",
+  "ZHS美国",
+  "自动选择",
+  "手动选择",
+  "DIRECT",
+  "REJECT"
+]
+
+[[proxy-groups]]
+name = "AI"
+icon = "https://cdn.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ChatGPT.png"
+type = "select"
+proxies = [
+  "Ex台湾",
+  "Ex星国",
+  "Ex日本",
+  "Ex美国",
+  "ZHS香港",
+  "ZHS台湾",
+  "ZHS星国",
+  "ZHS日本",
+  "ZHS美国",
+  "环球网络",
+  "自动选择",
+  "手动选择",
+  "DIRECT",
+  "REJECT"
+]
+
+[[proxy-groups]]
+name = "Netflix"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Netflix.png"
+type = "select"
+proxies = [
+  "环球网络",
+  "Ex香港",
+  "Ex台湾",
+  "Ex星国",
+  "Ex日本",
+  "Ex美国",
+  "ZHS香港",
+  "ZHS台湾",
+  "ZHS星国",
+  "ZHS日本",
+  "ZHS美国",
+  "自动选择",
+  "手动选择",
+  "DIRECT",
+  "REJECT"
+]
+
+[[proxy-groups]]
+name = "谷歌FCM"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Google_Search.png"
+type = "select"
+proxies = [
+  "环球网络",
+  "Ex香港",
+  "Ex台湾",
+  "Ex星国",
+  "Ex日本",
+  "Ex美国",
+  "ZHS香港",
+  "ZHS台湾",
+  "ZHS星国",
+  "ZHS日本",
+  "ZHS美国",
+  "自动选择",
+  "手动选择",
+  "DIRECT",
+  "REJECT"
+]
+
+[[proxy-groups]]
+name = "微软服务"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Microsoft.png"
+type = "select"
+proxies = [
+  "DIRECT",
+  "环球网络",
+  "Ex香港",
+  "Ex台湾",
+  "Ex星国",
+  "Ex日本",
+  "Ex美国",
+  "ZHS香港",
+  "ZHS台湾",
+  "ZHS星国",
+  "ZHS日本",
+  "ZHS美国",
+  "自动选择",
+  "手动选择"
+]
+
+[[proxy-groups]]
+name = "苹果服务"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Apple_1.png"
+type = "select"
+proxies = [
+  "DIRECT",
+  "环球网络",
+  "Ex香港",
+  "Ex台湾",
+  "Ex星国",
+  "Ex日本",
+  "Ex美国",
+  "ZHS香港",
+  "ZHS台湾",
+  "ZHS星国",
+  "ZHS日本",
+  "ZHS美国",
+  "自动选择",
+  "手动选择",
+  "REJECT"
+]
+
+[[proxy-groups]]
+name = "香港串流验证"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/myTV_SUPER.png"
+type = "select"
+proxies = [ "香港原生", "ZHS九龙", "ZHS铠甲", "ZHS契约", "HKT" ]
+
+[[proxy-groups]]
+name = "EdgeWare"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/TVB.png"
+type = "select"
+proxies = [
+  "DIRECT",
+  "环球网络",
+  "Ex香港",
+  "Ex台湾",
+  "Ex星国",
+  "Ex日本",
+  "Ex美国",
+  "ZHS香港",
+  "ZHS台湾",
+  "ZHS星国",
+  "ZHS日本",
+  "ZHS美国",
+  "自动选择",
+  "手动选择",
+  "REJECT"
+]
+
+[[proxy-groups]]
+name = "ViuTV"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/ViuTV.png"
+type = "select"
+proxies = [ "香港原生", "ZHS九龙", "ZHS铠甲", "ZHS契约", "HKT" ]
+
+[[proxy-groups]]
+name = "全球直连"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Direct.png"
+type = "select"
+proxies = [
+  "DIRECT",
+  "环球网络",
+  "Ex香港",
+  "Ex台湾",
+  "Ex星国",
+  "Ex日本",
+  "Ex美国",
+  "ZHS香港",
+  "ZHS台湾",
+  "ZHS星国",
+  "ZHS日本",
+  "ZHS美国",
+  "自动选择",
+  "手动选择"
+]
+
+[[proxy-groups]]
+name = "广告拦截"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/AdBlack.png"
+type = "select"
+proxies = [ "REJECT", "DIRECT" ]
+
+[[proxy-groups]]
+name = "漏网之鱼"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Final_1.png"
+type = "select"
+proxies = [
+  "环球网络",
+  "Ex香港",
+  "Ex台湾",
+  "Ex星国",
+  "Ex日本",
+  "Ex美国",
+  "ZHS香港",
+  "ZHS台湾",
+  "ZHS星国",
+  "ZHS日本",
+  "ZHS美国",
+  "自动选择",
+  "手动选择",
+  "DIRECT",
+  "REJECT"
+]
+
+[[proxy-groups]]
+name = "Ex香港"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
+include-all = true
+filter = "^(?!.*(深圳))(?=.*(?:香港)).*$"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "Ex台湾"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png"
+include-all = true
+filter = "(?=.*(台湾)(?!.*(动画))).*"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "Ex星国"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png"
+include-all = true
+filter = ".*(?<!(更))(新加坡)(?!.*游戏).*"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "Ex日本"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png"
+include-all = true
+filter = "(?=.*(日本)(?!.*(游戏))).*"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "Ex美国"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png"
+include-all = true
+filter = "(?=.*(美国)(?!.*(游戏))).*"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "ZHS香港"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
+include-all = true
+filter = "^(?=.*(?:HK))(?!.*(?:香港|游戏)).*$"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "ZHS台湾"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Taiwan.png"
+include-all = true
+filter = "(?=.*(TW)(?!.*(游戏))).*"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "ZHS星国"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Singapore.png"
+include-all = true
+filter = "(?=.*(SG)(?!.*(游戏))).*"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "ZHS日本"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Japan.png"
+include-all = true
+filter = "(?=.*(JP)(?!.*(游戏))).*"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "ZHS美国"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/United_States.png"
+include-all = true
+filter = "(?=.*(US)(?!.*(游戏))).*"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "香港原生"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
+include-all = true
+filter = "(HKT|九龙|铠甲|天机|契约|TVB)"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "ZHS九龙"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
+include-all = true
+filter = "(九龙)"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "ZHS天机"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
+include-all = true
+filter = "(天机)"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "ZHS铠甲"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
+include-all = true
+filter = "(铠甲)"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "ZHS契约"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
+include-all = true
+filter = "(契约)"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "HKT"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
+include-all = true
+filter = "(HKT)"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "TVB"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Hong_Kong.png"
+include-all = true
+filter = "(TVB)"
+type = "url-test"
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "自动选择"
+icon = "https://fastly.jsdelivr.net/gh/Koolson/Qure@master/IconSet/Color/Auto.png"
+type = "url-test"
+include-all = true
+interval = 300
+tolerance = 50
+
+[[proxy-groups]]
+name = "手动选择"
+icon = "https://fastly.jsdelivr.net/gh/shindgewongxj/WHATSINStash@master/icon/select.png"
+include-all = true
+type = "select"
+
+[rule-providers.GlobalWebsiteAndForeignlMedia]
+url = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/GlobalWebsiteAndForeignlMedia.list"
+path = "./GlobalWebsiteAndForeignlMedia.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.LocalAreaNetwork]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
+path = "./ruleset/LocalAreaNetwork.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.UnBan]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
+path = "./ruleset/UnBan.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.BanAD]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list"
+path = "./ruleset/BanAD.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.BanProgramAD]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list"
+path = "./ruleset/BanProgramAD.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.GoogleFCM]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/GoogleFCM.list"
+path = "./ruleset/GoogleFCM.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.GoogleCN]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/GoogleCN.list"
+path = "./ruleset/GoogleCN.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.Microsoft]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list"
+path = "./ruleset/Microsoft.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.Apple]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list"
+path = "./ruleset/Apple.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.Telegram]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list"
+path = "./ruleset/Telegram.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.AI]
+url = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/AI.list"
+path = "./ruleset/AI.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.Netflix]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list"
+path = "./ruleset/Netflix.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.HK-Media]
+url = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/HK-Media.list"
+path = "./ruleset/HK-Media.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.EdgeWare]
+url = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/EdgeWare.list"
+path = "./ruleset/EdgeWare.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.TVB-AD]
+url = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/TVB-AD.list"
+path = "./ruleset/EdgeWare.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.ViuTV]
+url = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/ViuTV.list"
+path = "./ruleset/ViuTV.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.ProxyGFWlist]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list"
+path = "./ruleset/ProxyGFWlist.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.Chinaclassical]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Chinaclassical.list"
+path = "./ruleset/Chinaclassical.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.ChinaCompanyIp]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list"
+path = "./ruleset/ChinaCompanyIp.list"
+behavior = "ipcidr"
+interval = 86_400
+format = "text"
+type = "http"
+
+[rule-providers.Download]
+url = "https://mirror.ghproxy.com/https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list"
+path = "./ruleset/Download.list"
+behavior = "classical"
+interval = 86_400
+format = "text"
+type = "http"
