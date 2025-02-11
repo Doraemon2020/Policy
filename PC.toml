@@ -1,271 +1,860 @@
 version = 1
+
 [custom]
 enable_rule_generator = true
 overwrite_original_rules = true
 
-# Options for custom base configuration file
-clash_rule_base = "https://raw.githubusercontent.com/zhongfly/clash-config/master/clash.yml"
-#surge_rule_base = "base/surge.conf"
-#surfboard_rule_base = "base/surfboard.conf"
-#mellow_rule_base = "base/mellow.conf"
-#quan_rule_base = "base/quan.conf"
-#quanx_rule_base = "base/quanx.conf"
+[custom_groups]
+  [[custom_groups.groups]]
+    name = "🌍 环球网络"
+    type = "select"
+    rule = [
+        "[]♻️ 自动选择",
+        "[]⚡ 均衡负载",
+        "[]🇭🇰 Ex香港",
+        "[]🇭🇰 ZHS香港",
+        "[]🇹🇼 Ex台湾",
+        "[]🇹🇼 ZHS台湾",
+        "[]🇸🇬 Ex星国",
+        "[]🇸🇬 ZHS星国",
+        "[]🇯🇵 Ex日本",
+        "[]🇯🇵 ZHS日本",
+        "[]🇺🇸 Ex美国",
+        "[]🇺🇸 ZHS美国",
+        "[]⚡ 全部节点",
+        "[]📌 全部节点",
+        "[]DIRECT",
+        "[]REJECT"
+    ]
 
-# Options for adding emojis
-add_emoji = true
-remove_old_emoji = true
+  [[custom_groups.groups]]
+    name = "♻️ 自动选择"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 60
+    tolerance = 100
+    rule = [
+        "[]🇭🇰 Ex香港",
+        "[]🇭🇰 ZHS香港",
+        "[]🇹🇼 Ex台湾",
+        "[]🇹🇼 ZHS台湾",
+        "[]🇸🇬 Ex星国",
+        "[]🇸🇬 ZHS星国",
+        "[]🇯🇵 Ex日本",
+        "[]🇯🇵 ZHS日本",
+        "[]🇺🇸 Ex美国",
+        "[]🇺🇸 ZHS美国"
+    ]
 
-# Options for filtering nodes
-#include_remarks = []
-exclude_remarks = ["(流量|时间|官(网|址)|产品|免费|耗尽|到期|订阅|更新|群组|剩余|可用|当前)"]
+  [[custom_groups.groups]]
+    name = "📺 Netflix"
+    type = "select"
+    rule = [
+        "[]🌍 环球网络",
+        "[]♻️ 自动选择",
+        "[]🇭🇰 Ex香港",
+        "[]🇭🇰 ZHS香港",
+        "[]🇹🇼 Ex台湾",
+        "[]🇹🇼 ZHS台湾",
+        "[]🇸🇬 Ex星国",
+        "[]🇸🇬 ZHS星国",
+        "[]🇯🇵 Ex日本",
+        "[]🇯🇵 ZHS日本",
+        "[]🇺🇸 Ex美国",
+        "[]🇺🇸 ZHS美国",
+        "[]⚡ 全部节点",
+        "[]📌 全部节点",
+        "[]DIRECT",
+        "[]REJECT"
+    ]
 
-# 设置分组标志位
-[[custom_groups]]
-name = "🌍 环球网络"
-type = "url-test"
-rule = [
-    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
-    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
-    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
-]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
+  [[custom_groups.groups]]
+    name = "🛑 拦截连接"
+    type = "select"
+    rule = [
+        "[]DIRECT",
+        "[]REJECT"
+    ]
 
-[[custom_groups]]
-name = "♻️ 自动选择"
-type = "url-test"
-rule = [".*"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
+  [[custom_groups.groups]]
+    name = "🐟 漏网之鱼"
+    type = "select"
+    rule = [
+        "[]🌍 环球网络",
+        "[]♻️ 自动选择",
+        "[]⚡ 全部节点",
+        "[]📌 全部节点",
+        "[]DIRECT",
+        "[]REJECT",
+        "[]🇭🇰 Ex香港",
+        "[]🇭🇰 ZHS香港",
+        "[]🇹🇼 Ex台湾",
+        "[]🇹🇼 ZHS台湾",
+        "[]🇸🇬 Ex星国",
+        "[]🇸🇬 ZHS星国",
+        "[]🇯🇵 Ex日本",
+        "[]🇯🇵 ZHS日本",
+        "[]🇺🇸 Ex美国",
+        "[]🇺🇸 ZHS美国"
+    ]
 
-[[custom_groups]]
-name = "📺 Netflix"
-type = "url-test"
-rule = [
-    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
-    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
-    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
-]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
+  [[custom_groups.groups]]
+    name = "📨 Telegram"
+    type = "select"
+    rule = [
+        "[]🌍 环球网络",
+        "[]♻️ 自动选择",
+        "[]⚡ 全部节点",
+        "[]📌 全部节点",
+        "[]🇭🇰 Ex香港",
+        "[]🇭🇰 ZHS香港",
+        "[]🇹🇼 Ex台湾",
+        "[]🇹🇼 ZHS台湾",
+        "[]🇸🇬 Ex星国",
+        "[]🇸🇬 ZHS星国",
+        "[]🇯🇵 Ex日本",
+        "[]🇯🇵 ZHS日本",
+        "[]🇺🇸 Ex美国",
+        "[]🇺🇸 ZHS美国"
+    ]
 
-[[custom_groups]]
-name = "🛑 拦截连接"
-type = "select"
-rule = ["[]DIRECT", "[]REJECT"]
+  [[custom_groups.groups]]
+    name = "🍎 苹果服务"
+    type = "select"
+    rule = [
+        "[]🌍 环球网络",
+        "[]♻️ 自动选择",
+        "[]⚡ 全部节点",
+        "[]📌 全部节点",
+        "[]🇭🇰 Ex香港",
+        "[]🇭🇰 ZHS香港",
+        "[]🇹🇼 Ex台湾",
+        "[]🇹🇼 ZHS台湾",
+        "[]🇸🇬 Ex星国",
+        "[]🇸🇬 ZHS星国",
+        "[]🇯🇵 Ex日本",
+        "[]🇯🇵 ZHS日本",
+        "[]🇺🇸 Ex美国",
+        "[]🇺🇸 ZHS美国"
+    ]
 
-[[custom_groups]]
-name = "🐟 漏网之鱼"
-type = "select"
-rule = [
-    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
-    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
-    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
-]
+  [[custom_groups.groups]]
+    name = "Ⓜ️ 微软服务"
+    type = "select"
+    rule = [
+        "[]🌍 环球网络",
+        "[]♻️ 自动选择",
+        "[]⚡ 全部节点",
+        "[]📌 全部节点",
+        "[]🇭🇰 Ex香港",
+        "[]🇭🇰 ZHS香港",
+        "[]🇹🇼 Ex台湾",
+        "[]🇹🇼 ZHS台湾",
+        "[]🇸🇬 Ex星国",
+        "[]🇸🇬 ZHS星国",
+        "[]🇯🇵 Ex日本",
+        "[]🇯🇵 ZHS日本",
+        "[]🇺🇸 Ex美国",
+        "[]🇺🇸 ZHS美国"
+    ]
 
-[[custom_groups]]
-name = "📨 Telegram"
-type = "select"
-rule = [
-    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
-    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
-    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
-]
+  [[custom_groups.groups]]
+    name = "📈 SpeedTest"
+    type = "select"
+    rule = [
+        "[]DIRECT",
+        "[]🌍 环球网络",
+        "[]📺 Netflix",
+        "[]📌 全部节点"
+    ]
 
-[[custom_groups]]
-name = "🍎 苹果服务"
-type = "select"
-rule = [
-    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
-    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
-    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
-]
+  [[custom_groups.groups]]
+    name = "👾 AI"
+    type = "select"
+    rule = [
+        "[]🇹🇼 Ex台湾",
+        "[]🇹🇼 ZHS台湾",
+        "[]🇸🇬 Ex星国",
+        "[]🇸🇬 ZHS星国",
+        "[]🇯🇵 Ex日本",
+        "[]🇯🇵 ZHS日本",
+        "[]🇺🇸 Ex美国",
+        "[]🇺🇸 ZHS美国"
+    ]
 
-[[custom_groups]]
-name = "Ⓜ️ 微软服务"
-type = "select"
-rule = [
-    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
-    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
-    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
-]
+  [[custom_groups.groups]]
+    name = "🇭🇰 香港串流验证"
+    type = "select"
+    rule = [
+        "[]🇭🇰 香港原生",
+        "[]🇭🇰 ZHS九龙",
+        "[]🇭🇰 ZHS天机",
+        "[]🇭🇰 ZHS铠甲",
+        "[]🇭🇰 ZHS契约",
+        "[]🇭🇰 TVB",
+        "[]🇭🇰 HKT",
+        "[]📌 全部节点"
+    ]
 
-[[custom_groups]]
-name = "📈 SpeedTest"
-type = "select"
-rule = [
-    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
-    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
-    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
-]
+  [[custom_groups.groups]]
+    name = "🇭🇰 EdgeWare"
+    type = "select"
+    rule = [
+        "[]DIRECT",
+        "[]🌍 环球网络",
+        "[]⚡ 全部节点",
+        "[]⚡ 均衡负载",
+        "[]📌 全部节点",
+        "[]♻️ 自动选择",
+        "[]🇭🇰 Ex香港",
+        "[]🇭🇰 ZHS香港",
+        "[]🇹🇼 Ex台湾",
+        "[]🇹🇼 ZHS台湾",
+        "[]🇸🇬 Ex星国",
+        "[]🇸🇬 ZHS星国",
+        "[]🇯🇵 Ex日本",
+        "[]🇯🇵 ZHS日本",
+        "[]🇺🇸 Ex美国",
+        "[]🇺🇸 ZHS美国"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇭🇰 香港原生"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 60
+    rule = [
+        "(HKT|九龙|铠甲|天机|契约|TVB)"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇭🇰 Ex香港"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "^(?!.*(深圳))(?=.*(?:香港)).*$"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇹🇼 Ex台湾"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "(?=.*(台湾)(?!.*(动画))).*"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇸🇬 Ex星国"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        ".*(?<!(更))(新加坡)(?!.*游戏).*"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇺🇸 Ex美国"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "(?=.*(美国)(?!.*(游戏))).*"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇯🇵 Ex日本"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "(?=.*(日本)(?!.*(游戏))).*"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇭🇰 ZHS香港"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "^(?=.*(?:HK))(?!.*(?:香港|游戏)).*$"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇹🇼 ZHS台湾"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "(?=.*(TW)(?!.*(游戏))).*"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇸🇬 ZHS星国"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "(?=.*(SG)(?!.*(游戏))).*"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇺🇸 ZHS美国"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "(?=.*(US)(?!.*(游戏))).*"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇯🇵 ZHS日本"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "(?=.*(JP)(?!.*(游戏))).*"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇭🇰 ZHS九龙"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "(九龙)"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇭🇰 ZHS天机"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "(天机)"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇭🇰 ZHS铠甲"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "(铠甲)"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇭🇰 ZHS契约"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "(契约)"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇭🇰 HKT"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "(HKT)"
+    ]
+
+  [[custom_groups.groups]]
+    name = "🇭🇰 TVB"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "(TVB)"
+    ]
+
+  [[custom_groups.groups]]
+    name = "⚡ 均衡负载"
+    type = "load-balance"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    strategy = "round-robin"
+    rule = [
+        "(?=.*(香港|HK)(?!.*(游戏))).*"
+    ]
+
+  [[custom_groups.groups]]
+    name = "⚡ 全部节点"
+    type = "url-test"
+    url = "http://www.gstatic.com/generate_204"
+    interval = 600
+    rule = [
+        "^((?!中国|回国|游戏|限速|结算|流量).)*$"
+    ]
+
+  [[custom_groups.groups]]
+    name = "📌 全部节点"
+    type = "select"
+    rule = [".*"]
 
 
-# 继续补充其他自定义规则
+[rulesets]
+  [[rulesets.groups]]
+    group = "DIRECT"
+    ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
 
-# 设置分组标志位
+  [[rulesets.groups]]
+    group = "DIRECT"
+    ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
+
+  [[rulesets.groups]]
+    group = "🛑 拦截连接"
+    ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"
+
+  [[rulesets.groups]]
+    group = "🛑 拦截连接"
+    ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list"
+
+  [[rulesets.groups]]
+    group = "🛑 拦截连接"
+    ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"
+
+  [[rulesets.groups]]
+    group = "🛑 拦截连接"
+    ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list"
+
+  [[rulesets.groups]]
+    group = "👾 AI"
+    ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/AI.list"
+
+  [[rulesets.groups]]
+    group = "🌍 环球网络"
+    ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/GlobalWebsiteAndForeignlMedia.list"
+
+  [[rulesets.groups]]
+    group = "📺 Netflix"
+    ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list"
+
+  [[rulesets.groups]]
+    group = "📨 Telegram"
+    ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list"
+
+  [[rulesets.groups]]
+    group = "🍎 苹果服务"
+    ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list"
+
+  [[rulesets.groups]]
+    group = "🇭🇰 香港串流验证"
+    ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-Media.list"
+
+  [[rulesets.groups]]
+    group = "🇭🇰 EdgeWare"
+    ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/EdgeWare.list"
+
+  [[rulesets.groups]]
+    group = "Ⓜ️ 微软服务"
+    ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Microsoft.list"
+
+  [[rulesets.groups]]
+    group = "📈 SpeedTest"
+    ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list"
+
+  [[rulesets.groups]]
+    group = "DIRECT"
+    ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list"
+
+  [[rulesets.groups]]
+    group = "DIRECT"
+    ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list"
+
+  [[rulesets.groups]]
+    group = "DIRECT"
+    ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list"
+
+  [[rulesets.groups]]
+    group = "DIRECT"
+    ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list"
+
+  [[rulesets.groups]]
+    group = "DIRECT"
+    ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-securities.list"
+
+  [[rulesets.groups]]
+    group = "DIRECT"
+    ruleset = "[]GEOIP,CN"
+
+  [[rulesets.groups]]
+    group = "🐟 漏网之鱼"
+    ruleset = "[]MATCH"
 
 
-# 设置规则标志位
-# 个人规则
-[[rulesets]]
-group = "🎯 全球直连"
-ruleset = "https://raw.githubusercontent.com/zhongfly/clash-config/master/Direct.list"
-[[rulesets]]
-group = "🚀 节点选择"
-ruleset = "https://raw.githubusercontent.com/zhongfly/clash-config/master/proxy.list"
-[[rulesets]]
-group = "📖 漫画"
-ruleset = "https://raw.githubusercontent.com/zhongfly/clash-config/master/comic.list"
-[[rulesets]]
-group = "📺 哔哩哔哩海外"
-ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/biliintl.yaml"
-type = "clash-domain"
-[[rulesets]]
-group = "📺 哔哩哔哩"
-ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.yaml"
-type = "clash-domain"
+[emoji]
+  [[emoji.groups]]
+    match = "(?i:Bandwidth|expire|流量|时间|应急|过期)"
+    emoji = "🏳️‍🌈"
 
-[[rulesets]]
-group = "🎯 全球直连"
-ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.yaml"
-type = "clash-domain"
+  [[emoji.groups]]
+    match = "(?i:\\bHK[G]?\\b|Hong.*?Kong|\\bHKT\\b|\\bHKBN\\b|\\bHGC\\b|\\bWTT\\b|\\bCMI\\b|[^-]港)"
+    emoji = "🇭🇰"
 
-# 广告拦截
-[[rulesets]]
-group = "🛑 全球拦截"
-ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.yaml"
-type = "clash-domain"
+  [[emoji.groups]]
+    match = "(?i:\\bTW[N]?\\b|Taiwan|新北|彰化|\\bCHT\\b|台湾|[^-]台|\\bHINET\\b)"
+    emoji = "🇹🇼"
 
-# 类型直连
-[[rulesets]]
-group = "🎯 全球直连"
-ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games@cn.yaml"
-type = "clash-domain"
-[[rulesets]]
-group = "🎯 全球直连"
-ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft@cn.yaml"
-type = "clash-domain"
-[[rulesets]]
-group = "🚀 节点选择"
-ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google@cn.yaml"
-type = "clash-domain"
+  [[emoji.groups]]
+    match = "(?i:\\bSG[P]?\\b|Singapore|新加坡|狮城|[^-]新)"
+    emoji = "🇸🇬"
 
-# 代理
-[[rulesets]]
-group = "🚀 节点选择"
-ruleset = "[]GEOSITE,geolocation-!cn"
+  [[emoji.groups]]
+    match = "(?i:\\bJP[N]?\\b|Japan|Tokyo|Osaka|Saitama|日本|东京|大阪|埼玉|[^-]日)"
+    emoji = "🇯🇵"
 
-# 直连
-[[rulesets]]
-group = "🎯 全球直连"
-ruleset = "[]GEOSITE,cn"
+  [[emoji.groups]]
+    match = "(?i:\\bK[O]?R\\b|Korea|首尔|韩|韓)"
+    emoji = "🇰🇷"
 
-# IP类规则
-[[rulesets]]
-group = "🎯 全球直连"
-ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.yaml"
-type = "clash-ipcidr"
-[[rulesets]]
-group = "🚀 节点选择"
-ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.yaml"
-type = "clash-ipcidr"
-[[rulesets]]
-group = "🎯 全球直连"
-ruleset = "[]GEOIP,CN"
+  [[emoji.groups]]
+    match = "(?i:\\bUS[A]?\\b|America|United.*?States|美国|[^-]美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥)"
+    emoji = "🇺🇸"
 
-[[rulesets]]
-group = "🐟 漏网之鱼"
-ruleset = "[]MATCH"
-# 设置规则标志位
+  [[emoji.groups]]
+    match = "(Ascension|阿森松)"
+    emoji = "🇦🇨"
 
+  [[emoji.groups]]
+    match = "(?i:\\bUAE\\b|Dubai|阿联酋|迪拜)"
+    emoji = "🇦🇪"
 
-[[emoji]]
-match = "(Australia|Sydney|澳大利亚|澳洲|悉尼)"
-emoji = "🇦🇺"
-[[emoji]]
-match = "(Brazil|Paulo|巴西|圣保罗)"
-emoji = "🇧🇷"
-[[emoji]]
-match = "(?i:\\bCA[N]?\\b|Canada|Toronto|Montreal|Vancouver|加拿大|蒙特利尔|温哥华|楓葉|枫叶)"
-emoji = "🇨🇦"
-[[emoji]]
-match = "(?i:DE|Germany|法兰克福|德)"
-emoji = "🇩🇪"
-[[emoji]]
-match = "(?i:\\bFR[A]?\\b|France|Paris|法国|巴黎)"
-emoji = "🇫🇷"
-[[emoji]]
-match = "(?i:UK|England|United.*?Kingdom|London|英|伦敦)"
-emoji = "🇬🇧"
-[[emoji]]
-match = "(Italy|Milan|意大利|米兰)"
-emoji = "🇮🇹"
-[[emoji]]
-match = "(India|Mumbai|印度|孟买)"
-emoji = "🇮🇳"
-[[emoji]]
-match = "(柬埔寨|Cambodia)"
-emoji = "🇰🇭"
-[[emoji]]
-match = "(卢森堡|LU)"
-emoji = "🇱🇺"
-[[emoji]]
-match = "(?i:JP|Japan|Tokyo|Osaka|Saitama|日本|东京|大阪|埼玉|[^-]日)"
-emoji = "🇯🇵"
-[[emoji]]
-match = "(?i:KR|Korea|KOR|首尔|韩|韓)"
-emoji = "🇰🇷"
-[[emoji]]
-match = "(Macao|澳门|CTM)"
-emoji = "🇲🇴"
-[[emoji]]
-match = "(墨西哥|Mexico)"
-emoji = "🇲🇽"
-[[emoji]]
-match = "(Malaysia|马来西亚)"
-emoji = "🇲🇾"
-[[emoji]]
-match = "(?i:\\bNL[D]?\\b|Netherlands|荷兰|阿姆斯特丹)"
-emoji = "🇳🇱"
-[[emoji]]
-match = "(Philippines|菲律宾)"
-emoji = "🇵🇭"
-[[emoji]]
-match = "(?i:RU|Russia|Moscow|Petersburg|Siberia|伯力|莫斯科|圣彼得堡|西伯利亚|新西伯利亚|哈巴罗夫斯克|俄|毛子)"
-emoji = "🇷🇺"
-[[emoji]]
-match = "乌克兰"
-emoji = "🇺🇦"
-[[emoji]]
-match = "(?i:SG|Singapore|新加坡|狮城|[^-]新)"
-emoji = "🇸🇬"
-[[emoji]]
-match = "(?i:\\bTH\\b|Thailand|泰国|曼谷|泰)"
-emoji = "🇹🇭"
-[[emoji]]
-match = "(?i:TW|Taiwan|台湾|[^-]台)"
-emoji = "🇨🇳"
-[[emoji]]
-match = "(?i:US|America|United.*?States|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥)"
-emoji = "🇺🇸"
-[[emoji]]
-match = "(?i:\\bUAE\\b|Dubai|阿联酋|迪拜)"
-emoji = "🇦🇪"
-[[emoji]]
-match = "(Argentina|阿根廷)"
-emoji = "🇦🇷"
-[[emoji]]
-match = "(Vietnam|越南|越)"
-emoji = "🇻🇳"
-[[emoji]]
-match = "(Turkey|土耳其|伊斯坦布尔)"
-emoji = "🇹🇷"
-[[emoji]]
-match = "(?i:HK|Hong.*?Kong|HKT|HKBN|HGC|WTT|CMI|港)"
-emoji = "🇭🇰"
+  [[emoji.groups]]
+    match = "(阿尔巴尼亚|Albania)"
+    emoji = "🇦🇱"
+
+  [[emoji.groups]]
+    match = "(Argentina|阿根廷)"
+    emoji = "🇦🇷"
+
+  [[emoji.groups]]
+    match = "(Austria|Vienna|奥地利|维也纳)"
+    emoji = "🇦🇹"
+
+  [[emoji.groups]]
+    match = "(?i:\\bAU[S]?\\b|Australia|Sydney|澳大利亚|澳洲|悉尼)"
+    emoji = "🇦🇺"
+
+  [[emoji.groups]]
+    match = "(阿塞拜疆|Azerbaijan)"
+    emoji = "🇦🇿"
+
+  [[emoji.groups]]
+    match = "(波黑共和国|波士尼亚与赫塞哥维纳|Bosnia|Herzegovina)"
+    emoji = "🇧🇦"
+
+  [[emoji.groups]]
+    match = "(Belgium|比利时)"
+    emoji = "🇧🇪"
+
+  [[emoji.groups]]
+    match = "(保加利亚|Bulgaria)"
+    emoji = "🇧🇬"
+
+  [[emoji.groups]]
+    match = "(Brazil|Paulo|巴西|圣保罗)"
+    emoji = "🇧🇷"
+
+  [[emoji.groups]]
+    match = "(?i:\\bCA[N]?\\b|Canada|Toronto|Montreal|Vancouver|加拿大|蒙特利尔|温哥华|楓葉|枫叶)"
+    emoji = "🇨🇦"
+
+  [[emoji.groups]]
+    match = "(Switzerland|Zurich|瑞士|苏黎世)"
+    emoji = "🇨🇭"
+
+  [[emoji.groups]]
+    match = "(智利|Chile)"
+    emoji = "🇨🇱"
+
+  [[emoji.groups]]
+    match = "(Colombia|哥伦比亚)"
+    emoji = "🇨🇴"
+
+  [[emoji.groups]]
+    match = "(Costa Rica|哥斯达黎加)"
+    emoji = "🇨🇷"
+
+  [[emoji.groups]]
+    match = "(塞浦路斯|Cyprus)"
+    emoji = "🇨🇾"
+
+  [[emoji.groups]]
+    match = "(Czech|捷克)"
+    emoji = "🇨🇿"
+
+  [[emoji.groups]]
+    match = "(?i:\\bDE[U]?\\b|Germany|法兰克福|德(国|意志)|中德|^德$)"
+    emoji = "🇩🇪"
+
+  [[emoji.groups]]
+    match = "(?i:\\bD[N]?K\\b|Denmark|丹麦)"
+    emoji = "🇩🇰"
+
+  [[emoji.groups]]
+    match = "(爱沙尼亚|Estonia)"
+    emoji = "🇪🇪"
+
+  [[emoji.groups]]
+    match = "(埃及|Egypt)"
+    emoji = "🇪🇬"
+
+  [[emoji.groups]]
+    match = "(?i:\\bES[P]?\\b|Spain|西班牙)"
+    emoji = "🇪🇸"
+
+  [[emoji.groups]]
+    match = "(Europe|欧洲)"
+    emoji = "🇪🇺"
+
+  [[emoji.groups]]
+    match = "(Finland|Helsinki|芬兰|赫尔辛基)"
+    emoji = "🇫🇮"
+
+  [[emoji.groups]]
+    match = "(?i:\\bFR[A]?\\b|France|Paris|法国|巴黎)"
+    emoji = "🇫🇷"
+
+  [[emoji.groups]]
+    match = "(?i:\\bUK\\b|\\bGB[R]?\\b|England|United.*?Kingdom|London|英国|[^-]英|伦敦)"
+    emoji = "🇬🇧"
+
+  [[emoji.groups]]
+    match = "(希腊|Greece)"
+    emoji = "🇬🇷"
+
+  [[emoji.groups]]
+    match = "(格鲁吉亚|Georgia)"
+    emoji = "🇬🇪"
+
+  [[emoji.groups]]
+    match = "(克罗地亚|Croatia)"
+    emoji = "🇭🇷"
+
+  [[emoji.groups]]
+    match = "(Hungary|匈牙利)"
+    emoji = "🇭🇺"
+
+  [[emoji.groups]]
+    match = "(Indonesia|Jakarta|印尼|印度尼西亚|雅加达)"
+    emoji = "🇮🇩"
+
+  [[emoji.groups]]
+    match = "(Ireland|Dublin|爱尔兰|都柏林)"
+    emoji = "🇮🇪"
+
+  [[emoji.groups]]
+    match = "(Israel|以色列)"
+    emoji = "🇮🇱"
+
+  [[emoji.groups]]
+    match = "(马恩岛|Mann)"
+    emoji = "🇮🇲"
+
+  [[emoji.groups]]
+    match = "(?i:\\bIN[D]?\\b|India|Mumbai|印度|孟买|加尔各答|贾坎德|泰米尔纳德)"
+    emoji = "🇮🇳"
+
+  [[emoji.groups]]
+    match = "(伊朗|Iran)"
+    emoji = "🇮🇷"
+
+  [[emoji.groups]]
+    match = "(?i:\\bIS[L]?\\b|Iceland|冰岛)"
+    emoji = "🇮🇸"
+
+  [[emoji.groups]]
+    match = "(Italy|Milan|意大利|米兰)"
+    emoji = "🇮🇹"
+
+  [[emoji.groups]]
+    match = "(约旦|Jordan)"
+    emoji = "🇯🇴"
+
+  [[emoji.groups]]
+    match = "(肯尼亚|Kenya)"
+    emoji = "🇰🇪"
+
+  [[emoji.groups]]
+    match = "(吉尔吉斯斯坦|Kyrgyzstan)"
+    emoji = "🇰🇬"
+
+  [[emoji.groups]]
+    match = "(柬埔寨|Cambodia)"
+    emoji = "🇰🇭"
+
+  [[emoji.groups]]
+    match = "(North.*?Korea|朝鲜)"
+    emoji = "🇰🇵"
+
+  [[emoji.groups]]
+    match = "(哈萨克斯坦|Kazakhstan)"
+    emoji = "🇰🇿"
+
+  [[emoji.groups]]
+    match = "(立陶宛|Lietuvos)"
+    emoji = "🇱🇹"
+
+  [[emoji.groups]]
+    match = "(卢森堡|Luxemburg|Luxembourg)"
+    emoji = "🇱🇺"
+
+  [[emoji.groups]]
+    match = "(拉脱维亚|Latvia)"
+    emoji = "🇱🇻"
+
+  [[emoji.groups]]
+    match = "(Moldova|摩尔多瓦)"
+    emoji = "🇲🇩"
+
+  [[emoji.groups]]
+    match = "(北马其顿|Macedonia)"
+    emoji = "🇲🇰"
+
+  [[emoji.groups]]
+    match = "(蒙古|Монголулс|Mongolia)"
+    emoji = "🇲🇳"
+
+  [[emoji.groups]]
+    match = "(Macao|澳门|\\bCTM\\b)"
+    emoji = "🇲🇴"
+
+  [[emoji.groups]]
+    match = "(墨西哥|Mexico)"
+    emoji = "🇲🇽"
+
+  [[emoji.groups]]
+    match = "(Malaysia|马来|MY)"
+    emoji = "🇲🇾"
+
+  [[emoji.groups]]
+    match = "(尼日利亚|Nigeria)"
+    emoji = "🇳🇬"
+
+  [[emoji.groups]]
+    match = "(?i:\\bNL[D]?\\b|Netherlands|荷兰|阿姆斯特丹)"
+    emoji = "🇳🇱"
+
+  [[emoji.groups]]
+    match = "(挪威|Norway)"
+    emoji = "🇳🇴"
+
+  [[emoji.groups]]
+    match = "(新西兰|纽西兰|New Zealand)"
+    emoji = "🇳🇿"
+
+  [[emoji.groups]]
+    match = "(Philippines|菲律宾)"
+    emoji = "🇵🇭"
+
+  [[emoji.groups]]
+    match = "(Pakistan|巴基斯坦)"
+    emoji = "🇵🇰"
+
+  [[emoji.groups]]
+    match = "(?i:\\bP[O]?L\\b|Poland|波兰)"
+    emoji = "🇵🇱"
+
+  [[emoji.groups]]
+    match = "(巴拿马|Panama)"
+    emoji = "🇵🇦"
+
+  [[emoji.groups]]
+    match = "(秘鲁|Peru)"
+    emoji = "🇵🇪"
+
+  [[emoji.groups]]
+    match = "(葡萄牙|Portugal)"
+    emoji = "🇵🇹"
+
+  [[emoji.groups]]
+    match = "(Romania|罗马尼亚)"
+    emoji = "🇷🇴"
+
+  [[emoji.groups]]
+    match = "(塞尔维亚|Serbia)"
+    emoji = "🇷🇸"
+
+  [[emoji.groups]]
+    match = "(?i:\\bRU[S]?\\b|Russia|Moscow|Petersburg|Siberia|伯力|莫斯科|圣彼得堡|西伯利亚|新西伯利亚|哈巴罗夫斯克|俄罗斯|[^-]俄)"
+    emoji = "🇷🇺"
+
+  [[emoji.groups]]
+    match = "(Arabia|沙特)"
+    emoji = "🇸🇦"
+
+  [[emoji.groups]]
+    match = "(Sweden|瑞典)"
+    emoji = "🇸🇪"
+
+  [[emoji.groups]]
+    match = "(斯洛文尼亚|Slovenia)"
+    emoji = "🇸🇮"
+
+  [[emoji.groups]]
+    match = "(斯洛伐克|Slovensko)"
+    emoji = "🇸🇰"
+
+  [[emoji.groups]]
+    match = "(Thailand|泰国|曼谷)"
+    emoji = "🇹🇭"
+
+  [[emoji.groups]]
+    match = "(突尼斯|Tunisia)"
+    emoji = "🇹🇳"
+
+  [[emoji.groups]]
+    match = "(TR|Turkey|土耳其|伊斯坦布尔)"
+    emoji = "🇹🇷"
+
+  [[emoji.groups]]
+    match = "(乌拉圭|Uruguay)"
+    emoji = "🇺🇾"
+
+  [[emoji.groups]]
+    match = "(Vietnam|越南)"
+    emoji = "🇻🇳"
+
+  [[emoji.groups]]
+    match = "(Africa|南非)"
+    emoji = "🇿🇦"
+
+  [[emoji.groups]]
+    match = "(Ukraine|UA|乌克兰)"
+    emoji = "🇺🇦"
+
+  [[emoji.groups]]
+    match = "(Puerto.*?Rico|波多黎各)"
+    emoji = "🇵🇷"
+
+  [[emoji.groups]]
+    match = "(Ecuador|厄瓜多尔)"
+    emoji = "🇪🇨"
+
+  [[emoji.groups]]
+    match = "(Venezuela|委内瑞拉)"
+    emoji = "🇻🇪"
+
+  [[emoji.groups]]
+    match = "(Morocco|摩洛哥)"
+    emoji = "🇲🇦"
+
+  [[emoji.groups]]
+    match = "(Nigeria|尼日利亚)"
+    emoji = "🇳🇬"
+
+  [[emoji.groups]]
+    match = "(Nepal|尼泊尔)"
+    emoji = "🇳🇵"
+
+  [[emoji.groups]]
+    match = "(Bengal|孟加拉)"
+    emoji = "🇧🇩"
+
+  [[emoji.groups]]
+    match = "(?i:\\bC[H]?N\\b|China|back|回国|中国[^\\-]|江苏[^\\-]|北京[^\\-]|上海[^\\-]|广州[^\\-]|深圳[^\\-]|杭州[^\\-]|常州[^\\-]|徐州[^\\-]|青岛[^\\-]|宁波[^\\-]|镇江[^\\-]|成都[^\\-]|河北[^\\-]|山西[^\\-]|辽宁[^\\-]|吉林[^\\-]|黑龙江[^\\-]|江苏[^\\-]|浙江[^\\-]|安徽[^\\-]|福建[^\\-]|江西[^\\-]|山东[^\\-]|河南[^\\-]|湖北[^\\-]|湖南[^\\-]|广东[^\\-]|海南[^\\-]|四川[^\\-]|贵州[^\\-]|云南[^\\-]|陕西[^\\-]|甘肃[^\\-]|青海[^\\-]|内蒙古[^\\-]|广西[^\\-]|西藏[^\\-]|宁夏[^\\-]|新疆[^\\-])"
+    emoji = "🇨🇳"
