@@ -1,596 +1,271 @@
 version = 1
-[common]
-# API mode, set to true to prevent loading local subscriptions or serving local files directly
-api_mode = false
+[custom]
+enable_rule_generator = true
+overwrite_original_rules = true
 
-# Access token used for performing critical action through Web interface
-api_access_token = "password"
+# Options for custom base configuration file
+clash_rule_base = "https://raw.githubusercontent.com/zhongfly/clash-config/master/clash.yml"
+#surge_rule_base = "base/surge.conf"
+#surfboard_rule_base = "base/surfboard.conf"
+#mellow_rule_base = "base/mellow.conf"
+#quan_rule_base = "base/quan.conf"
+#quanx_rule_base = "base/quanx.conf"
 
-# Default URLs, used when no URL is provided in request, use "|" to separate multiple subscription links, supports local files/URL
-default_url = []
-
-# Insert subscription links to requests. Can be used to add node(s) to all exported subscriptions.
-enable_insert = true
-# URLs to insert before subscription links, can be used to add node(s) to all exported subscriptions, supports local files/URL
-insert_url = [""]
-# Prepend inserted URLs to subscription links. Nodes in insert_url will be added to groups first with non-group-specific match pattern.
-prepend_insert_url = true
-
-# Exclude nodes which remarks match the following patterns. Supports regular expression.
-exclude_remarks = ["(到期|剩余流量|时间|官网|产品)"]
-
-# Only include nodes which remarks match the following patterns. Supports regular expression.
-#include_remarks = ["V3.*港"]
-
-# Enable script support for filtering nodes
-enable_filter = false
-# Script used for filtering nodes. Supports inline script and script path. A "filter" function with 1 argument which is a node should be defined in the script.
-# Example: Inline script: set value to content of script.
-#          Script path: set value to "path:/path/to/script.js".
-#filter_script = '''
-#function filter(node) {
-#    const info = JSON.parse(node.ProxyInfo);
-#    if(info.EncryptMethod.includes('chacha20'))
-#	    return true;
-#    return false;
-#}
-#'''
-
-# Setting an external config file as default when none is specified, supports local files/URL
-# default_external_config = "config/example_external_config.toml"
-
-# The file scope limit of the 'rule_base' options in external configs.
-base_path = "base"
-
-# Clash config base used by the generator, supports local files/URL
-clash_rule_base = "base/all_base.tpl"
-
-# Surge config base used by the generator, supports local files/URL
-surge_rule_base = "base/all_base.tpl"
-
-# Surfboard config base used by the generator, supports local files/URL
-surfboard_rule_base = "base/all_base.tpl"
-
-# Mellow config base used by the generator, supports local files/URL
-mellow_rule_base = "base/all_base.tpl"
-
-# Quantumult config base used by the generator, supports local files/URL
-quan_rule_base = "base/all_base.tpl"
-
-# Quantumult X config base used by the generator, supports local files/URL
-quanx_rule_base = "base/all_base.tpl"
-
-# Loon config base used by the generator, supports local files/URL
-loon_rule_base = "base/all_base.tpl"
-
-# Shadowsocks Android config base used by the generator, supports local files/URL
-sssub_rule_base = "base/all_base.tpl"
-
-# sing-box config base used by the generator, supports local files/URL
-singbox_rule_base = "base/all_base.tpl"
-
-# Proxy used to download rulesets or subscriptions, set to NONE or empty to disable it, set to SYSTEM to use system proxy.
-# Accept cURL-supported proxies (http:// https:// socks4a:// socks5://)
-
-proxy_config = "SYSTEM"
-proxy_ruleset = "SYSTEM"
-proxy_subscription = "NONE"
-
-# Append a proxy type string ([SS] [SSR] [VMess]) to node remark.
-append_proxy_type = false
-
-# When requesting /sub, reload this config file first.
-reload_conf_on_request = false
-
-[[userinfo.stream_rule]]
-# Rules to extract stream data from node
-# Format: full_match_regex|new_format_regex
-# where new_format_regex should be like "total=$1&left=$2&used=$3"
-match = '^剩余流量：(.*?)\|总流量：(.*)$'
-replace = 'total=$2&left=$1'
-
-[[userinfo.stream_rule]]
-match = '^剩余流量：(.*?) (.*)$'
-replace = 'total=$1&left=$2'
-
-[[userinfo.stream_rule]]
-match = '^Bandwidth: (.*?)/(.*)$'
-replace = 'used=$1&total=$2'
-
-[[userinfo.stream_rule]]
-match = '^.*剩余(.*?)(?:\s*?)@(?:.*)$'
-replace = 'total=$1'
-
-[[userinfo.time_rule]]
-# Rules to extract expire time data from node
-# Format: full_match_regex|new_format_regex
-# where new_format_regex should follow this example: yyyy:mm:dd:hh:mm:ss
-match = '^过期时间：(\d+)-(\d+)-(\d+) (\d+):(\d+):(\d+)$'
-replace = '$1:$2:$3:$4:$5:$6'
-
-[[userinfo.time_rule]]
-match = '^到期时间:(\d+)-(\d+)-(\d+)$'
-replace = '$1:$2:$3:0:0:0'
-
-[[userinfo.time_rule]]
-match = '^Smart Access expire: (\d+)/(\d+)/(\d+)$'
-replace = '$1:$2:$3:0:0:0'
-
-[node_pref]
-#udp_flag = false
-#tcp_fast_open_flag = false
-#skip_cert_verify_flag = false
-#tls13_flag = false
-
-sort_flag = false
-# Script used for sorting nodes. A "compare" function with 2 arguments which are the 2 nodes to be compared should be defined in the script. Supports inline script and script path.
-# Examples can be seen at the filter_script option in [common] section.
-#sort_script = '''
-#function compare(node_a, node_b) {
-#   return info_a.Remark > info_b.Remark;
-#}
-#'''
-
-filter_deprecated_nodes = false
-append_sub_userinfo = true
-clash_use_new_field_name = true
-
-# Generate style of the proxies and proxy groups section of Clash subscriptions.
-# Supported styles: block, flow, compact
-# Block: - name: name1    Flow: - {name: name1, key: value}    Compact: [{name: name1, key: value},{name: name2, key: value}]
-#         key: value           - {name: name2, key: value}
-#       - name: name2
-#         key: value
-clash_proxies_style = "flow"
-clash_proxy_groups_style = "block"
-
-# add Clash mode to sing-box rules, and add a GLOBAL group to end of outbounds
-singbox_add_clash_modes = true
-
-[[node_pref.rename_node]]
-match = '\(?((x|X)?(\d+)(\.?\d+)?)((\s?倍率?)|(x|X))\)?'
-replace = "$1x"
-
-[managed_config]
-# Append a '#!MANAGED-CONFIG' info to Surge configurations
-write_managed_config = true
-
-# Address prefix for MANAGED-CONFIG info, without the trailing "/".
-managed_config_prefix = "http://127.0.0.1:25500"
-
-# Managed config update interval in seconds, determine how long the config will be updated.
-config_update_interval = 86400
-
-# If config_update_strict is set to true, Surge will require a force update after the interval.
-config_update_strict = false
-
-# Device ID to be written to rewrite scripts for some version of Quantumult X 
-quanx_device_id = ""
-
-[surge_external_proxy]
-#surge_ssr_path = "/usr/bin/ssr-local"
-resolve_hostname = true
-
-[emojis]
-add_emoji = false
+# Options for adding emojis
+add_emoji = true
 remove_old_emoji = true
 
-[[emojis.emoji]]
-match = '(流量|时间|应急)'
-emoji = '🏳️‍🌈'
-#import = "snippets/emoji.toml"
+# Options for filtering nodes
+#include_remarks = []
+exclude_remarks = ["(流量|时间|官(网|址)|产品|免费|耗尽|到期|订阅|更新|群组|剩余|可用|当前)"]
 
+# 设置分组标志位
 [[custom_groups]]
 name = "🌍 环球网络"
 type = "url-test"
-rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
+rule = [
+    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
+    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
+    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
+]
 url = "http://www.gstatic.com/generate_204"
 interval = 300
 tolerance = 150
 lazy = true
-
-name = "♻️ 自动选择"
-type = "url-test"
-rule = [.*]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "📺 Netflix"
-type = "url-test"
-rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🛑 拦截连接"
-type = "select"
-rule = ["[]DIRECT","[]REJECT]"]
-
-name = "🐟 漏网之鱼"
-type = "select"
-rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
-
-name = "📨 Telegram"
-type = "select"
-rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
-
-name = "🍎 苹果服务"
-type = "select"
-rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
-
-name = "Ⓜ️ 微软服务"
-type = "select"
-rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
-
-name = "📈 SpeedTest"
-type = "select"
-rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
-
-name = "👾 AI"
-type = "select"
-rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
-
-name = "🇭🇰 香港串流验证"
-type = "select"
-rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
-
-name = "🇭🇰 EdgeWare"
-type = "select"
-rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
-
-name = "🇭🇰 香港原生"
-type = "url-test"
-rule = ["HKT|九龙|铠甲|天机|契约|TVB"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇭🇰 Ex香港"
-type = "url-test"
-rule = ["^(?!.*(深圳))(?=.*(?:香港)).*$"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇹🇼 Ex台湾"
-type = "url-test"
-rule = ["(?=.*(台湾)(?!.*(动画))).*"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇸🇬 Ex星国"
-type = "url-test"
-rule = [".*(?<!(更))(新加坡)(?!.*游戏).*"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇺🇸 Ex美国"
-type = "url-test"
-rule = ["(?=.*(美国)(?!.*(游戏))).*"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇯🇵 Ex日本"
-type = "url-test"
-rule = ["(?=.*(日本)(?!.*(游戏))).*"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇭🇰 ZHS香港"
-type = "url-test"
-rule = ["^(?=.*(?:HK))(?!.*(?:香港|游戏)).*$"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇹🇼 ZHS台湾"
-type = "url-test"
-rule = ["(?=.*(TW)(?!.*(游戏))).*"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇸🇬 ZHS星国"
-type = "url-test"
-rule = ["(?=.*(SG)(?!.*(游戏))).*"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇺🇸 ZHS美国"
-type = "url-test"
-rule = ["(?=.*(US)(?!.*(游戏))).*"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇯🇵 ZHS日本"
-type = "url-test"
-rule = ["(?=.*(JP)(?!.*(游戏))).*"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇭🇰 ZHS九龙"
-type = "url-test"
-rule = ["九龙"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇭🇰 ZHS天机"
-type = "url-test"
-rule = ["天机"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇭🇰 ZHS铠甲"
-type = "url-test"
-rule = ["铠甲"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇭🇰 ZHS契约"
-type = "url-test"
-rule = ["契约"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇭🇰 HKT"
-type = "url-test"
-rule = ["HKT"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-name = "🇭🇰 TVB"
-type = "url-test"
-rule = ["TVB"]
-url = "http://www.gstatic.com/generate_204"
-interval = 300
-tolerance = 150
-lazy = true
-
-#[[custom_groups]]
-#name = "Proxy"
-#type = "select"
-#rule = [".*", "[]DIRECT"]
-#disable_udp = false
 
 [[custom_groups]]
-name = "LoadBalance"
-type = "load-balance"
-rule = [".*", "[]Proxy", "[]DIRECT"]
-interval = 100
-strategy = "consistent-hashing"
+name = "♻️ 自动选择"
+type = "url-test"
+rule = [".*"]
 url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
 
-# [[custom_groups]]
-# import = "snippets/groups.toml"
+[[custom_groups]]
+name = "📺 Netflix"
+type = "url-test"
+rule = [
+    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
+    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
+    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
+]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
 
-[ruleset]
-# Enable generating rules with rulesets
-enabled = true
+[[custom_groups]]
+name = "🛑 拦截连接"
+type = "select"
+rule = ["[]DIRECT", "[]REJECT"]
 
-# Overwrite the existing rules in rule_base
-overwrite_original_rules = false
+[[custom_groups]]
+name = "🐟 漏网之鱼"
+type = "select"
+rule = [
+    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
+    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
+    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
+]
 
-# Perform a ruleset update on request
-update_ruleset_on_request = false
+[[custom_groups]]
+name = "📨 Telegram"
+type = "select"
+rule = [
+    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
+    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
+    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
+]
+
+[[custom_groups]]
+name = "🍎 苹果服务"
+type = "select"
+rule = [
+    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
+    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
+    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
+]
+
+[[custom_groups]]
+name = "Ⓜ️ 微软服务"
+type = "select"
+rule = [
+    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
+    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
+    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
+]
+
+[[custom_groups]]
+name = "📈 SpeedTest"
+type = "select"
+rule = [
+    "[]♻️ 自动选择", "[]⚡ 均衡负载", "[]🇭🇰 Ex香港", "[]🇭🇰 ZHS香港", "[]🇹🇼 Ex台湾", "[]🇹🇼 ZHS台湾", 
+    "[]🇸🇬 Ex星国", "[]🇸🇬 ZHS星国", "[]🇯🇵 Ex日本", "[]🇯🇵 ZHS日本", "[]🇺🇸 Ex美国", "[]🇺🇸 ZHS美国", 
+    "[]⚡ 全部节点", "[]📌 全部节点", "[]DIRECT", "[]REJECT"
+]
+
+
+# 继续补充其他自定义规则
+
+# 设置分组标志位
+
+
+# 设置规则标志位
+# 个人规则
+[[rulesets]]
+group = "🎯 全球直连"
+ruleset = "https://raw.githubusercontent.com/zhongfly/clash-config/master/Direct.list"
+[[rulesets]]
+group = "🚀 节点选择"
+ruleset = "https://raw.githubusercontent.com/zhongfly/clash-config/master/proxy.list"
+[[rulesets]]
+group = "📖 漫画"
+ruleset = "https://raw.githubusercontent.com/zhongfly/clash-config/master/comic.list"
+[[rulesets]]
+group = "📺 哔哩哔哩海外"
+ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/biliintl.yaml"
+type = "clash-domain"
+[[rulesets]]
+group = "📺 哔哩哔哩"
+ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bilibili.yaml"
+type = "clash-domain"
 
 [[rulesets]]
-group = "🛑 拦截连接"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"
-type = "surge-ruleset"
-interval = 86400
+group = "🎯 全球直连"
+ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.yaml"
+type = "clash-domain"
 
-group = "🛑 拦截连接"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list"
-type = "surge-ruleset"
-interval = 86400
+# 广告拦截
+[[rulesets]]
+group = "🛑 全球拦截"
+ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-ads-all.yaml"
+type = "clash-domain"
 
-group = "🛑 拦截连接"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"
-type = "surge-ruleset"
-interval = 86400
+# 类型直连
+[[rulesets]]
+group = "🎯 全球直连"
+ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/category-games@cn.yaml"
+type = "clash-domain"
+[[rulesets]]
+group = "🎯 全球直连"
+ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft@cn.yaml"
+type = "clash-domain"
+[[rulesets]]
+group = "🚀 节点选择"
+ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google@cn.yaml"
+type = "clash-domain"
 
-group = "🛑 拦截连接"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list"
-type = "surge-ruleset"
-interval = 86400
+# 代理
+[[rulesets]]
+group = "🚀 节点选择"
+ruleset = "[]GEOSITE,geolocation-!cn"
 
-group = "👾 AI"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/AI.list"
-type = "surge-ruleset"
-interval = 86400
+# 直连
+[[rulesets]]
+group = "🎯 全球直连"
+ruleset = "[]GEOSITE,cn"
 
-group = "🌍 环球网络"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/GlobalWebsiteAndForeignlMedia.list"
-type = "surge-ruleset"
-interval = 86400
-
-group = "📺 Netflix"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list"
-type = "surge-ruleset"
-interval = 86400
-
-group = "📨 Telegram"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list"
-type = "surge-ruleset"
-interval = 86400
-
-group = "🍎 苹果服务"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list"
-type = "surge-ruleset"
-interval = 86400
-
-group = "🇭🇰 香港串流验证"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-Media.list"
-type = "surge-ruleset"
-interval = 86400
-
-group = "🇭🇰 EdgeWare"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/EdgeWare.list"
-type = "surge-ruleset"
-interval = 86400
-
-group = "Ⓜ️ 微软服务"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Microsoft.list"
-type = "surge-ruleset"
-interval = 86400
-
-group = "📈 SpeedTest"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list"
-type = "surge-ruleset"
-interval = 86400
+# IP类规则
+[[rulesets]]
+group = "🎯 全球直连"
+ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.yaml"
+type = "clash-ipcidr"
+[[rulesets]]
+group = "🚀 节点选择"
+ruleset = "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.yaml"
+type = "clash-ipcidr"
+[[rulesets]]
+group = "🎯 全球直连"
+ruleset = "[]GEOIP,CN"
 
 [[rulesets]]
-import = "snippets/rulesets.toml"
+group = "🐟 漏网之鱼"
+ruleset = "[]MATCH"
+# 设置规则标志位
 
-[template]
-template_path = ""
 
-[[template.globals]]
-key = "clash.http_port"
-value = "7890"
-
-[[template.globals]]
-key = "clash.socks_port"
-value = "7891"
-
-[[template.globals]]
-key = "clash.allow_lan"
-value = "true"
-
-[[template.globals]]
-key = "clash.log_level"
-value = "info"
-
-[[template.globals]]
-key = "clash.external_controller"
-value = "127.0.0.1:9090"
-
-[[template.globals]]
-key = "singbox.allow_lan"
-value = "true"
-
-[[template.globals]]
-key = "singbox.mixed_port"
-value = "2080"
-
-[[aliases]]
-uri = "/clash"
-target = "/sub?target=clash"
-
-[[aliases]]
-uri = "/clashr"
-target = "/sub?target=clashr"
-
-[[aliases]]
-uri = "/surge"
-target = "/sub?target=surge"
-
-[[aliases]]
-uri = "/quan"
-target = "/sub?target=quan"
-
-[[aliases]]
-uri = "/quanx"
-target = "/sub?target=quanx"
-
-[[aliases]]
-uri = "/mellow"
-target = "/sub?target=mellow"
-
-[[aliases]]
-uri = "/surfboard"
-target = "/sub?target=surfboard"
-
-[[aliases]]
-uri = "/loon"
-target = "/sub?target=loon"
-
-[[aliases]]
-uri = "/singbox"
-target = "/sub?target=singbox"
-
-[[aliases]]
-uri = "/ss"
-target = "/sub?target=ss"
-
-[[aliases]]
-uri = "/ssd"
-target = "/sub?target=ssd"
-
-[[aliases]]
-uri = "/sssub"
-target = "/sub?target=sssub"
-
-[[aliases]]
-uri = "/ssr"
-target = "/sub?target=ssr"
-
-[[aliases]]
-uri = "/v2ray"
-target = "/sub?target=v2ray"
-
-[[aliases]]
-uri = "/trojan"
-target = "/sub?target=trojan"
-
-[[aliases]]
-uri = "/test"
-target = "/render?path=templates/test.tpl"
-
-#[[tasks]]
-#name = "tick"
-#cronexp = "0/10 * * * * ?"
-#path = "tick.js"
-#timeout = 3
-
-[server]
-listen = "0.0.0.0"
-port = 25500
-serve_file_root = "web"
-
-[advanced]
-log_level = "debug"
-print_debug_info = true
-max_pending_connections = 10240
-max_concurrent_threads = 4
-max_allowed_rulesets = 64
-max_allowed_rules = 0
-max_allowed_download_size = 0
-enable_cache = true
-cache_subscription = 60
-cache_config = 300
-cache_ruleset = 21600
-script_clean_context = true
-async_fetch_ruleset = false
-skip_failed_links = true
+[[emoji]]
+match = "(Australia|Sydney|澳大利亚|澳洲|悉尼)"
+emoji = "🇦🇺"
+[[emoji]]
+match = "(Brazil|Paulo|巴西|圣保罗)"
+emoji = "🇧🇷"
+[[emoji]]
+match = "(?i:\\bCA[N]?\\b|Canada|Toronto|Montreal|Vancouver|加拿大|蒙特利尔|温哥华|楓葉|枫叶)"
+emoji = "🇨🇦"
+[[emoji]]
+match = "(?i:DE|Germany|法兰克福|德)"
+emoji = "🇩🇪"
+[[emoji]]
+match = "(?i:\\bFR[A]?\\b|France|Paris|法国|巴黎)"
+emoji = "🇫🇷"
+[[emoji]]
+match = "(?i:UK|England|United.*?Kingdom|London|英|伦敦)"
+emoji = "🇬🇧"
+[[emoji]]
+match = "(Italy|Milan|意大利|米兰)"
+emoji = "🇮🇹"
+[[emoji]]
+match = "(India|Mumbai|印度|孟买)"
+emoji = "🇮🇳"
+[[emoji]]
+match = "(柬埔寨|Cambodia)"
+emoji = "🇰🇭"
+[[emoji]]
+match = "(卢森堡|LU)"
+emoji = "🇱🇺"
+[[emoji]]
+match = "(?i:JP|Japan|Tokyo|Osaka|Saitama|日本|东京|大阪|埼玉|[^-]日)"
+emoji = "🇯🇵"
+[[emoji]]
+match = "(?i:KR|Korea|KOR|首尔|韩|韓)"
+emoji = "🇰🇷"
+[[emoji]]
+match = "(Macao|澳门|CTM)"
+emoji = "🇲🇴"
+[[emoji]]
+match = "(墨西哥|Mexico)"
+emoji = "🇲🇽"
+[[emoji]]
+match = "(Malaysia|马来西亚)"
+emoji = "🇲🇾"
+[[emoji]]
+match = "(?i:\\bNL[D]?\\b|Netherlands|荷兰|阿姆斯特丹)"
+emoji = "🇳🇱"
+[[emoji]]
+match = "(Philippines|菲律宾)"
+emoji = "🇵🇭"
+[[emoji]]
+match = "(?i:RU|Russia|Moscow|Petersburg|Siberia|伯力|莫斯科|圣彼得堡|西伯利亚|新西伯利亚|哈巴罗夫斯克|俄|毛子)"
+emoji = "🇷🇺"
+[[emoji]]
+match = "乌克兰"
+emoji = "🇺🇦"
+[[emoji]]
+match = "(?i:SG|Singapore|新加坡|狮城|[^-]新)"
+emoji = "🇸🇬"
+[[emoji]]
+match = "(?i:\\bTH\\b|Thailand|泰国|曼谷|泰)"
+emoji = "🇹🇭"
+[[emoji]]
+match = "(?i:TW|Taiwan|台湾|[^-]台)"
+emoji = "🇨🇳"
+[[emoji]]
+match = "(?i:US|America|United.*?States|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥)"
+emoji = "🇺🇸"
+[[emoji]]
+match = "(?i:\\bUAE\\b|Dubai|阿联酋|迪拜)"
+emoji = "🇦🇪"
+[[emoji]]
+match = "(Argentina|阿根廷)"
+emoji = "🇦🇷"
+[[emoji]]
+match = "(Vietnam|越南|越)"
+emoji = "🇻🇳"
+[[emoji]]
+match = "(Turkey|土耳其|伊斯坦布尔)"
+emoji = "🇹🇷"
+[[emoji]]
+match = "(?i:HK|Hong.*?Kong|HKT|HKBN|HGC|WTT|CMI|港)"
+emoji = "🇭🇰"
