@@ -378,9 +378,9 @@ name = "⚡ 均衡负载"
 type = "load-balance"
 url = "http://www.gstatic.com/generate_204"
 interval = 600
-strategy = "round-robin"
+strategy = "consistent-hashing"
 rule = [
-"(?=.*(香港|HK)(?!.*(游戏))).*"
+"(?!.*\b游戏\b)(?=.*\b(香港|九龙|契约|铠甲|TVB|HK)\b).*"
 ]
 
 [[custom_groups]]
