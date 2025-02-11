@@ -1,14 +1,14 @@
 [[custom_groups]]
 name = "环球网络"
 type = "url-test"
-rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+rule = ["[]自动选择", "[]均衡负载", "[]Ex香港", "[]ZHS香港", "[]Ex台湾", "[]ZHS台湾", "[]Ex星国", "[]ZHS星国", "[]Ex日本", "[]ZHS日本", "[]Ex美国", "[]ZHS美国", "[]全部节点", "[]全部节点", "[]DIRECT", "[]REJECT"]
 url = "http://www.gstatic.com/generate_204"
 interval = 300
 tolerance = 150
 lazy = true
 
 [[custom_groups]]
-name = "♻️ 自动选择"
+name = "自动选择"
 type = "url-test"
 rule = [".*"]
 url = "http://www.gstatic.com/generate_204"
@@ -19,7 +19,7 @@ lazy = true
 [[custom_groups]]
 name = "Netflix"
 type = "url-test"
-rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+rule = ["[]自动选择", "[]均衡负载", "[]Ex香港", "[]ZHS香港", "[]Ex台湾", "[]ZHS台湾", "[]Ex星国", "[]ZHS星国", "[]Ex日本", "[]ZHS日本", "[]Ex美国", "[]ZHS美国", "[]全部节点", "[]全部节点", "[]DIRECT", "[]REJECT"]
 url = "http://www.gstatic.com/generate_204"
 interval = 300
 tolerance = 150
@@ -33,42 +33,41 @@ rule = ["[]DIRECT", "[]REJECT"]
 [[custom_groups]]
 name = "漏网之鱼"
 type = "select"
-rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+rule = ["[]自动选择", "[]均衡负载", "[]Ex香港", "[]ZHS香港", "[]Ex台湾", "[]ZHS台湾", "[]Ex星国", "[]ZHS星国", "[]Ex日本", "[]ZHS日本", "[]Ex美国", "[]ZHS美国", "[]全部节点", "[]全部节点", "[]DIRECT", "[]REJECT"]
 
 [[custom_groups]]
 name = "Telegram"
 type = "select"
-rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+rule = ["[]自动选择", "[]均衡负载", "[]Ex香港", "[]ZHS香港", "[]Ex台湾", "[]ZHS台湾", "[]Ex星国", "[]ZHS星国", "[]Ex日本", "[]ZHS日本", "[]Ex美国", "[]ZHS美国", "[]全部节点", "[]全部节点", "[]DIRECT", "[]REJECT"]
 
 [[custom_groups]]
 name = "苹果服务"
 type = "select"
-rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+rule = ["[]自动选择", "[]均衡负载", "[]Ex香港", "[]ZHS香港", "[]Ex台湾", "[]ZHS台湾", "[]Ex星国", "[]ZHS星国", "[]Ex日本", "[]ZHS日本", "[]Ex美国", "[]ZHS美国", "[]全部节点", "[]全部节点", "[]DIRECT", "[]REJECT"]
 
 [[custom_groups]]
 name = "Ⓜ️ 微软服务"
 type = "select"
-rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+rule = ["[]自动选择", "[]均衡负载", "[]Ex香港", "[]ZHS香港", "[]Ex台湾", "[]ZHS台湾", "[]Ex星国", "[]ZHS星国", "[]Ex日本", "[]ZHS日本", "[]Ex美国", "[]ZHS美国", "[]全部节点", "[]全部节点", "[]DIRECT", "[]REJECT"]
 
 [[custom_groups]]
 name = "SpeedTest"
 type = "select"
-rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+rule = ["[]自动选择", "[]均衡负载", "[]Ex香港", "[]ZHS香港", "[]Ex台湾", "[]ZHS台湾", "[]Ex星国", "[]ZHS星国", "[]Ex日本", "[]ZHS日本", "[]Ex美国", "[]ZHS美国", "[]全部节点", "[]全部节点", "[]DIRECT", "[]REJECT"]
  
 [[custom_groups]]
 name = "AI"
 type = "select"
-rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
-
+rule = ["[]自动选择", "[]均衡负载", "[]Ex香港", "[]ZHS香港", "[]Ex台湾", "[]ZHS台湾", "[]Ex星国", "[]ZHS星国", "[]Ex日本", "[]ZHS日本", "[]Ex美国", "[]ZHS美国", "[]全部节点", "[]全部节点", "[]DIRECT", "[]REJECT"]
 [[custom_groups]]
 name = "香港串流验证"
 type = "select"
-rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+rule = ["[]自动选择", "[]均衡负载", "[]Ex香港", "[]ZHS香港", "[]Ex台湾", "[]ZHS台湾", "[]Ex星国", "[]ZHS星国", "[]Ex日本", "[]ZHS日本", "[]Ex美国", "[]ZHS美国", "[]全部节点", "[]全部节点", "[]DIRECT", "[]REJECT"]
 
 [[custom_groups]]
 name = "EdgeWare"
 type = "select"
-rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+rule = ["[]自动选择", "[]均衡负载", "[]Ex香港", "[]ZHS香港", "[]Ex台湾", "[]ZHS台湾", "[]Ex星国", "[]ZHS星国", "[]Ex日本", "[]ZHS日本", "[]Ex美国", "[]ZHS美国", "[]全部节点", "[]全部节点", "[]DIRECT", "[]REJECT"]
 
 [[custom_groups]]
 name = "香港原生"
@@ -156,79 +155,79 @@ lazy = true
 enabled = true
 
 [[rulesets]]
-group = "🛑 拦截连接"
+group = "拦截连接"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"
 type = "surge-ruleset"
 interval = 86400
 
 [[rulesets]]
-group = "🛑 拦截连接"
+group = "拦截连接"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list"
 type = "surge-ruleset"
 interval = 86400
 
 [[rulesets]]
-group = "🛑 拦截连接"
+group = "拦截连接"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"
 type = "surge-ruleset"
 interval = 86400
 
 [[rulesets]]
-group = "🛑 拦截连接"
+group = "拦截连接"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list"
 type = "surge-ruleset"
 interval = 86400
 
 [[rulesets]]
-group = "👾 AI"
+group = "AI"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/AI.list"
 type = "surge-ruleset"
 interval = 86400
 
 [[rulesets]]
-group = "🌍 环球网络"
+group = "环球网络"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/GlobalWebsiteAndForeignlMedia.list"
 type = "surge-ruleset"
 interval = 86400
 
 [[rulesets]]
-group = "📺 Netflix"
+group = "Netflix"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list"
 type = "surge-ruleset"
 interval = 86400
 
 [[rulesets]]
-group = "📨 Telegram"
+group = "Telegram"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list"
 type = "surge-ruleset"
 interval = 86400
 
 [[rulesets]]
-group = "🍎 苹果服务"
+group = "苹果服务"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list"
 type = "surge-ruleset"
 interval = 86400
 
 [[rulesets]]
-group = "🇭🇰 香港串流验证"
+group = "香港串流验证"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-Media.list"
 type = "surge-ruleset"
 interval = 86400
 
 [[rulesets]]
-group = "🇭🇰 EdgeWare"
+group = "EdgeWare"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/EdgeWare.list"
 type = "surge-ruleset"
 interval = 86400
 
 [[rulesets]]
-group = "Ⓜ️ 微软服务"
+group = "微软服务"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Microsoft.list"
 type = "surge-ruleset"
 interval = 86400
 
 [[rulesets]]
-group = "📈 SpeedTest"
+group = "SpeedTest"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list"
 type = "surge-ruleset"
 interval = 86400
