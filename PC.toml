@@ -3,9 +3,11 @@ version = 1
 [custom]
 enable_rule_generator = true
 overwrite_original_rules = true
+add_emoji = true
+remove_old_emoji = true
 
-[custom_groups]
-  [[custom_groups.groups]]
+# 设置分组标志位
+  [[custom_groups]]
     name = "🌍 环球网络"
     type = "select"
     rule = [
@@ -27,7 +29,7 @@ overwrite_original_rules = true
         "[]REJECT"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "♻️ 自动选择"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -46,7 +48,7 @@ overwrite_original_rules = true
         "[]🇺🇸 ZHS美国"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "📺 Netflix"
     type = "select"
     rule = [
@@ -68,7 +70,7 @@ overwrite_original_rules = true
         "[]REJECT"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🛑 拦截连接"
     type = "select"
     rule = [
@@ -76,7 +78,7 @@ overwrite_original_rules = true
         "[]REJECT"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🐟 漏网之鱼"
     type = "select"
     rule = [
@@ -98,7 +100,7 @@ overwrite_original_rules = true
         "[]🇺🇸 ZHS美国"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "📨 Telegram"
     type = "select"
     rule = [
@@ -118,7 +120,7 @@ overwrite_original_rules = true
         "[]🇺🇸 ZHS美国"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🍎 苹果服务"
     type = "select"
     rule = [
@@ -138,7 +140,7 @@ overwrite_original_rules = true
         "[]🇺🇸 ZHS美国"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "Ⓜ️ 微软服务"
     type = "select"
     rule = [
@@ -158,7 +160,7 @@ overwrite_original_rules = true
         "[]🇺🇸 ZHS美国"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "📈 SpeedTest"
     type = "select"
     rule = [
@@ -168,7 +170,7 @@ overwrite_original_rules = true
         "[]📌 全部节点"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "👾 AI"
     type = "select"
     rule = [
@@ -182,7 +184,7 @@ overwrite_original_rules = true
         "[]🇺🇸 ZHS美国"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇭🇰 香港串流验证"
     type = "select"
     rule = [
@@ -196,7 +198,7 @@ overwrite_original_rules = true
         "[]📌 全部节点"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇭🇰 EdgeWare"
     type = "select"
     rule = [
@@ -218,7 +220,7 @@ overwrite_original_rules = true
         "[]🇺🇸 ZHS美国"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇭🇰 香港原生"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -227,7 +229,7 @@ overwrite_original_rules = true
         "(HKT|九龙|铠甲|天机|契约|TVB)"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇭🇰 Ex香港"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -236,7 +238,7 @@ overwrite_original_rules = true
         "^(?!.*(深圳))(?=.*(?:香港)).*$"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇹🇼 Ex台湾"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -245,7 +247,7 @@ overwrite_original_rules = true
         "(?=.*(台湾)(?!.*(动画))).*"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇸🇬 Ex星国"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -254,7 +256,7 @@ overwrite_original_rules = true
         ".*(?<!(更))(新加坡)(?!.*游戏).*"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇺🇸 Ex美国"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -263,7 +265,7 @@ overwrite_original_rules = true
         "(?=.*(美国)(?!.*(游戏))).*"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇯🇵 Ex日本"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -272,7 +274,7 @@ overwrite_original_rules = true
         "(?=.*(日本)(?!.*(游戏))).*"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇭🇰 ZHS香港"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -281,7 +283,7 @@ overwrite_original_rules = true
         "^(?=.*(?:HK))(?!.*(?:香港|游戏)).*$"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇹🇼 ZHS台湾"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -290,7 +292,7 @@ overwrite_original_rules = true
         "(?=.*(TW)(?!.*(游戏))).*"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇸🇬 ZHS星国"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -299,7 +301,7 @@ overwrite_original_rules = true
         "(?=.*(SG)(?!.*(游戏))).*"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇺🇸 ZHS美国"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -308,7 +310,7 @@ overwrite_original_rules = true
         "(?=.*(US)(?!.*(游戏))).*"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇯🇵 ZHS日本"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -317,7 +319,7 @@ overwrite_original_rules = true
         "(?=.*(JP)(?!.*(游戏))).*"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇭🇰 ZHS九龙"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -326,7 +328,7 @@ overwrite_original_rules = true
         "(九龙)"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇭🇰 ZHS天机"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -335,7 +337,7 @@ overwrite_original_rules = true
         "(天机)"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇭🇰 ZHS铠甲"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -344,7 +346,7 @@ overwrite_original_rules = true
         "(铠甲)"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇭🇰 ZHS契约"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -353,7 +355,7 @@ overwrite_original_rules = true
         "(契约)"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇭🇰 HKT"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -362,7 +364,7 @@ overwrite_original_rules = true
         "(HKT)"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "🇭🇰 TVB"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -371,7 +373,7 @@ overwrite_original_rules = true
         "(TVB)"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "⚡ 均衡负载"
     type = "load-balance"
     url = "http://www.gstatic.com/generate_204"
@@ -381,7 +383,7 @@ overwrite_original_rules = true
         "(?=.*(香港|HK)(?!.*(游戏))).*"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "⚡ 全部节点"
     type = "url-test"
     url = "http://www.gstatic.com/generate_204"
@@ -390,471 +392,472 @@ overwrite_original_rules = true
         "^((?!中国|回国|游戏|限速|结算|流量).)*$"
     ]
 
-  [[custom_groups.groups]]
+  [[custom_groups]]
     name = "📌 全部节点"
     type = "select"
     rule = [".*"]
 
+# 设置规则标志位
 
-[rulesets]
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "DIRECT"
     ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "DIRECT"
     ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "🛑 拦截连接"
     ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "🛑 拦截连接"
     ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "🛑 拦截连接"
     ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "🛑 拦截连接"
     ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "👾 AI"
     ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/AI.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "🌍 环球网络"
     ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/GlobalWebsiteAndForeignlMedia.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "📺 Netflix"
     ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "📨 Telegram"
     ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "🍎 苹果服务"
     ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "🇭🇰 香港串流验证"
     ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-Media.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "🇭🇰 EdgeWare"
     ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/EdgeWare.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "Ⓜ️ 微软服务"
     ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Microsoft.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "📈 SpeedTest"
     ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "DIRECT"
     ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "DIRECT"
     ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "DIRECT"
     ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "DIRECT"
     ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "DIRECT"
     ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-securities.list"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "DIRECT"
     ruleset = "[]GEOIP,CN"
 
-  [[rulesets.groups]]
+  [[rulesets]]
     group = "🐟 漏网之鱼"
     ruleset = "[]MATCH"
-
+    
+# 设置规则标志位
 
 [emoji]
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:Bandwidth|expire|流量|时间|应急|过期)"
     emoji = "🏳️‍🌈"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bHK[G]?\\b|Hong.*?Kong|\\bHKT\\b|\\bHKBN\\b|\\bHGC\\b|\\bWTT\\b|\\bCMI\\b|[^-]港)"
     emoji = "🇭🇰"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bTW[N]?\\b|Taiwan|新北|彰化|\\bCHT\\b|台湾|[^-]台|\\bHINET\\b)"
     emoji = "🇹🇼"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bSG[P]?\\b|Singapore|新加坡|狮城|[^-]新)"
     emoji = "🇸🇬"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bJP[N]?\\b|Japan|Tokyo|Osaka|Saitama|日本|东京|大阪|埼玉|[^-]日)"
     emoji = "🇯🇵"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bK[O]?R\\b|Korea|首尔|韩|韓)"
     emoji = "🇰🇷"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bUS[A]?\\b|America|United.*?States|美国|[^-]美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥)"
     emoji = "🇺🇸"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Ascension|阿森松)"
     emoji = "🇦🇨"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bUAE\\b|Dubai|阿联酋|迪拜)"
     emoji = "🇦🇪"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(阿尔巴尼亚|Albania)"
     emoji = "🇦🇱"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Argentina|阿根廷)"
     emoji = "🇦🇷"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Austria|Vienna|奥地利|维也纳)"
     emoji = "🇦🇹"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bAU[S]?\\b|Australia|Sydney|澳大利亚|澳洲|悉尼)"
     emoji = "🇦🇺"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(阿塞拜疆|Azerbaijan)"
     emoji = "🇦🇿"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(波黑共和国|波士尼亚与赫塞哥维纳|Bosnia|Herzegovina)"
     emoji = "🇧🇦"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Belgium|比利时)"
     emoji = "🇧🇪"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(保加利亚|Bulgaria)"
     emoji = "🇧🇬"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Brazil|Paulo|巴西|圣保罗)"
     emoji = "🇧🇷"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bCA[N]?\\b|Canada|Toronto|Montreal|Vancouver|加拿大|蒙特利尔|温哥华|楓葉|枫叶)"
     emoji = "🇨🇦"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Switzerland|Zurich|瑞士|苏黎世)"
     emoji = "🇨🇭"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(智利|Chile)"
     emoji = "🇨🇱"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Colombia|哥伦比亚)"
     emoji = "🇨🇴"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Costa Rica|哥斯达黎加)"
     emoji = "🇨🇷"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(塞浦路斯|Cyprus)"
     emoji = "🇨🇾"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Czech|捷克)"
     emoji = "🇨🇿"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bDE[U]?\\b|Germany|法兰克福|德(国|意志)|中德|^德$)"
     emoji = "🇩🇪"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bD[N]?K\\b|Denmark|丹麦)"
     emoji = "🇩🇰"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(爱沙尼亚|Estonia)"
     emoji = "🇪🇪"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(埃及|Egypt)"
     emoji = "🇪🇬"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bES[P]?\\b|Spain|西班牙)"
     emoji = "🇪🇸"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Europe|欧洲)"
     emoji = "🇪🇺"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Finland|Helsinki|芬兰|赫尔辛基)"
     emoji = "🇫🇮"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bFR[A]?\\b|France|Paris|法国|巴黎)"
     emoji = "🇫🇷"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bUK\\b|\\bGB[R]?\\b|England|United.*?Kingdom|London|英国|[^-]英|伦敦)"
     emoji = "🇬🇧"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(希腊|Greece)"
     emoji = "🇬🇷"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(格鲁吉亚|Georgia)"
     emoji = "🇬🇪"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(克罗地亚|Croatia)"
     emoji = "🇭🇷"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Hungary|匈牙利)"
     emoji = "🇭🇺"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Indonesia|Jakarta|印尼|印度尼西亚|雅加达)"
     emoji = "🇮🇩"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Ireland|Dublin|爱尔兰|都柏林)"
     emoji = "🇮🇪"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Israel|以色列)"
     emoji = "🇮🇱"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(马恩岛|Mann)"
     emoji = "🇮🇲"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bIN[D]?\\b|India|Mumbai|印度|孟买|加尔各答|贾坎德|泰米尔纳德)"
     emoji = "🇮🇳"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(伊朗|Iran)"
     emoji = "🇮🇷"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bIS[L]?\\b|Iceland|冰岛)"
     emoji = "🇮🇸"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Italy|Milan|意大利|米兰)"
     emoji = "🇮🇹"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(约旦|Jordan)"
     emoji = "🇯🇴"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(肯尼亚|Kenya)"
     emoji = "🇰🇪"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(吉尔吉斯斯坦|Kyrgyzstan)"
     emoji = "🇰🇬"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(柬埔寨|Cambodia)"
     emoji = "🇰🇭"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(North.*?Korea|朝鲜)"
     emoji = "🇰🇵"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(哈萨克斯坦|Kazakhstan)"
     emoji = "🇰🇿"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(立陶宛|Lietuvos)"
     emoji = "🇱🇹"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(卢森堡|Luxemburg|Luxembourg)"
     emoji = "🇱🇺"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(拉脱维亚|Latvia)"
     emoji = "🇱🇻"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Moldova|摩尔多瓦)"
     emoji = "🇲🇩"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(北马其顿|Macedonia)"
     emoji = "🇲🇰"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(蒙古|Монголулс|Mongolia)"
     emoji = "🇲🇳"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Macao|澳门|\\bCTM\\b)"
     emoji = "🇲🇴"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(墨西哥|Mexico)"
     emoji = "🇲🇽"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Malaysia|马来|MY)"
     emoji = "🇲🇾"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(尼日利亚|Nigeria)"
     emoji = "🇳🇬"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bNL[D]?\\b|Netherlands|荷兰|阿姆斯特丹)"
     emoji = "🇳🇱"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(挪威|Norway)"
     emoji = "🇳🇴"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(新西兰|纽西兰|New Zealand)"
     emoji = "🇳🇿"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Philippines|菲律宾)"
     emoji = "🇵🇭"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Pakistan|巴基斯坦)"
     emoji = "🇵🇰"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bP[O]?L\\b|Poland|波兰)"
     emoji = "🇵🇱"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(巴拿马|Panama)"
     emoji = "🇵🇦"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(秘鲁|Peru)"
     emoji = "🇵🇪"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(葡萄牙|Portugal)"
     emoji = "🇵🇹"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Romania|罗马尼亚)"
     emoji = "🇷🇴"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(塞尔维亚|Serbia)"
     emoji = "🇷🇸"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bRU[S]?\\b|Russia|Moscow|Petersburg|Siberia|伯力|莫斯科|圣彼得堡|西伯利亚|新西伯利亚|哈巴罗夫斯克|俄罗斯|[^-]俄)"
     emoji = "🇷🇺"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Arabia|沙特)"
     emoji = "🇸🇦"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Sweden|瑞典)"
     emoji = "🇸🇪"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(斯洛文尼亚|Slovenia)"
     emoji = "🇸🇮"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(斯洛伐克|Slovensko)"
     emoji = "🇸🇰"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Thailand|泰国|曼谷)"
     emoji = "🇹🇭"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(突尼斯|Tunisia)"
     emoji = "🇹🇳"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(TR|Turkey|土耳其|伊斯坦布尔)"
     emoji = "🇹🇷"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(乌拉圭|Uruguay)"
     emoji = "🇺🇾"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Vietnam|越南)"
     emoji = "🇻🇳"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Africa|南非)"
     emoji = "🇿🇦"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Ukraine|UA|乌克兰)"
     emoji = "🇺🇦"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Puerto.*?Rico|波多黎各)"
     emoji = "🇵🇷"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Ecuador|厄瓜多尔)"
     emoji = "🇪🇨"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Venezuela|委内瑞拉)"
     emoji = "🇻🇪"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Morocco|摩洛哥)"
     emoji = "🇲🇦"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Nigeria|尼日利亚)"
     emoji = "🇳🇬"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Nepal|尼泊尔)"
     emoji = "🇳🇵"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(Bengal|孟加拉)"
     emoji = "🇧🇩"
 
-  [[emoji.groups]]
+  [[emoji]]
     match = "(?i:\\bC[H]?N\\b|China|back|回国|中国[^\\-]|江苏[^\\-]|北京[^\\-]|上海[^\\-]|广州[^\\-]|深圳[^\\-]|杭州[^\\-]|常州[^\\-]|徐州[^\\-]|青岛[^\\-]|宁波[^\\-]|镇江[^\\-]|成都[^\\-]|河北[^\\-]|山西[^\\-]|辽宁[^\\-]|吉林[^\\-]|黑龙江[^\\-]|江苏[^\\-]|浙江[^\\-]|安徽[^\\-]|福建[^\\-]|江西[^\\-]|山东[^\\-]|河南[^\\-]|湖北[^\\-]|湖南[^\\-]|广东[^\\-]|海南[^\\-]|四川[^\\-]|贵州[^\\-]|云南[^\\-]|陕西[^\\-]|甘肃[^\\-]|青海[^\\-]|内蒙古[^\\-]|广西[^\\-]|西藏[^\\-]|宁夏[^\\-]|新疆[^\\-])"
     emoji = "🇨🇳"
