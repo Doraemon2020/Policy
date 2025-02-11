@@ -481,11 +481,11 @@ ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK
 
 [[rulesets]]
 group = "DIRECT"
-ruleset =     "[]GEOIP,CN"
+ruleset = "[]GEOIP,CN"
 
 [[rulesets]]
 group = "🐟 漏网之鱼"
-ruleset =     "[]MATCH"
+ruleset = "[]MATCH"
 
 # 设置规则标志位
 
