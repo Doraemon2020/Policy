@@ -54,8 +54,8 @@ rule = [
 name = "🛑 拦截连接"
 type = "select"
 rule = [
-    "DIRECT",
-    "REJECT"
+    "[]DIRECT",
+    "[]REJECT"
 ]
 
 [[custom_groups]]
