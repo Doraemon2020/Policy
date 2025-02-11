@@ -150,3 +150,85 @@ url = "http://www.gstatic.com/generate_204"
 interval = 300
 tolerance = 150
 lazy = true
+
+[ruleset]
+# Enable generating rules with rulesets
+enabled = true
+
+[[rulesets]]
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"
+type = "surge-ruleset"
+interval = 86400
+
+[[rulesets]]
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list"
+type = "surge-ruleset"
+interval = 86400
+
+[[rulesets]]
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"
+type = "surge-ruleset"
+interval = 86400
+
+[[rulesets]]
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list"
+type = "surge-ruleset"
+interval = 86400
+
+[[rulesets]]
+group = "👾 AI"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/AI.list"
+type = "surge-ruleset"
+interval = 86400
+
+[[rulesets]]
+group = "🌍 环球网络"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/GlobalWebsiteAndForeignlMedia.list"
+type = "surge-ruleset"
+interval = 86400
+
+[[rulesets]]
+group = "📺 Netflix"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list"
+type = "surge-ruleset"
+interval = 86400
+
+[[rulesets]]
+group = "📨 Telegram"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list"
+type = "surge-ruleset"
+interval = 86400
+
+[[rulesets]]
+group = "🍎 苹果服务"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list"
+type = "surge-ruleset"
+interval = 86400
+
+[[rulesets]]
+group = "🇭🇰 香港串流验证"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-Media.list"
+type = "surge-ruleset"
+interval = 86400
+
+[[rulesets]]
+group = "🇭🇰 EdgeWare"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/EdgeWare.list"
+type = "surge-ruleset"
+interval = 86400
+
+[[rulesets]]
+group = "Ⓜ️ 微软服务"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Microsoft.list"
+type = "surge-ruleset"
+interval = 86400
+
+[[rulesets]]
+group = "📈 SpeedTest"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list"
+type = "surge-ruleset"
+interval = 86400
