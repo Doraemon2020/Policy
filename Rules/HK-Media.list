@@ -5,6 +5,7 @@ DOMAIN-SUFFIX,mytvsuper.com
 DOMAIN-SUFFIX,omtrdc.net
 # > 有线电视
 USER-AGENT,i-cable*
+DOMAIN-SUFFIX,hoy.tv
 DOMAIN-SUFFIX,utvhk.com
 DOMAIN-SUFFIX,hkott.hk
 DOMAIN-SUFFIX,i-cable.com
