@@ -24,8 +24,8 @@ rule = [
     "[]🇺🇸 ZHS美国",
     "[]⚡ 全部节点",
     "[]📌 全部节点",
-    "DIRECT",
-    "REJECT"
+    "[]DIRECT",
+    "[]REJECT"
 ]
 
 [[custom_groups]]
@@ -40,8 +40,8 @@ rule = [
     "[]🇭🇰 TVB",
     "[]🇭🇰 HKT",
     "[]📌 全部节点",
-    "DIRECT",
-    "REJECT"
+    "[]DIRECT",
+    "[]REJECT"
 ]
 
 [[custom_groups]]
@@ -55,7 +55,6 @@ rule = [
     "[]🇭🇰 ZHS香港",
     "[]🇸🇬 Ex星国",
     "[]🇸🇬 ZHS星国",
-    "[]🇯🇵 Ex日本",
     "[]🇯🇵 ZHS日本"
 ]
 
@@ -67,8 +66,8 @@ rule = [
     "[]🇭🇰 ZHS天机",
     "[]🇭🇰 ZHS铠甲",
     "[]🇭🇰 ZHS契约",
-    "DIRECT",
-    "REJECT"
+    "[]DIRECT",
+    "[]REJECT"
 ]
 
 [[custom_groups]]
@@ -89,16 +88,16 @@ rule = [
     "[]🇺🇸 ZHS美国",
     "[]⚡ 全部节点",
     "[]📌 全部节点",
-    "DIRECT",
-    "REJECT"
+    "[]DIRECT",
+    "[]REJECT"
 ]
 
 [[custom_groups]]
 name = "🛑 拦截连接"
 type = "select"
 rule = [
-    "REJECT",
-    "DIRECT"
+    "[]REJECT",
+    "[]DIRECT"
 ]
 
 [[custom_groups]]
@@ -280,11 +279,11 @@ rule = [".*"]
 
 # 设置规则标志位
 [[rulesets]]
-group = "DIRECT"
+group = "[]DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
 
 [[rulesets]]
-group = "DIRECT"
+group = "[]DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
 
 [[rulesets]]
@@ -324,23 +323,23 @@ group = "ViuTV"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/ViuTV.list"
 
 [[rulesets]]
-group = "DIRECT"
+group = "[]DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list"
 
 [[rulesets]]
-group = "DIRECT"
+group = "[]DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list"
 
 [[rulesets]]
-group = "DIRECT"
+group = "[]DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list"
 
 [[rulesets]]
-group = "DIRECT"
+group = "[]DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list"
 
 [[rulesets]]
-group = "DIRECT"
+group = "[]DIRECT"
 ruleset = "GEOIP,CN"
 
 [[rulesets]]
