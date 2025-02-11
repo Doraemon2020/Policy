@@ -11,6 +11,7 @@ remove_old_emoji = true
 name = "🌍 环球网络"
 type = "select"
 rule = [
+    "[]⚡ 均衡负载",
     "[]♻️ 自动选择",
     "[]🇭🇰 Ex香港",
     "[]🇭🇰 ZHS香港",
@@ -216,6 +217,16 @@ rule = [
     "[]🇯🇵 ZHS日本",
     "[]🇺🇸 Ex美国",
     "[]🇺🇸 ZHS美国"
+]
+
+[[custom_groups]]
+name = "⚡ 均衡负载"
+type = "load-balance"
+strategy = "consistent-hashing"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = [
+    "^(?!.*游戏).*(香港|九龙|契约|铠甲|TVB|HK|HKT).*"
 ]
 
 [[custom_groups]]
