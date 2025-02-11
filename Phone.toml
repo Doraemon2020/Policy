@@ -472,7 +472,7 @@ ruleset = "GEOIP,CN"
 
 [[rulesets]]
 group = "🐟 漏网之鱼"
-ruleset = "FINAL"
+ruleset = "MATCH"
 
 # 设置规则标志位
 
