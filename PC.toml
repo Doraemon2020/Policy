@@ -11,8 +11,8 @@ remove_old_emoji = true
 name = "🌍 环球网络"
 type = "select"
 rule = [
-    "[]♻️ 自动选择",
     "[]⚡ 均衡负载",
+    "[]♻️ 自动选择",
     "[]🇭🇰 Ex香港",
     "[]🇭🇰 ZHS香港",
     "[]🇹🇼 Ex台湾",
