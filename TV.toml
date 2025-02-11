@@ -345,7 +345,7 @@ ruleset = "GEOIP,CN"
 
 [[rulesets]]
 group = "🌍 播放组"
-ruleset = "MATCH"
+ruleset = "[]MATCH"
 
 # 设置规则标志位
 
