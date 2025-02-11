@@ -1,0 +1,152 @@
+[[custom_groups]]
+name = "环球网络"
+type = "url-test"
+rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+[[custom_groups]]
+name = "♻️ 自动选择"
+type = "url-test"
+rule = [".*"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+[[custom_groups]]
+name = "Netflix"
+type = "url-test"
+rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+[[custom_groups]]
+name = "拦截连接"
+type = "select"
+rule = ["[]DIRECT", "[]REJECT"]
+
+[[custom_groups]]
+name = "漏网之鱼"
+type = "select"
+rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+
+[[custom_groups]]
+name = "Telegram"
+type = "select"
+rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+
+[[custom_groups]]
+name = "苹果服务"
+type = "select"
+rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+
+[[custom_groups]]
+name = "Ⓜ️ 微软服务"
+type = "select"
+rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+
+[[custom_groups]]
+name = "SpeedTest"
+type = "select"
+rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+ 
+[[custom_groups]]
+name = "AI"
+type = "select"
+rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+
+[[custom_groups]]
+name = "香港串流验证"
+type = "select"
+rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+
+[[custom_groups]]
+name = "EdgeWare"
+type = "select"
+rule = ["[]♻️ 自动选择", "[]⚡ 均衡负载", "[] Ex香港", "[] ZHS香港", "[] Ex台湾", "[] ZHS台湾", "[] Ex星国", "[] ZHS星国", "[] Ex日本", "[] ZHS日本", "[] Ex美国", "[] ZHS美国", "[]⚡ 全部节点", "[] 全部节点", "[]DIRECT", "[]REJECT"]
+
+[[custom_groups]]
+name = "香港原生"
+type = "url-test"
+rule = ["HKT|九龙|铠甲|天机|契约|TVB"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+[[custom_groups]]
+name = "Ex香港"
+type = "url-test"
+rule = ["^(?!.*(深圳))(?=.*(?:香港)).*$"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+[[custom_groups]]
+name = "Ex台湾"
+type = "url-test"
+rule = ["(?=.*(台湾)(?!.*(动画))).*"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+[[custom_groups]]
+name = "Ex星国"
+type = "url-test"
+rule = ["^(?=.*(?:星国)).*$"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+[[custom_groups]]
+name = "ZHS香港"
+type = "url-test"
+rule = ["^(?!.*(深圳))(?=.*(?:香港)).*$"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+[[custom_groups]]
+name = "ZHS台湾"
+type = "url-test"
+rule = ["(?=.*(台湾)(?!.*(动画))).*"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+[[custom_groups]]
+name = "ZHS星国"
+type = "url-test"
+rule = ["^(?=.*(?:星国)).*$"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+[[custom_groups]]
+name = "ZHS日本"
+type = "url-test"
+rule = ["^(?=.*(?:日本)).*$"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+[[custom_groups]]
+name = "ZHS美国"
+type = "url-test"
+rule = ["^(?=.*(?:美国)).*$"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
