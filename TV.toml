@@ -279,11 +279,11 @@ rule = [".*"]
 
 # 设置规则标志位
 [[rulesets]]
-group = "[]DIRECT"
+group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
 
 [[rulesets]]
-group = "[]DIRECT"
+group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
 
 [[rulesets]]
@@ -323,23 +323,23 @@ group = "ViuTV"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/ViuTV.list"
 
 [[rulesets]]
-group = "[]DIRECT"
+group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list"
 
 [[rulesets]]
-group = "[]DIRECT"
+group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list"
 
 [[rulesets]]
-group = "[]DIRECT"
+group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list"
 
 [[rulesets]]
-group = "[]DIRECT"
+group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list"
 
 [[rulesets]]
-group = "[]DIRECT"
+group = "DIRECT"
 ruleset = "GEOIP,CN"
 
 [[rulesets]]
