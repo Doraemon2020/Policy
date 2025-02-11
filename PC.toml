@@ -213,9 +213,169 @@ name = "🐟 漏网之鱼"
 type = "select"
 rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
 
-name = "🐟 漏网之鱼"
+name = "📨 Telegram"
 type = "select"
 rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
+
+name = "🍎 苹果服务"
+type = "select"
+rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
+
+name = "Ⓜ️ 微软服务"
+type = "select"
+rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
+
+name = "📈 SpeedTest"
+type = "select"
+rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
+
+name = "👾 AI"
+type = "select"
+rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
+
+name = "🇭🇰 香港串流验证"
+type = "select"
+rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
+
+name = "🇭🇰 EdgeWare"
+type = "select"
+rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]🇭🇰 ZHS香港","[]🇹🇼 Ex台湾","[]🇹🇼 ZHS台湾","[]🇸🇬 Ex星国","[]🇸🇬 ZHS星国","[]🇯🇵 Ex日本","[]🇯🇵 ZHS日本","[]🇺🇸 Ex美国","[]🇺🇸 ZHS美国","[]⚡ 全部节点","[]📌 全部节点","[]DIRECT","[]REJECT]"]
+
+name = "🇭🇰 香港原生"
+type = "url-test"
+rule = ["HKT|九龙|铠甲|天机|契约|TVB"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇭🇰 Ex香港"
+type = "url-test"
+rule = ["^(?!.*(深圳))(?=.*(?:香港)).*$"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇹🇼 Ex台湾"
+type = "url-test"
+rule = ["(?=.*(台湾)(?!.*(动画))).*"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇸🇬 Ex星国"
+type = "url-test"
+rule = [".*(?<!(更))(新加坡)(?!.*游戏).*"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇺🇸 Ex美国"
+type = "url-test"
+rule = ["(?=.*(美国)(?!.*(游戏))).*"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇯🇵 Ex日本"
+type = "url-test"
+rule = ["(?=.*(日本)(?!.*(游戏))).*"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇭🇰 ZHS香港"
+type = "url-test"
+rule = ["^(?=.*(?:HK))(?!.*(?:香港|游戏)).*$"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇹🇼 ZHS台湾"
+type = "url-test"
+rule = ["(?=.*(TW)(?!.*(游戏))).*"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇸🇬 ZHS星国"
+type = "url-test"
+rule = ["(?=.*(SG)(?!.*(游戏))).*"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇺🇸 ZHS美国"
+type = "url-test"
+rule = ["(?=.*(US)(?!.*(游戏))).*"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇯🇵 ZHS日本"
+type = "url-test"
+rule = ["(?=.*(JP)(?!.*(游戏))).*"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇭🇰 ZHS九龙"
+type = "url-test"
+rule = ["九龙"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇭🇰 ZHS天机"
+type = "url-test"
+rule = ["天机"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇭🇰 ZHS铠甲"
+type = "url-test"
+rule = ["铠甲"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇭🇰 ZHS契约"
+type = "url-test"
+rule = ["契约"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇭🇰 HKT"
+type = "url-test"
+rule = ["HKT"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
+
+name = "🇭🇰 TVB"
+type = "url-test"
+rule = ["TVB"]
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 150
+lazy = true
 
 #[[custom_groups]]
 #name = "Proxy"
@@ -223,13 +383,13 @@ rule = ["[]♻️ 自动选择","[]⚡ 均衡负载","[]🇭🇰 Ex香港","[]�
 #rule = [".*", "[]DIRECT"]
 #disable_udp = false
 
-# [[custom_groups]]
-# name = "LoadBalance"
-# type = "load-balance"
-# rule = [".*", "[]Proxy", "[]DIRECT"]
-# interval = 100
-# strategy = "consistent-hashing"
-# url = "http://www.gstatic.com/generate_204"
+[[custom_groups]]
+name = "LoadBalance"
+type = "load-balance"
+rule = [".*", "[]Proxy", "[]DIRECT"]
+interval = 100
+strategy = "consistent-hashing"
+url = "http://www.gstatic.com/generate_204"
 
 # [[custom_groups]]
 # import = "snippets/groups.toml"
@@ -244,11 +404,71 @@ overwrite_original_rules = false
 # Perform a ruleset update on request
 update_ruleset_on_request = false
 
-# [[rulesets]]
-# group = "Proxy"
-# ruleset = "https://raw.githubusercontent.com/DivineEngine/Profiles/master/Surge/Ruleset/Unbreak.list"
-# type = "surge-ruleset"
-# interval = 86400
+[[rulesets]]
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"
+type = "surge-ruleset"
+interval = 86400
+
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list"
+type = "surge-ruleset"
+interval = 86400
+
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"
+type = "surge-ruleset"
+interval = 86400
+
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list"
+type = "surge-ruleset"
+interval = 86400
+
+group = "👾 AI"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/AI.list"
+type = "surge-ruleset"
+interval = 86400
+
+group = "🌍 环球网络"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/GlobalWebsiteAndForeignlMedia.list"
+type = "surge-ruleset"
+interval = 86400
+
+group = "📺 Netflix"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list"
+type = "surge-ruleset"
+interval = 86400
+
+group = "📨 Telegram"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list"
+type = "surge-ruleset"
+interval = 86400
+
+group = "🍎 苹果服务"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list"
+type = "surge-ruleset"
+interval = 86400
+
+group = "🇭🇰 香港串流验证"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-Media.list"
+type = "surge-ruleset"
+interval = 86400
+
+group = "🇭🇰 EdgeWare"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/EdgeWare.list"
+type = "surge-ruleset"
+interval = 86400
+
+group = "Ⓜ️ 微软服务"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Microsoft.list"
+type = "surge-ruleset"
+interval = 86400
+
+group = "📈 SpeedTest"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list"
+type = "surge-ruleset"
+interval = 86400
 
 [[rulesets]]
 import = "snippets/rulesets.toml"
