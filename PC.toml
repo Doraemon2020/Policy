@@ -408,58 +408,6 @@ group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
 
 [[rulesets]]
-group = "🛑 拦截连接"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"
-
-[[rulesets]]
-group = "🛑 拦截连接"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list"
-
-[[rulesets]]
-group = "🛑 拦截连接"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"
-
-[[rulesets]]
-group = "🛑 拦截连接"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list"
-
-[[rulesets]]
-group = "👾 AI"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/AI.list"
-
-[[rulesets]]
-group = "🌍 环球网络"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/GlobalWebsiteAndForeignlMedia.list"
-
-[[rulesets]]
-group = "📺 Netflix"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list"
-
-[[rulesets]]
-group = "📨 Telegram"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list"
-
-[[rulesets]]
-group = "🍎 苹果服务"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list"
-
-[[rulesets]]
-group = "🇭🇰 香港串流验证"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-Media.list"
-
-[[rulesets]]
-group = "🇭🇰 EdgeWare"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/EdgeWare.list"
-
-[[rulesets]]
-group = "Ⓜ️ 微软服务"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Microsoft.list"
-
-[[rulesets]]
-group = "📈 SpeedTest"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list"
-
-[[rulesets]]
 group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list"
 
@@ -484,7 +432,59 @@ group = "DIRECT"
 ruleset = "[]GEOIP,CN"
 
 [[rulesets]]
-group = "🐟 漏网之鱼"
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"
+
+[[rulesets]]
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list"
+
+[[rulesets]]
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"
+
+[[rulesets]]
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list"
+
+[[rulesets]]
+group = "👾 AI"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/AI.list"
+
+[[rulesets]]
+group = "📺 Netflix"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list"
+
+[[rulesets]]
+group = "📨 Telegram"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list"
+
+[[rulesets]]
+group = "🍎 苹果服务"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list"
+
+[[rulesets]]
+group = "🏛 Gov"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/gov.list"
+
+[[rulesets]]
+group = "🇭🇰 香港串流验证"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-Media.list"
+
+[[rulesets]]
+group = "🇭🇰 EdgeWare"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/EdgeWare.list"
+
+[[rulesets]]
+group = "Ⓜ️ 微软服务"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Microsoft.list"
+
+[[rulesets]]
+group = "📈 SpeedTest"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list"
+
+[[rulesets]]
+group = "🌍 环球网络"
 ruleset = "[]MATCH"
 
 # 设置规则标志位
