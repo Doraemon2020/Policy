@@ -220,6 +220,19 @@ rule = [
 ]
 
 [[custom_groups]]
+name = "🏛 Gov"
+type = "select"
+rule = [
+    "[]🇭🇰 ZHS香港",
+    "[]🇹🇼 ZHS台湾",
+    "[]🇸🇬 ZHS星国",
+    "[]🇯🇵 ZHS日本",
+    "[]🇺🇸 ZHS美国",
+    "[]📌 全部节点",
+    "[]DIRECT"
+]
+
+[[custom_groups]]
 name = "⚡ 均衡负载"
 type = "load-balance"
 strategy = "consistent-hashing"
@@ -456,6 +469,11 @@ ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Sp
 [[rulesets]]
 group = "🌍 环球网络"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/GlobalWebsiteAndForeignlMedia.list"
+
+[[rulesets]]
+group = "🏛 Gov"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/gov.list"
+
 
 [[rulesets]]
 group = "DIRECT"
