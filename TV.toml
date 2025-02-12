@@ -105,6 +105,41 @@ rule = [
 ]
 
 [[custom_groups]]
+name = "⚡ 均衡负载"
+type = "load-balance"
+strategy = "consistent-hashing"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = [
+    "^(?!.*游戏).*(香港|九龙|契约|铠甲|TVB|HK|HKT).*"
+]
+
+[[custom_groups]]
+name = "⚡ 原生均载"
+type = "load-balance"
+strategy = "consistent-hashing"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = [
+    "^(?!.*游戏).*(九龙|契约|铠甲|TVB|HKT).*"
+]
+
+[[custom_groups]]
+name = "⚡ 全部节点"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = [
+    "^((?!中国|回国|游戏|限速|结算|流量).)*$"
+]
+
+[[custom_groups]]
+name = "📌 全部节点"
+type = "select"
+rule = [".*"]
+
+
+[[custom_groups]]
 name = "🇭🇰 香港原生"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
@@ -257,40 +292,6 @@ rule = [
     "(?=.*(JP)(?!.*(游戏))).*"
 ]
 
-[[custom_groups]]
-name = "⚡ 均衡负载"
-type = "load-balance"
-strategy = "consistent-hashing"
-url = "http://www.gstatic.com/generate_204"
-interval = 600
-rule = [
-    "^(?!.*游戏).*(香港|九龙|契约|铠甲|TVB|HK|HKT).*"
-]
-
-[[custom_groups]]
-name = "⚡ 原生均载"
-type = "load-balance"
-strategy = "consistent-hashing"
-url = "http://www.gstatic.com/generate_204"
-interval = 600
-rule = [
-    "^(?!.*游戏).*(九龙|契约|铠甲|TVB|HKT).*"
-]
-
-[[custom_groups]]
-name = "⚡ 全部节点"
-type = "url-test"
-url = "http://www.gstatic.com/generate_204"
-interval = 600
-rule = [
-    "^((?!中国|回国|游戏|限速|结算|流量).)*$"
-]
-
-[[custom_groups]]
-name = "📌 全部节点"
-type = "select"
-rule = [".*"]
-
 # 设置规则标志位
 [[rulesets]]
 group = "DIRECT"
@@ -299,6 +300,26 @@ ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalA
 [[rulesets]]
 group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "GEOIP,CN"
 
 [[rulesets]]
 group = "🛑 拦截连接"
@@ -335,26 +356,6 @@ ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK
 [[rulesets]]
 group = "ViuTV"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/ViuTV.list"
-
-[[rulesets]]
-group = "DIRECT"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list"
-
-[[rulesets]]
-group = "DIRECT"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list"
-
-[[rulesets]]
-group = "DIRECT"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list"
-
-[[rulesets]]
-group = "DIRECT"
-ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list"
-
-[[rulesets]]
-group = "DIRECT"
-ruleset = "GEOIP,CN"
 
 [[rulesets]]
 group = "🌍 播放组"
