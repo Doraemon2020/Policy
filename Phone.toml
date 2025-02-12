@@ -11,8 +11,8 @@ remove_old_emoji = true
 name = "🌍 环球网络"
 type = "select"
 rule = [
-    "[]⚡ 均衡负载",
     "[]♻️ 自动选择",
+    "[]⚡ 均衡负载",
     "[]🇭🇰 Ex香港",
     "[]🇭🇰 ZHS香港",
     "[]🇹🇼 Ex台湾",
@@ -224,7 +224,7 @@ rule = [
 name = "🇭🇰 香港原生"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-interval = 60
+interval = 600
 rule = [
     "(HKT|九龙|铠甲|天机|契约|TVB)"
 ]
