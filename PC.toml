@@ -79,28 +79,6 @@ rule = [
 ]
 
 [[custom_groups]]
-name = "🐟 漏网之鱼"
-type = "select"
-rule = [
-    "[]🌍 环球网络",
-    "[]♻️ 自动选择",
-    "[]⚡ 全部节点",
-    "[]📌 全部节点",
-    "[]DIRECT",
-    "[]REJECT",
-    "[]🇭🇰 Ex香港",
-    "[]🇭🇰 ZHS香港",
-    "[]🇹🇼 Ex台湾",
-    "[]🇹🇼 ZHS台湾",
-    "[]🇸🇬 Ex星国",
-    "[]🇸🇬 ZHS星国",
-    "[]🇯🇵 Ex日本",
-    "[]🇯🇵 ZHS日本",
-    "[]🇺🇸 Ex美国",
-    "[]🇺🇸 ZHS美国"
-]
-
-[[custom_groups]]
 name = "📨 Telegram"
 type = "select"
 rule = [
@@ -118,6 +96,19 @@ rule = [
     "[]🇯🇵 ZHS日本",
     "[]🇺🇸 Ex美国",
     "[]🇺🇸 ZHS美国"
+]
+
+[[custom_groups]]
+name = "🏛 Gov"
+type = "select"
+rule = [
+    "[]🇭🇰 ZHS香港",
+    "[]🇹🇼 ZHS台湾",
+    "[]🇸🇬 ZHS星国",
+    "[]🇯🇵 ZHS日本",
+    "[]🇺🇸 ZHS美国",
+    "[]📌 全部节点",
+    "[]DIRECT"
 ]
 
 [[custom_groups]]
