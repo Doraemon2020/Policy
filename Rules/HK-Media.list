@@ -3,6 +3,11 @@ DOMAIN-SUFFIX,ulivetv.net
 USER-AGENT,mytv*
 DOMAIN-SUFFIX,mytvsuper.com
 DOMAIN-SUFFIX,omtrdc.net
+# > ViuTV
+DOMAIN-SUFFIX,viu.tv
+DOMAIN-SUFFIX,viu.com
+DOMAIN-SUFFIX,now.com
+DOMAIN-SUFFIX,nowe.com
 # > 有线电视
 USER-AGENT,i-cable*
 DOMAIN-SUFFIX,hoy.tv
