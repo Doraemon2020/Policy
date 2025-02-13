@@ -30,6 +30,27 @@ rule = [
 ]
 
 [[custom_groups]]
+name = "🎞 YouTube"
+type = "select"
+rule = [
+    "[]♻️ 自动选择",
+    "[]🇭🇰 Ex香港",
+    "[]🇭🇰 ZHS香港",
+    "[]🇹🇼 Ex台湾",
+    "[]🇹🇼 ZHS台湾",
+    "[]🇸🇬 Ex星国",
+    "[]🇸🇬 ZHS星国",
+    "[]🇯🇵 Ex日本",
+    "[]🇯🇵 ZHS日本",
+    "[]🇺🇸 Ex美国",
+    "[]🇺🇸 ZHS美国",
+    "[]⚡ 全部节点",
+    "[]📌 全部节点",
+    "[]DIRECT",
+    "[]REJECT"
+]
+
+[[custom_groups]]
 name = "♻️ 自动选择"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
@@ -449,6 +470,10 @@ ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEas
 [[rulesets]]
 group = "🛑 拦截连接"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list"
+
+[[rulesets]]
+group = "🎞 YouTube"
+ruleset = "https://raw.githubusercontent.com/tindy2013/subconverter/refs/heads/master/base/rules/ACL4SSR/Clash/Ruleset/YouTube.list"
 
 [[rulesets]]
 group = "👾 AI"
