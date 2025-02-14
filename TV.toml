@@ -82,10 +82,9 @@ rule = [
 ]
 
 [[custom_groups]]
-name = "ViuTV"
+name = "📺 ViuTV"
 type = "select"
 rule = [
-    "[]⚡ 原生均载",
     "[]🇭🇰 香港原生",
     "[]🇭🇰 ZHS九龙",
     "[]🇭🇰 ZHS天机",
@@ -375,7 +374,7 @@ group = "📺 Netflix"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list"
 
 [[rulesets]]
-group = "ViuTV"
+group = "📺 ViuTV"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/ViuTV.list"
 
 [[rulesets]]
