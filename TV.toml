@@ -375,12 +375,12 @@ group = "📺 Netflix"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list"
 
 [[rulesets]]
-group = "🇭🇰 验证组"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-Media.list"
-
-[[rulesets]]
 group = "ViuTV"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/ViuTV.list"
+
+[[rulesets]]
+group = "🇭🇰 验证组"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-Media.list"
 
 [[rulesets]]
 group = "🌍 播放组"
