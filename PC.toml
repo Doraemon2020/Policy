@@ -203,7 +203,6 @@ rule = [
     "[]⚡ 原生均载",
     "[]🇭🇰 香港原生",
     "[]🇭🇰 ZHS九龙",
-    "[]🇭🇰 ZHS天机",
     "[]🇭🇰 ZHS铠甲",
     "[]🇭🇰 ZHS契约",
     "[]🇭🇰 TVB",
@@ -240,7 +239,7 @@ type = "url-test"
 url = "http://www.gstatic.com/generate_204"
 interval = 60
 rule = [
-"(HKT|九龙|铠甲|天机|契约|TVB)"
+"(HKT|九龙|铠甲|契约|TVB)"
 ]
 
 [[custom_groups]]
@@ -340,15 +339,6 @@ url = "http://www.gstatic.com/generate_204"
 interval = 600
 rule = [
 "(九龙)"
-]
-
-[[custom_groups]]
-name = "🇭🇰 ZHS天机"
-type = "url-test"
-url = "http://www.gstatic.com/generate_204"
-interval = 600
-rule = [
-"(天机)"
 ]
 
 [[custom_groups]]
