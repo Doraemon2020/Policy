@@ -124,9 +124,9 @@ rule = [
 [[custom_groups]]
 name = "⚡ 均衡负载"
 type = "load-balance"
-strategy = "consistent-hashing"
+strategy = "round-robin"
 url = "http://www.gstatic.com/generate_204"
-interval = 600
+interval = 60
 rule = [
     "^(?!.*游戏).*(香港|九龙|契约|铠甲|TVB|HK|HKT).*"
 ]
