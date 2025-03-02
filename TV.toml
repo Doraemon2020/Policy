@@ -135,8 +135,8 @@ rule = [
 
 [[custom_groups]]
 name = "⚡ 原生均载"
-type = "round-robin"
-strategy = "consistent-hashing"
+type = "load-balance"
+strategy = "round-robin"
 url = "http://www.gstatic.com/generate_204"
 interval = 60
 rule = [
