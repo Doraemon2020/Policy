@@ -33,9 +33,7 @@ rule = [
 name = "🇭🇰 验证组"
 type = "select"
 rule = [
-    "[]⚡ 原生均载",
     "[]🇭🇰 香港原生",
-    "[]🌍 播放组",
     "[]🇭🇰 ZHS九龙",
     "[]🇭🇰 ZHS铠甲",
     "[]🇭🇰 ZHS契约",
@@ -131,16 +129,6 @@ url = "http://www.gstatic.com/generate_204"
 interval = 600
 rule = [
     "^(?!.*游戏).*(香港|九龙|契约|铠甲|TVB|HK|HKT).*"
-]
-
-[[custom_groups]]
-name = "⚡ 原生均载"
-type = "load-balance"
-strategy = "round-robin"
-url = "http://www.gstatic.com/generate_204"
-interval = 60
-rule = [
-    "^(?!.*游戏).*(九龙|契约|铠甲|TVB|HKT).*"
 ]
 
 [[custom_groups]]
