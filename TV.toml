@@ -11,7 +11,6 @@ remove_old_emoji = true
 name = "🌍 播放组"
 type = "select"
 rule = [
-    "[]⚡ 均衡负载",
     "[]♻️ 自动选择",
     "[]🇭🇰 Ex香港",
     "[]🇭🇰 ZHS香港",
@@ -72,6 +71,7 @@ url = "http://www.gstatic.com/generate_204"
 interval = 20
 tolerance = 100
 rule = [
+    "[]⚡ 全部节点",
     "[]🇭🇰 Ex香港",
     "[]🇭🇰 ZHS香港",
     "[]🇸🇬 Ex星国",
@@ -119,25 +119,6 @@ type = "select"
 rule = [
     "[]REJECT",
     "[]DIRECT"
-]
-
-[[custom_groups]]
-name = "⚡ 均衡负载"
-type = "load-balance"
-strategy = "consistent-hashing"
-url = "http://www.gstatic.com/generate_204"
-interval = 60
-rule = [
-    "[]🇭🇰 Ex香港",
-    "[]🇭🇰 ZHS香港",
-    "[]🇹🇼 ZHS台湾",
-    "[]🇸🇬 Ex星国",
-    "[]🇸🇬 ZHS星国",
-    "[]🇯🇵 Ex日本",
-    "[]🇯🇵 ZHS日本",
-    "[]🇺🇸 Ex美国",
-    "[]🇺🇸 ZHS美国",
-    "[]⚡ 全部节点",
 ]
 
 [[custom_groups]]
