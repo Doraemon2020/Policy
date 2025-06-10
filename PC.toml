@@ -499,6 +499,10 @@ group = "📈 SpeedTest"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list"
 
 [[rulesets]]
+group = "🌍 环球网络"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Extra.list"
+
+[[rulesets]]
 group = "DIRECT"
 ruleset = "[]GEOIP,CN"
 
