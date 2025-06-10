@@ -443,10 +443,6 @@ group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-securities.list"
 
 [[rulesets]]
-group = "DIRECT"
-ruleset = "[]GEOIP,CN"
-
-[[rulesets]]
 group = "🛑 拦截连接"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"
 
@@ -501,6 +497,10 @@ ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Mi
 [[rulesets]]
 group = "📈 SpeedTest"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "[]GEOIP,CN"
 
 [[rulesets]]
 group = "🌍 环球网络"
