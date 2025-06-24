@@ -413,7 +413,7 @@ ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Downlo
 
 [[rulesets]]
 group = "DIRECT"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-securities.list"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Direct.list"
 
 [[rulesets]]
 group = "🛑 拦截连接"
