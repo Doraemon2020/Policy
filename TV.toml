@@ -11,7 +11,7 @@ remove_old_emoji = true
 name = "🌍 播放组"
 type = "select"
 rule = [
-    "(HKT|香港|九龙|铠甲|契约|HK|TVB)"
+    "(HKT|香港|九龙|铠甲|契约|HK|TVB)",
     "[]♻️ 自动选择",
     "[]🇭🇰 Ex香港",
     "[]🇭🇰 ZHS香港",
