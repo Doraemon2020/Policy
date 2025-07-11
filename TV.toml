@@ -104,6 +104,14 @@ rule = [
 ]
 
 [[custom_groups]]
+name = "BL"
+type = "select"
+rule = [
+    "[]REJECT",
+    "[]DIRECT"
+]
+
+[[custom_groups]]
 name = "🛑 拦截连接"
 type = "select"
 rule = [
@@ -272,7 +280,7 @@ rule = [
 
 # 设置规则标志位
 [[rulesets]]
-group = "🛑 拦截连接"
+group = "BL"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/Bilib.list"
 
 [[rulesets]]
