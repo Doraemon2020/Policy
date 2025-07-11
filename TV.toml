@@ -272,6 +272,10 @@ rule = [
 
 # 设置规则标志位
 [[rulesets]]
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list"
+
+[[rulesets]]
 group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
 
@@ -318,10 +322,6 @@ ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEas
 [[rulesets]]
 group = "🛑 拦截连接"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"
-
-[[rulesets]]
-group = "🛑 拦截连接"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list"
 
 [[rulesets]]
 group = "🎞 YouTube"
