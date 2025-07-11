@@ -273,7 +273,7 @@ rule = [
 # 设置规则标志位
 [[rulesets]]
 group = "🛑 拦截连接"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/Bili.list"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/Bilib.list"
 
 [[rulesets]]
 group = "🛑 拦截连接"
