@@ -12,7 +12,6 @@ name = "🌍 环球网络"
 type = "select"
 rule = [
     "[]♻️ 自动选择",
-    "[]⚡ 均衡负载",
     "[]🇭🇰 Ex香港",
     "[]🇭🇰 ZHS香港",
     "[]🇹🇼 Ex台湾",
@@ -202,7 +201,6 @@ rule = [
 name = "🇭🇰 香港串流验证"
 type = "select"
 rule = [
-    "[]⚡ 原生均载",
     "[]🇭🇰 香港原生",
     "[]🇭🇰 ZHS九龙",
     "[]🇭🇰 ZHS铠甲",
@@ -219,8 +217,6 @@ rule = [
     "[]DIRECT",
     "[]🌍 环球网络",
     "[]⚡ 全部节点",
-    "[]⚡ 原生均载",
-    "[]⚡ 均衡负载",
     "[]📌 全部节点",
     "[]♻️ 自动选择",
     "[]🇭🇰 Ex香港",
@@ -380,16 +376,6 @@ rule = [
 ]
 
 [[custom_groups]]
-name = "⚡ 均衡负载"
-type = "load-balance"
-url = "http://www.gstatic.com/generate_204"
-interval = 600
-strategy = "consistent-hashing"
-rule = [
-"^(?!.*游戏).*(香港|九龙|契约|铠甲|TVB|HK|HKT).*"
-]
-
-[[custom_groups]]
 name = "⚡ 全部节点"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
@@ -398,15 +384,6 @@ rule = [
 "^((?!中国|回国|游戏|限速|结算|流量).)*$"
 ]
 
-[[custom_groups]]
-name = "⚡ 原生均载"
-type = "load-balance"
-strategy = "consistent-hashing"
-url = "http://www.gstatic.com/generate_204"
-interval = 600
-rule = [
-    "^(?!.*游戏).*(九龙|契约|铠甲|TVB|HKT).*"
-]
 
 [[custom_groups]]
 name = "📌 全部节点"
