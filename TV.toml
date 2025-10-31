@@ -5,29 +5,6 @@ enable_rule_generator = true
 overwrite_original_rules = true
 add_emoji = true
 remove_old_emoji = true
-mixed-port: 7890
-allow-lan: true
-dns:
-  enable: true
-  listen: 0.0.0.0:53
-  enhanced-mode: fake-ip
-  nameserver:
-    - https://223.5.5.5/dns-query
-    - https://8.8.8.8/dns-query
-  fallback:
-    - https://1.1.1.1/dns-query
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-tun:
-  enable: true
-  stack: system
-  dns-hijack:
-    - any:53
-global-client-fingerprint: chrome
-mode: Rule
-log-level: info
-external-controller: 127.0.0.1:9090
 
 # 设置分组标志位
 
