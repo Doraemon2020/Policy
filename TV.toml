@@ -4,7 +4,7 @@ enable_rule_generator = true
 overwrite_original_rules = true
 add_emoji = true
 remove_old_emoji = true
-clash_rule_base = "https://raw.githubusercontent.com/zhongfly/clash-config/master/clash.yml"
+clash_rule_base = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/Clash-Config.yml"
 
 # 设置分组标志位
 
