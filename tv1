@@ -1,0 +1,306 @@
+version = 1
+
+##############################################
+# Clash Meta 专用全局配置
+##############################################
+
+[template]
+mixed-port = 7890
+allow-lan = true
+mode = "Rule"
+log-level = "info"
+external-controller = "127.0.0.1:9090"
+global-client-fingerprint = "chrome"
+
+[template.dns]
+enable = true
+listen = "0.0.0.0:53"
+enhanced-mode = "fake-ip"
+nameserver = [
+  "https://223.5.5.5/dns-query",
+  "https://8.8.8.8/dns-query"
+]
+fallback = [
+  "https://1.1.1.1/dns-query"
+]
+[template.dns.fallback-filter]
+geoip = true
+geoip-code = "CN"
+
+[template.tun]
+enable = true
+stack = "system"
+dns-hijack = ["any:53"]
+
+##############################################
+# Subconverter 自定义部分
+##############################################
+
+[custom]
+enable_rule_generator = true
+overwrite_original_rules = true
+add_emoji = true
+remove_old_emoji = true
+
+# -------------------------------
+# 节点分组配置
+# -------------------------------
+
+[[custom_groups]]
+name = "🌍 播放组"
+type = "select"
+rule = [
+    "[]♻️ 自动选择",
+    "[]🇭🇰 Ex香港",
+    "[]🇭🇰 ZHS香港",
+    "[]⚡ 全部节点",
+    "[]📌 全部节点",
+    "^(?!.*(深圳))(?=.*(?:香港|九龙|铠甲|契约|HK|TVB)).*$",
+    "[]DIRECT",
+    "[]REJECT"
+]
+
+[[custom_groups]]
+name = "🇭🇰 验证组"
+type = "select"
+rule = [
+    "[]🇭🇰 香港原生",
+    "[]🇭🇰 ZHS九龙",
+    "[]🇭🇰 ZHS铠甲",
+    "[]🇭🇰 ZHS契约",
+    "[]🇭🇰 TVB",
+    "[]🇭🇰 HKT",
+    "[]📌 全部节点",
+    "[]DIRECT",
+    "[]REJECT"
+]
+
+[[custom_groups]]
+name = "🎞 YouTube"
+type = "select"
+rule = [
+    "[]♻️ 自动选择",
+    "[]🇭🇰 Ex香港",
+    "[]🇭🇰 ZHS香港",
+    "[]🇹🇼 Ex台湾",
+    "[]🇹🇼 ZHS台湾",
+    "[]🇸🇬 Ex星国",
+    "[]🇸🇬 ZHS星国",
+    "[]🇯🇵 Ex日本",
+    "[]🇯🇵 ZHS日本",
+    "[]🇺🇸 Ex美国",
+    "[]🇺🇸 ZHS美国",
+    "[]⚡ 全部节点",
+    "[]📌 全部节点",
+    "[]DIRECT",
+    "[]REJECT"
+]
+
+[[custom_groups]]
+name = "♻️ 自动选择"
+type = "url-test"
+url = "https://www.tvb.com"
+interval = 20
+tolerance = 50
+rule = [
+    "[]🇭🇰 Ex香港",
+    "[]🇭🇰 ZHS香港"
+]
+
+[[custom_groups]]
+name = "📺 ViuTV"
+type = "select"
+rule = [
+    "[]🇭🇰 香港原生",
+    "[]🇭🇰 ZHS九龙",
+    "[]🇭🇰 ZHS铠甲",
+    "[]🇭🇰 ZHS契约",
+    "[]DIRECT",
+    "[]REJECT"
+]
+
+[[custom_groups]]
+name = "📺 Netflix"
+type = "select"
+rule = [
+    "[]🌍 播放组",
+    "[]♻️ 自动选择",
+    "[]🇭🇰 Ex香港",
+    "[]🇭🇰 ZHS香港",
+    "[]🇹🇼 Ex台湾",
+    "[]🇹🇼 ZHS台湾",
+    "[]🇸🇬 Ex星国",
+    "[]🇸🇬 ZHS星国",
+    "[]🇯🇵 Ex日本",
+    "[]🇯🇵 ZHS日本",
+    "[]🇺🇸 Ex美国",
+    "[]🇺🇸 ZHS美国",
+    "[]⚡ 全部节点",
+    "[]📌 全部节点",
+    "[]DIRECT",
+    "[]REJECT"
+]
+
+[[custom_groups]]
+name = "BL"
+type = "select"
+rule = [
+    "[]REJECT",
+    "[]DIRECT"
+]
+
+[[custom_groups]]
+name = "🛑 拦截连接"
+type = "select"
+rule = [
+    "[]REJECT",
+    "[]DIRECT"
+]
+
+[[custom_groups]]
+name = "⚡ 全部节点"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = [
+    "^((?!中国|回国|游戏|限速|结算|流量).)*$"
+]
+
+[[custom_groups]]
+name = "📌 全部节点"
+type = "select"
+rule = [".*"]
+
+[[custom_groups]]
+name = "🇭🇰 香港原生"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 30
+rule = [
+    "(HKT|九龙|铠甲|契约|TVB)"
+]
+
+[[custom_groups]]
+name = "🇭🇰 ZHS九龙"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(九龙)"]
+
+[[custom_groups]]
+name = "🇭🇰 ZHS铠甲"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(铠甲)"]
+
+[[custom_groups]]
+name = "🇭🇰 ZHS契约"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(契约)"]
+
+[[custom_groups]]
+name = "🇭🇰 HKT"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(HKT)"]
+
+[[custom_groups]]
+name = "🇭🇰 TVB"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(TVB)"]
+
+[[custom_groups]]
+name = "🇭🇰 Ex香港"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["^(?!.*(深圳))(?=.*(?:香港)).*$"]
+
+[[custom_groups]]
+name = "🇹🇼 Ex台湾"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(?=.*(台湾)(?!.*(动画))).*"]
+
+[[custom_groups]]
+name = "🇸🇬 Ex星国"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = [".*(?<!(更))(新加坡)(?!.*游戏).*"]
+
+[[custom_groups]]
+name = "🇺🇸 Ex美国"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(?=.*(美国)(?!.*(游戏))).*"]
+
+[[custom_groups]]
+name = "🇯🇵 Ex日本"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(?=.*(日本)(?!.*(游戏))).*"]
+
+[[custom_groups]]
+name = "🇭🇰 ZHS香港"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["^(?=.*(?:HK))(?!.*(?:游戏|香港)).*$"]
+
+[[custom_groups]]
+name = "🇹🇼 ZHS台湾"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(?=.*(TW)(?!.*(游戏))).*"]
+
+[[custom_groups]]
+name = "🇸🇬 ZHS星国"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = [".*(?<!(更))(SG)(?!.*游戏).*"]
+
+[[custom_groups]]
+name = "🇺🇸 ZHS美国"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(?=.*(US)(?!.*(游戏))).*"]
+
+[[custom_groups]]
+name = "🇯🇵 ZHS日本"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(?=.*(JP)(?!.*(游戏))).*"]
+
+# -------------------------------
+# 规则集配置
+# -------------------------------
+
+[[rulesets]]
+group = "BL"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/Bilib.list"
+
+[[rulesets]]
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
