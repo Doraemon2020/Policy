@@ -5,8 +5,6 @@ enable_rule_generator = true
 overwrite_original_rules = true
 add_emoji = true
 remove_old_emoji = true
-
-# 设置分组标志位
 mixed-port: 7890
 allow-lan: true
 dns:
@@ -30,6 +28,8 @@ global-client-fingerprint: chrome
 mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
+
+# 设置分组标志位
 
 [[custom_groups]]
 name = "🌍 播放组"
