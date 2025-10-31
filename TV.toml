@@ -137,7 +137,9 @@ rule = [".*"]
 name = "🇭🇰 香港原生"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
+timeout = 500
 interval = 30
+tolerance = 50
 rule = [
     "(HKT|九龙|铠甲|契约|TVB)"
 ]
@@ -146,7 +148,9 @@ rule = [
 name = "🇭🇰 ZHS九龙"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-interval = 600
+timeout = 500
+interval = 30
+tolerance = 50
 rule = [
     "(九龙)"
 ]
@@ -155,7 +159,9 @@ rule = [
 name = "🇭🇰 ZHS铠甲"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-interval = 600
+timeout = 500
+interval = 30
+tolerance = 50
 rule = [
     "(铠甲)"
 ]
@@ -164,7 +170,9 @@ rule = [
 name = "🇭🇰 ZHS契约"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-interval = 600
+timeout = 500
+interval = 30
+tolerance = 50
 rule = [
     "(契约)"
 ]
@@ -173,7 +181,9 @@ rule = [
 name = "🇭🇰 HKT"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-interval = 600
+timeout = 500
+interval = 30
+tolerance = 50
 rule = [
     "(HKT)"
 ]
@@ -182,7 +192,9 @@ rule = [
 name = "🇭🇰 TVB"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-interval = 600
+timeout = 500
+interval = 30
+tolerance = 50
 rule = [
     "(TVB)"
 ]
@@ -191,7 +203,9 @@ rule = [
 name = "🇭🇰 Ex香港"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-interval = 600
+timeout = 500
+interval = 30
+tolerance = 50
 rule = [
     "^(?!.*(深圳))(?=.*(?:香港)).*$"
 ]
@@ -236,7 +250,9 @@ rule = [
 name = "🇭🇰 ZHS香港"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-interval = 600
+timeout = 500
+interval = 30
+tolerance = 50
 rule = [
     "^(?=.*(?:HK))(?!.*(?:游戏|香港)).*$"
 ]
