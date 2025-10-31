@@ -107,7 +107,7 @@ dns:
      - https://cloudflare-dns.com/dns-query
 
 tun:
-  enable: ture
+  enable: true
   stack: system
   dns-hijack:
     - 198.18.0.2:53 # when `fake-ip-range` is 198.18.0.1/16, should hijack 198.18.0.2:53
