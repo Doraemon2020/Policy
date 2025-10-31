@@ -1,39 +1,9 @@
-version = 1
-
-[template]
-# Clash Meta 专用配置参数
-mixed-port = 7890
-allow-lan = true
-mode = "Rule"
-log-level = "info"
-external-controller = "127.0.0.1:9090"
-global-client-fingerprint = "chrome"
-
-[template.dns]
-enable = true
-listen = "0.0.0.0:53"
-enhanced-mode = "fake-ip"
-nameserver = [
-  "https://223.5.5.5/dns-query",
-  "https://8.8.8.8/dns-query"
-]
-fallback = [
-  "https://1.1.1.1/dns-query"
-]
-[template.dns.fallback-filter]
-geoip = true
-geoip-code = "CN"
-
-[template.tun]
-enable = true
-stack = "system"
-dns-hijack = ["any:53"]
-
 [custom]
 enable_rule_generator = true
 overwrite_original_rules = true
 add_emoji = true
 remove_old_emoji = true
+clash_rule_base = "https://raw.githubusercontent.com/zhongfly/clash-config/master/clash.yml"
 
 # 设置分组标志位
 
@@ -91,7 +61,7 @@ rule = [
 [[custom_groups]]
 name = "♻️ 自动选择"
 type = "url-test"
-url = "https://www.tvb.com"
+url = "https://cp.cloudflare.com/generate_204"
 interval = 20
 tolerance = 50
 rule = [
