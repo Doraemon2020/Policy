@@ -5,6 +5,7 @@ enable_rule_generator = true
 overwrite_original_rules = true
 add_emoji = true
 remove_old_emoji = true
+clash_rule_base = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/Clash-Config.yml"
 
 # 设置分组标志位
 [[custom_groups]]
@@ -151,7 +152,11 @@ rule = [
 
 [[custom_groups]]
 name = "👾 AI"
-type = "select"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 60
+timeout = 500
+tolerance = 100
 rule = [
     "[]🇹🇼 Ex台湾",
     "[]🇹🇼 ZHS台湾",
@@ -202,7 +207,6 @@ rule = [
 name = "🇭🇰 EdgeWare"
 type = "select"
 rule = [
-    "[]DIRECT",
     "[]🌍 环球网络",
     "[]⚡ 全部节点",
     "[]📌 全部节点",
@@ -216,7 +220,8 @@ rule = [
     "[]🇯🇵 Ex日本",
     "[]🇯🇵 ZHS日本",
     "[]🇺🇸 Ex美国",
-    "[]🇺🇸 ZHS美国"
+    "[]🇺🇸 ZHS美国",
+    "[]DIRECT"
 ]
 
 [[custom_groups]]
