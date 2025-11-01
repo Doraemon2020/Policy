@@ -16,6 +16,7 @@ rule = [
     "[]🇭🇰 Ex香港",
     "[]🇭🇰 ZHS香港",
     "[]⚡ 全部节点",
+    "[]🇭🇰 验证组",
     "[]DIRECT",
     "[]REJECT"
 ]
@@ -62,7 +63,7 @@ name = "♻️ 自动选择"
 type = "url-test"
 url = "https://cp.cloudflare.com/generate_204"
 interval = 20
-tolerance = 50
+tolerance = 100
 rule = [
     "[]🇭🇰 Ex香港",
     "[]🇭🇰 ZHS香港"
@@ -122,7 +123,7 @@ rule = [
 name = "⚡ 全部节点"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-interval = 600
+interval = 60
 rule = [
     "^((?!中国|回国|游戏|限速|结算|流量).)*$"
 ]
@@ -130,14 +131,15 @@ rule = [
 [[custom_groups]]
 name = "📌 全部节点"
 type = "select"
-rule = [".*"]
+rule = rule = [
+    "^((?!中国|回国|游戏|限速|结算|流量).)*$"
+]
 
 
 [[custom_groups]]
 name = "🇭🇰 香港原生"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-timeout = 500
 interval = 30
 tolerance = 50
 rule = [
@@ -149,7 +151,6 @@ name = "🇭🇰 ZHS九龙"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
 interval = 30
-timeout = 1
 tolerance = 50
 rule = [
     "(九龙)"
@@ -159,7 +160,6 @@ rule = [
 name = "🇭🇰 ZHS铠甲"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-timeout = 500
 interval = 30
 tolerance = 50
 rule = [
@@ -170,7 +170,6 @@ rule = [
 name = "🇭🇰 ZHS契约"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-timeout = 500
 interval = 30
 tolerance = 50
 rule = [
@@ -181,7 +180,6 @@ rule = [
 name = "🇭🇰 HKT"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-timeout = 500
 interval = 30
 tolerance = 50
 rule = [
@@ -192,7 +190,6 @@ rule = [
 name = "🇭🇰 TVB"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-timeout = 500
 interval = 30
 tolerance = 50
 rule = [
@@ -203,7 +200,6 @@ rule = [
 name = "🇭🇰 Ex香港"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-timeout = 500
 interval = 30
 tolerance = 50
 rule = [
@@ -250,7 +246,6 @@ rule = [
 name = "🇭🇰 ZHS香港"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-test-timeout = 500
 interval = 30
 tolerance = 50
 rule = [
