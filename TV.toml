@@ -69,10 +69,17 @@ name = "♻️ 自动选择"
 type = "url-test"
 url = "https://cp.cloudflare.com/generate_204"
 interval = 20
-tolerance = 100
+timeout = 500
+tolerance = 50
 rule = [
     "[]🇭🇰 Ex香港",
-    "[]🇭🇰 ZHS香港"
+    "[]🇭🇰 ZHS香港",
+    "[]🇭🇰 香港原生",
+    "[]🇭🇰 ZHS九龙",
+    "[]🇭🇰 ZHS铠甲",
+    "[]🇭🇰 ZHS契约",
+    "[]🇭🇰 TVB",
+    "[]🇭🇰 HKT",
 ]
 
 [[custom_groups]]
