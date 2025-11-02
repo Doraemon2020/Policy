@@ -79,13 +79,13 @@ rule = [
 name = "📺 ViuTV"
 type = "select"
 rule = [
+    "[]♻️ 自动选择",
     "[]🇭🇰 香港原生",
     "[]🇭🇰 ZHS九龙",
     "[]🇭🇰 ZHS铠甲",
     "[]🇭🇰 ZHS契约",
     "[]🇭🇰 Ex香港",
     "[]🇭🇰 ZHS香港",
-    "[]♻️ 自动选择",
     "[]DIRECT",
     "[]REJECT"
 ]
