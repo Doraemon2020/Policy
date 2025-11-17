@@ -63,7 +63,7 @@ type = "url-test"
 url = "https://cp.cloudflare.com/generate_204"
 interval = 20
 timeout = 500
-tolerance = 50
+tolerance = 100
 rule = [
     "[]🇭🇰 Ex香港",
     "[]🇭🇰 ZHS香港",
@@ -71,8 +71,6 @@ rule = [
     "[]🇭🇰 ZHS九龙",
     "[]🇭🇰 ZHS铠甲",
     "[]🇭🇰 ZHS契约",
-    "[]🇭🇰 TVB",
-    "[]🇭🇰 HKT",
 ]
 
 [[custom_groups]]
@@ -183,26 +181,6 @@ interval = 30
 tolerance = 50
 rule = [
     "(契约)"
-]
-
-[[custom_groups]]
-name = "🇭🇰 HKT"
-type = "url-test"
-url = "http://www.gstatic.com/generate_204"
-interval = 30
-tolerance = 50
-rule = [
-    "(HKT)"
-]
-
-[[custom_groups]]
-name = "🇭🇰 TVB"
-type = "url-test"
-url = "http://www.gstatic.com/generate_204"
-interval = 30
-tolerance = 50
-rule = [
-    "(TVB)"
 ]
 
 [[custom_groups]]
