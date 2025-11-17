@@ -148,7 +148,7 @@ url = "http://www.gstatic.com/generate_204"
 interval = 30
 tolerance = 50
 rule = [
-    "(HKT|九龙|铠甲|契约|TVB)"
+    "(九龙|铠甲|契约)"
 ]
 
 [[custom_groups]]
