@@ -2,6 +2,10 @@ DOMAIN,ads.cdn.tvb.com
 DOMAIN,t-mai.tvb.com
 DOMAIN,mai.tvb.com
 DOMAIN,adstvb.akamaized.net
+DOMIAN,googleads.g.doubleclick.net
+DOMIAN-SUFFIX,smartadserver.com
+DOMIAN-SUFFIX,adsolut.in
+DOMIAN-SUFFIX,adsrvr.org
 DOMIAN-SUFFIX,googleadservices.com
 DOMIAN-SUFFIX,admob.com
 DOMAIN-SUFFIX,pubads.g.doubleclick.net
