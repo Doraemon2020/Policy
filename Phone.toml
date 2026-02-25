@@ -152,11 +152,9 @@ rule = [
 
 [[custom_groups]]
 name = "👾 AI"
-type = "url-test"
+type = "fallback"
 url = "http://www.gstatic.com/generate_204"
 interval = 60
-timeout = 500
-tolerance = 100
 rule = [
     "[]🇹🇼 Ex台湾",
     "[]🇹🇼 ZHS台湾",
@@ -165,9 +163,7 @@ rule = [
     "[]🇯🇵 Ex日本",
     "[]🇯🇵 ZHS日本",
     "[]🇺🇸 Ex美国",
-    "[]🇺🇸 ZHS美国",
-    "[]🌍 环球网络",
-    "[]📌 全部节点"
+    "[]🇺🇸 ZHS美国"
 ]
 
 [[custom_groups]]
