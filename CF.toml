@@ -118,9 +118,7 @@ name = "♻️ 自动选择"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
 interval = 60
-rule = [
-    "[]⚡ 全部节点"
-]
+rule = [".*"]
 
 [[custom_groups]]
 name = "🇭🇰 香港"
