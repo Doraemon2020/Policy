@@ -1,1 +1,260 @@
+version = 1
 
+[custom]
+enable_rule_generator = true
+overwrite_original_rules = true
+add_emoji = true
+remove_old_emoji = true
+clash_rule_base = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Clash-Config.yml"
+
+##############################
+# 策略组
+##############################
+
+[[custom_groups]]
+name = "🌍 环球网络"
+type = "select"
+rule = [
+    "[]♻️ 自动选择",
+    "[]🇭🇰 香港节点",
+    "[]🇹🇼 台湾节点",
+    "[]🇸🇬 新加坡节点",
+    "[]🇯🇵 日本节点",
+    "[]🇺🇸 美国节点",
+    "[]🌐 其他地区",
+    "[]⚡ 全部节点",
+    "[]📌 手动选择",
+    "[]DIRECT",
+    "[]REJECT"
+]
+
+[[custom_groups]]
+name = "🎞 YouTube"
+type = "select"
+rule = [
+    "[]🌍 环球网络",
+    "[]♻️ 自动选择",
+    "[]🇭🇰 香港节点",
+    "[]🇹🇼 台湾节点",
+    "[]🇸🇬 新加坡节点",
+    "[]🇯🇵 日本节点",
+    "[]🇺🇸 美国节点",
+    "[]⚡ 全部节点",
+    "[]DIRECT"
+]
+
+[[custom_groups]]
+name = "📺 Netflix"
+type = "select"
+rule = [
+    "[]🇭🇰 香港节点",
+    "[]🇹🇼 台湾节点",
+    "[]🇸🇬 新加坡节点",
+    "[]🇯🇵 日本节点",
+    "[]🇺🇸 美国节点",
+    "[]🌍 环球网络",
+    "[]⚡ 全部节点",
+    "[]DIRECT"
+]
+
+[[custom_groups]]
+name = "📨 Telegram"
+type = "select"
+rule = [
+    "[]🌍 环球网络",
+    "[]♻️ 自动选择",
+    "[]⚡ 全部节点"
+]
+
+[[custom_groups]]
+name = "👾 AI"
+type = "fallback"
+url = "http://www.gstatic.com/generate_204"
+interval = 60
+rule = [
+    "[]🇹🇼 台湾节点",
+    "[]🇸🇬 新加坡节点",
+    "[]🇯🇵 日本节点",
+    "[]🇺🇸 美国节点"
+]
+
+[[custom_groups]]
+name = "🍎 苹果服务"
+type = "select"
+rule = [
+    "[]DIRECT",
+    "[]🌍 环球网络",
+    "[]♻️ 自动选择"
+]
+
+[[custom_groups]]
+name = "Ⓜ️ 微软服务"
+type = "select"
+rule = [
+    "[]DIRECT",
+    "[]🌍 环球网络",
+    "[]♻️ 自动选择"
+]
+
+[[custom_groups]]
+name = "📈 SpeedTest"
+type = "select"
+rule = [
+    "[]DIRECT",
+    "[]🌍 环球网络",
+    "[]⚡ 全部节点"
+]
+
+[[custom_groups]]
+name = "🛑 拦截连接"
+type = "select"
+rule = [
+    "[]REJECT",
+    "[]DIRECT"
+]
+
+[[custom_groups]]
+name = "🇭🇰 香港串流"
+type = "select"
+rule = [
+    "[]🇭🇰 香港节点",
+    "[]🌍 环球网络",
+    "[]⚡ 全部节点"
+]
+
+[[custom_groups]]
+name = "🏛 Gov"
+type = "select"
+rule = [
+    "[]DIRECT",
+    "[]🌍 环球网络"
+]
+
+##############################
+# 自动测速组
+##############################
+
+[[custom_groups]]
+name = "♻️ 自动选择"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 300
+tolerance = 100
+rule = [
+    "[]🇭🇰 香港节点",
+    "[]🇹🇼 台湾节点",
+    "[]🇸🇬 新加坡节点",
+    "[]🇯🇵 日本节点",
+    "[]🇺🇸 美国节点",
+    "[]🌐 其他地区"
+]
+
+##############################
+# 地区分组
+##############################
+
+[[custom_groups]]
+name = "🇭🇰 香港节点"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(?i)(hong kong|hk|hkt|hgc|wtt|cmhk|hkbn|香港|深港)"]
+
+[[custom_groups]]
+name = "🇹🇼 台湾节点"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(?i)(taiwan|tw|hinet|cht|台湾|台北|新北|高雄)"]
+
+[[custom_groups]]
+name = "🇸🇬 新加坡节点"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(?i)(singapore|sg|新加坡|狮城)"]
+
+[[custom_groups]]
+name = "🇯🇵 日本节点"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(?i)(japan|jp|tokyo|osaka|日本|东京|大阪)"]
+
+[[custom_groups]]
+name = "🇺🇸 美国节点"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(?i)(united states|america|us|los angeles|seattle|silicon valley|美国|洛杉矶|西雅图|硅谷)"]
+
+[[custom_groups]]
+name = "🌐 其他地区"
+type = "select"
+rule = [
+    "^((?!香港|hk|taiwan|tw|singapore|sg|japan|jp|united states|us|美国|日本|新加坡|台湾).)*$"
+]
+
+[[custom_groups]]
+name = "⚡ 全部节点"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["^.*$"]
+
+[[custom_groups]]
+name = "📌 手动选择"
+type = "select"
+rule = ["^.*$"]
+
+##############################
+# 规则集
+##############################
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Direct.list"
+
+[[rulesets]]
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"
+
+[[rulesets]]
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"
+
+[[rulesets]]
+group = "🎞 YouTube"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/YouTube.list"
+
+[[rulesets]]
+group = "📺 Netflix"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list"
+
+[[rulesets]]
+group = "📨 Telegram"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list"
+
+[[rulesets]]
+group = "🍎 苹果服务"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list"
+
+[[rulesets]]
+group = "Ⓜ️ 微软服务"
+r
