@@ -257,4 +257,32 @@ ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.
 
 [[rulesets]]
 group = "Ⓜ️ 微软服务"
-r
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Microsoft.list"
+
+[[rulesets]]
+group = "👾 AI"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/AI.list"
+
+[[rulesets]]
+group = "📈 SpeedTest"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list"
+
+[[rulesets]]
+group = "🇭🇰 香港串流"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-Media.list"
+
+[[rulesets]]
+group = "🏛 Gov"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/gov.list"
+
+[[rulesets]]
+group = "🌍 环球网络"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Extra.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "[]GEOIP,CN"
+
+[[rulesets]]
+group = "🌍 环球网络"
+ruleset = "[]MATCH"
