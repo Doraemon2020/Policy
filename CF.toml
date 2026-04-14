@@ -1,0 +1,216 @@
+Version = 1
+
+[custom]
+enable_rule_generator = true
+overwrite_original_rules = true
+add_emoji = true
+remove_old_emoji = true
+clash_rule_base = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/heads/master/Rules/Clash-Config.yml"
+
+# ================= 代理分組設置 =================
+
+[[custom_groups]]
+name = "🌍 环球网络"
+type = "select"
+rule = [
+    "[]♻️ 自动选择",
+    "[]🇭🇰 香港",
+    "[]🇹🇼 台湾",
+    "[]🇸🇬 星国",
+    "[]🇯🇵 日本",
+    "[]🇺🇸 美国",
+    "[]⚡ 全部节点",
+    "[]📌 全部节点",
+    "[]DIRECT"
+]
+
+[[custom_groups]]
+name = "🎞 YouTube"
+type = "select"
+rule = [
+    "[]🌍 环球网络",
+    "[]♻️ 自动选择",
+    "[]🇭🇰 香港",
+    "[]🇹🇼 台湾",
+    "[]🇸🇬 星国",
+    "[]🇯🇵 日本",
+    "[]🇺🇸 美国",
+    "[]⚡ 全部节点",
+    "[]📌 全部节点"
+]
+
+[[custom_groups]]
+name = "📺 Netflix"
+type = "select"
+rule = [
+    "[]🌍 环球网络",
+    "[]♻️ 自动选择",
+    "[]🇭🇰 香港",
+    "[]🇹🇼 台湾",
+    "[]🇸🇬 星国",
+    "[]🇯🇵 日本",
+    "[]🇺🇸 美国",
+    "[]⚡ 全部节点",
+    "[]📌 全部节点"
+]
+
+[[custom_groups]]
+name = "👾 AI"
+type = "select"
+rule = [
+    "[]🇺🇸 美国",
+    "[]🇯🇵 日本",
+    "[]🇸🇬 星国",
+    "[]🌍 环球网络",
+    "[]♻️ 自动选择"
+]
+
+[[custom_groups]]
+name = "📨 Telegram"
+type = "select"
+rule = [
+    "[]🌍 环球网络",
+    "[]♻️ 自动选择",
+    "[]🇭🇰 香港",
+    "[]🇸🇬 星国",
+    "[]🇺🇸 美国"
+]
+
+[[custom_groups]]
+name = "🍎 苹果服务"
+type = "select"
+rule = [
+    "[]DIRECT",
+    "[]🌍 环球网络",
+    "[]♻️ 自动选择"
+]
+
+[[custom_groups]]
+name = "Ⓜ️ 微软服务"
+type = "select"
+rule = [
+    "[]DIRECT",
+    "[]🌍 环球网络",
+    "[]♻️ 自动选择"
+]
+
+[[custom_groups]]
+name = "🛑 拦截连接"
+type = "select"
+rule = [
+    "[]REJECT",
+    "[]DIRECT"
+]
+
+[[custom_groups]]
+name = "📈 SpeedTest"
+type = "select"
+rule = [
+    "[]DIRECT",
+    "[]🌍 环球网络",
+    "[]📌 全部节点"
+]
+
+# ================= 基礎節點篩選 =================
+
+[[custom_groups]]
+name = "♻️ 自动选择"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 60
+rule = [
+    "[]⚡ 全部节点"
+]
+
+[[custom_groups]]
+name = "🇭🇰 香港"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(HK|香港|HongKong)"]
+
+[[custom_groups]]
+name = "🇹🇼 台湾"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(TW|台湾|Taiwan)"]
+
+[[custom_groups]]
+name = "🇸🇬 星国"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(SG|新加坡|Singapore)"]
+
+[[custom_groups]]
+name = "🇺🇸 美国"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(US|美国|United States)"]
+
+[[custom_groups]]
+name = "🇯🇵 日本"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["(JP|日本|Japan)"]
+
+[[custom_groups]]
+name = "⚡ 全部节点"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = ["^((?!中国|回国|游戏|限速|结算|流量).)*$"]
+
+[[custom_groups]]
+name = "📌 全部节点"
+type = "select"
+rule = ["^((?!中国|回国|游戏|限速|结算|流量).)*$"]
+
+# ================= 規則集設置 =================
+
+[[rulesets]]
+group = "🛑 拦截连接"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list"
+
+[[rulesets]]
+group = "👾 AI"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/OpenAI.list"
+
+[[rulesets]]
+group = "🎞 YouTube"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/YouTube.list"
+
+[[rulesets]]
+group = "📺 Netflix"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Netflix.list"
+
+[[rulesets]]
+group = "📨 Telegram"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Telegram.list"
+
+[[rulesets]]
+group = "🍎 苹果服务"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list"
+
+[[rulesets]]
+group = "Ⓜ️ 微软服务"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Microsoft.list"
+
+[[rulesets]]
+group = "📈 SpeedTest"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Speedtest.list"
+
+[[rulesets]]
+group = "🌍 环球网络"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyLite.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list"
