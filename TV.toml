@@ -278,9 +278,10 @@ rule = [
 name = "☁️ CF免费"
 type = "url-test"
 url = "http://www.gstatic.com/generate_204"
-interval = 600
+interval = 60
+tolerance = 200
 rule = [
-    "(?=.*(免费|HKG)(?!.*(游戏))).*"
+    "(免费|HKG)"
 ]
 # 设置规则标志位
 [[rulesets]]
