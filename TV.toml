@@ -15,6 +15,7 @@ rule = [
     "[]♻️ 自动选择",
     "[]🇭🇰 Ex香港",
     "[]🇭🇰 ZHS香港",
+    "[]☁️ CF免费"
     "[]⚡ 全部节点",
     "[]DIRECT",
     "[]REJECT"
@@ -273,6 +274,14 @@ rule = [
     "(?=.*(JP)(?!.*(游戏))).*"
 ]
 
+[[custom_groups]]
+name = "☁️ CF免费"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 600
+rule = [
+    "(?=.*(免费|HKG)(?!.*(游戏))).*"
+]
 # 设置规则标志位
 [[rulesets]]
 group = "BL"
