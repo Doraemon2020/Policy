@@ -30,6 +30,7 @@ rule = [
     "[]🇭🇰 ZHS九龙",
     "[]🇭🇰 ZHS铠甲",
     "[]🇭🇰 ZHS契约",
+    "[]☁️ CF免费",
     "[]📌 全部节点",
     "[]DIRECT",
     "[]REJECT"
@@ -83,6 +84,8 @@ rule = [
     "[]🇭🇰 ZHS契约",
     "[]🇭🇰 Ex香港",
     "[]🇭🇰 ZHS香港",
+    "[]☁️ CF免费",
+    "[]📌 全部节点",
     "[]DIRECT",
     "[]REJECT"
 ]
@@ -123,6 +126,16 @@ type = "select"
 rule = [
     "[]REJECT",
     "[]DIRECT"
+]
+
+[[custom_groups]]
+name = "☁️ CF免费"
+type = "url-test"
+url = "http://www.gstatic.com/generate_204"
+interval = 60
+tolerance = 200
+rule = [
+    "(免费|HKG)"
 ]
 
 [[custom_groups]]
@@ -274,15 +287,6 @@ rule = [
     "(?=.*(JP)(?!.*(游戏))).*"
 ]
 
-[[custom_groups]]
-name = "☁️ CF免费"
-type = "url-test"
-url = "http://www.gstatic.com/generate_204"
-interval = 60
-tolerance = 200
-rule = [
-    "(免费|HKG)"
-]
 # 设置规则标志位
 [[rulesets]]
 group = "BL"
