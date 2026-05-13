@@ -192,11 +192,6 @@ name = "🇭🇰 香港串流验证"
 type = "select"
 rule = [
     "[]🇭🇰 香港原生",
-    "[]🇭🇰 ZHS九龙",
-    "[]🇭🇰 ZHS铠甲",
-    "[]🇭🇰 ZHS契约",
-    "[]🇭🇰 TVB",
-    "[]🇭🇰 HKT",
     "[]📌 全部节点"
 ]
 
@@ -331,51 +326,6 @@ url = "http://www.gstatic.com/generate_204"
 interval = 600
 rule = [
     "(?=.*(JP)(?!.*(游戏))).*"
-]
-
-[[custom_groups]]
-name = "🇭🇰 ZHS九龙"
-type = "url-test"
-url = "http://www.gstatic.com/generate_204"
-interval = 600
-rule = [
-    "(九龙)"
-]
-
-[[custom_groups]]
-name = "🇭🇰 ZHS铠甲"
-type = "url-test"
-url = "http://www.gstatic.com/generate_204"
-interval = 600
-rule = [
-    "(铠甲)"
-]
-
-[[custom_groups]]
-name = "🇭🇰 ZHS契约"
-type = "url-test"
-url = "http://www.gstatic.com/generate_204"
-interval = 600
-rule = [
-    "(契约)"
-]
-
-[[custom_groups]]
-name = "🇭🇰 HKT"
-type = "url-test"
-url = "http://www.gstatic.com/generate_204"
-interval = 600
-rule = [
-    "(HKT)"
-]
-
-[[custom_groups]]
-name = "🇭🇰 TVB"
-type = "url-test"
-url = "http://www.gstatic.com/generate_204"
-interval = 600
-rule = [
-    "(TVB)"
 ]
 
 [[custom_groups]]
