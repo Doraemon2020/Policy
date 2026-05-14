@@ -33,6 +33,6 @@ DOMAIN-SUFFIX,scdn.co
 DOMAIN-SUFFIX,spotify.com
 DOMAIN-SUFFIX,spoti.fi
 # > FuTu
-DOMAIN-SUFFIX,futufin.com
-DOMAIN-SUFFIX,futunn.com
+#DOMAIN-SUFFIX,futufin.com
+#DOMAIN-SUFFIX,futunn.com
 
