@@ -1,7 +1,7 @@
 DOMAIN-SUFFIX,chatgpt.com
 DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,openai.com
-DOMAIN-SUFFIX,gemini.google.com
+#DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-KEYWORD,claude
 DOMAIN-KEYWORD,anthropic
 #DOMAIN-SUFFIX,mtalk.google.com
