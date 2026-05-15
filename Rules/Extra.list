@@ -1,3 +1,4 @@
-DOMAIN,futunn.com
-WILDCARD,*.futunn.com,DIRECT
+DOMAIN,www.futunn.com
+DOMAIN-SUFFIX,futunn.com,DIRECT
+#WILDCARD,*.futunn.com,DIRECT
 DOMAIN-SUFFIX,googleapis.cn
