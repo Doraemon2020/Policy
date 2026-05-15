@@ -4,5 +4,5 @@ DOMAIN-SUFFIX,openai.com
 DOMAIN-SUFFIX,gemini.google.com
 DOMAIN-KEYWORD,claude
 DOMAIN-KEYWORD,anthropic
-DOMAIN-SUFFIX,mtalk.google.com
-DOMAIN-SUFFIX,googleapis.com
+#DOMAIN-SUFFIX,mtalk.google.com
+#DOMAIN-SUFFIX,googleapis.com
