@@ -9,7 +9,7 @@ clash_rule_base = "https://raw.githubusercontent.com/Doraemon2020/Policy/refs/he
 
 # 设置分组标志位
 [[custom_groups]]
-name = "🌍 环球网络"
+name = "🌍 GFW"
 type = "select"
 rule = [
     "[]♻️ 自动选择",
@@ -28,6 +28,18 @@ rule = [
     "[]DIRECT",
     "[]REJECT"
 ]
+
+[[custom_groups]]
+name = "🐟 漏网之鱼"
+type = "select"
+rule = [
+    "[]DIRECT",
+    "[]🌍 GFW",
+    "[]⚡ 全部节点",
+    "[]📌 全部节点",
+    "[]REJECT"
+]
+
 
 [[custom_groups]]
 name = "🎞 YouTube"
@@ -65,7 +77,7 @@ rule = [
     "[]🇯🇵 ZHS日本",
     "[]🇺🇸 Ex美国",
     "[]🇺🇸 ZHS美国",
-    "[]🌍 环球网络",
+    "[]🌍 GFW",
     "[]⚡ 全部节点",
     "[]📌 全部节点",
     "[]DIRECT",
@@ -84,7 +96,7 @@ rule = [
 name = "📨 Telegram"
 type = "select"
 rule = [
-    "[]🌍 环球网络",
+    "[]🌍 GFW",
     "[]♻️ 自动选择",
     "[]⚡ 全部节点",
     "[]📌 全部节点",
@@ -104,7 +116,7 @@ rule = [
 name = "🍎 苹果服务"
 type = "select"
 rule = [
-    "[]🌍 环球网络",
+    "[]🌍 GFW",
     "[]♻️ 自动选择",
     "[]⚡ 全部节点",
     "[]📌 全部节点",
@@ -124,7 +136,7 @@ rule = [
 name = "Ⓜ️ 微软服务"
 type = "select"
 rule = [
-    "[]🌍 环球网络",
+    "[]🌍 GFW",
     "[]♻️ 自动选择",
     "[]⚡ 全部节点",
     "[]📌 全部节点",
@@ -145,7 +157,7 @@ name = "📈 SpeedTest"
 type = "select"
 rule = [
     "[]DIRECT",
-    "[]🌍 环球网络",
+    "[]🌍 GFW",
     "[]📺 Netflix",
     "[]📌 全部节点"
 ]
@@ -199,7 +211,7 @@ rule = [
 name = "🇭🇰 EdgeWare"
 type = "select"
 rule = [
-    "[]🌍 环球网络",
+    "[]🌍 GFW",
     "[]⚡ 全部节点",
     "[]📌 全部节点",
     "[]♻️ 自动选择",
@@ -345,7 +357,7 @@ rule = [
 # 设置规则标志位
 
 [[rulesets]]
-group = "🌍 环球网络"
+group = "🌍 GFW"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Extra.list"
 
 [[rulesets]]
@@ -429,11 +441,15 @@ group = "🏛 Gov"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/gov.list"
 
 [[rulesets]]
+group = "🌍 GFW"
+ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list"
+
+[[rulesets]]
 group = "DIRECT"
 ruleset = "[]GEOIP,CN"
 
 [[rulesets]]
-group = "🌍 环球网络"
+group = "🐟 漏网之鱼"
 ruleset = "[]MATCH"
 # 设置规则标志位
 
