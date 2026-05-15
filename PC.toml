@@ -399,6 +399,14 @@ rule = [
 # 设置规则标志位
 
 [[rulesets]]
+group = "🌍 环球网络"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Extra.list"
+
+[[rulesets]]
+group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Direct.list"
+
+[[rulesets]]
 group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
 
@@ -421,10 +429,6 @@ ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaC
 [[rulesets]]
 group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list"
-
-[[rulesets]]
-group = "DIRECT"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Direct.list"
 
 [[rulesets]]
 group = "🛑 拦截连接"
@@ -481,10 +485,6 @@ ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Mi
 [[rulesets]]
 group = "📈 SpeedTest"
 ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list"
-
-[[rulesets]]
-group = "🌍 环球网络"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Extra.list"
 
 [[rulesets]]
 group = "DIRECT"
