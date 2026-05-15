@@ -1,2 +1,3 @@
-#DOMAIN-SUFFIX,futunn.com
+DOMAIN-SUFFIX,api.futunn.com,DIRECT
+DOMAIN-SUFFIX,client.futunn.com,DIRECT
 DOMAIN-SUFFIX,googleapis.cn
