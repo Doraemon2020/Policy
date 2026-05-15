@@ -350,6 +350,10 @@ ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Ex
 
 [[rulesets]]
 group = "DIRECT"
+ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Direct.list"
+
+[[rulesets]]
+group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list"
 
 [[rulesets]]
@@ -367,10 +371,6 @@ ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaC
 [[rulesets]]
 group = "DIRECT"
 ruleset = "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list"
-
-[[rulesets]]
-group = "DIRECT"
-ruleset = "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Direct.list"
 
 [[rulesets]]
 group = "🛑 拦截连接"
