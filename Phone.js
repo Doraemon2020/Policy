@@ -3,23 +3,105 @@ function main(config) {
     if (!config.proxies) config.proxies = [];
 
     // =========================================
-    // 1. 節點名稱 Emoji 處理 (擷取自原配置)
+    // 1. 節點名稱 Emoji 處理 (已修正 JS 相容性問題)
     // =========================================
     const emojiRules = [
+        { reg: /Bandwidth|pire|流量|时间|应急|过期/i, emoji: "🏳️‍🌈" },
         { reg: /\bHK[G]?\b|Hong.*?Kong|\bHKT\b|\bHKBN\b|\bHGC\b|\bWTT\b|\bCMI\b|[^-]港/i, emoji: "🇭🇰" },
         { reg: /\bTW[N]?\b|Taiwan|新北|彰化|\bCHT\b|台湾|[^-]台|\bHINET\b/i, emoji: "🇹🇼" },
         { reg: /\bSG[P]?\b|Singapore|新加坡|狮城|[^-]新/i, emoji: "🇸🇬" },
         { reg: /\bJP[N]?\b|Japan|Tokyo|Osaka|Saitama|日本|东京|大阪|埼玉|[^-]日/i, emoji: "🇯🇵" },
         { reg: /\bK[O]?R\b|Korea|首尔|韩|韓/i, emoji: "🇰🇷" },
         { reg: /\bUS[A]?\b|America|United.*?States|美国|[^-]美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥/i, emoji: "🇺🇸" },
-        { reg: /Bandwidth|pire|流量|时间|应急|过期/i, emoji: "🏳️‍🌈" },
-        { reg: /\bC[H]?N\b|China|back|回国|中国[^-]|江苏[^-]|北京[^-]|上海[^-]|广州[^-]|深圳[^-]|杭州[^-]/i, emoji: "🇨🇳" },
-        { reg: /(?i:\bUK\b|\bGB[R]?\b|England|United.*?Kingdom|London|英国|[^-]英|伦敦)/i, emoji: "🇬🇧" }
+        { reg: /Ascension|阿森松/i, emoji: "🇦🇨" },
+        { reg: /\bUAE\b|Dubai|阿联酋|迪拜/i, emoji: "🇦🇪" },
+        { reg: /阿尔巴尼亚|Albania/i, emoji: "🇦🇱" },
+        { reg: /Argentina|阿根廷/i, emoji: "🇦🇷" },
+        { reg: /Austria|Vienna|奥地利|维也纳/i, emoji: "🇦🇹" },
+        { reg: /\bAU[S]?\b|Australia|Sydney|澳大利亚|澳洲|悉尼/i, emoji: "🇦🇺" },
+        { reg: /阿塞拜疆|Azerbaijan/i, emoji: "🇦🇿" },
+        { reg: /波黑共和国|波士尼亚与赫塞哥维纳|Bosnia|Herzegovina/i, emoji: "🇧🇦" },
+        { reg: /Belgium|比利时/i, emoji: "🇧🇪" },
+        { reg: /保加利亚|Bulgaria/i, emoji: "🇧🇬" },
+        { reg: /Brazil|Paulo|巴西|圣保罗/i, emoji: "🇧🇷" },
+        { reg: /\bCA[N]?\b|Canada|Toronto|Montreal|Vancouver|加拿大|蒙特利尔|温哥华|楓葉|枫叶/i, emoji: "🇨🇦" },
+        { reg: /Switzerland|Zurich|瑞士|苏黎世/i, emoji: "🇨🇭" },
+        { reg: /智利|Chile/i, emoji: "🇨🇱" },
+        { reg: /Colombia|哥伦比亚/i, emoji: "🇨🇴" },
+        { reg: /Costa Rica|哥斯达黎加/i, emoji: "🇨🇷" },
+        { reg: /塞浦路斯|Cyprus/i, emoji: "🇨🇾" },
+        { reg: /Czech|捷克/i, emoji: "🇨🇿" },
+        { reg: /\bDE[U]?\b|Germany|法兰克福|德(国|意志)|中德|^德$/i, emoji: "🇩🇪" },
+        { reg: /\bD[N]?K\b|Denmark|丹麦/i, emoji: "🇩🇰" },
+        { reg: /爱沙尼亚|Estonia/i, emoji: "🇪🇪" },
+        { reg: /埃及|Egypt/i, emoji: "🇪🇬" },
+        { reg: /\bES[P]?\b|Spain|西班牙/i, emoji: "🇪🇸" },
+        { reg: /Europe|欧洲/i, emoji: "🇪🇺" },
+        { reg: /Finland|Helsinki|芬兰|赫尔辛基/i, emoji: "🇫🇮" },
+        { reg: /\bFR[A]?\b|France|Paris|法国|巴黎/i, emoji: "🇫🇷" },
+        { reg: /\bUK\b|\bGB[R]?\b|England|United.*?Kingdom|London|英国|[^-]英|伦敦/i, emoji: "🇬🇧" },
+        { reg: /希腊|Greece/i, emoji: "🇬🇷" },
+        { reg: /格鲁吉亚|Georgia/i, emoji: "🇬🇪" },
+        { reg: /克罗地亚|Croatia/i, emoji: "🇭🇷" },
+        { reg: /Hungary|匈牙利/i, emoji: "🇭🇺" },
+        { reg: /Indonesia|Jakarta|印尼|印度尼西亚|雅加达/i, emoji: "🇮🇩" },
+        { reg: /Ireland|Dublin|爱尔兰|都柏林/i, emoji: "🇮🇪" },
+        { reg: /Israel|以色列/i, emoji: "🇮🇱" },
+        { reg: /马恩岛|Mann/i, emoji: "🇮🇲" },
+        { reg: /\bIN[D]?\b|India|Mumbai|印度|孟买|加尔各答|贾坎德|泰米尔纳德/i, emoji: "🇮🇳" },
+        { reg: /伊朗|Iran/i, emoji: "🇮🇷" },
+        { reg: /\bIS[L]?\b|Iceland|冰岛/i, emoji: "🇮🇸" },
+        { reg: /Italy|Milan|意大利|米兰/i, emoji: "🇮🇹" },
+        { reg: /约旦|Jordan/i, emoji: "🇯🇴" },
+        { reg: /肯尼亚|Kenya/i, emoji: "🇰🇪" },
+        { reg: /吉尔吉斯斯坦|Kyrgyzstan/i, emoji: "🇰🇬" },
+        { reg: /柬埔寨|Cambodia/i, emoji: "🇰🇭" },
+        { reg: /North.*?Korea|朝鲜/i, emoji: "🇰🇵" },
+        { reg: /哈萨克斯坦|Kazakhstan/i, emoji: "🇰🇿" },
+        { reg: /立陶宛|Lietuvos/i, emoji: "🇱🇹" },
+        { reg: /卢森堡|Luxemburg|Luxembourg/i, emoji: "🇱🇺" },
+        { reg: /拉脱维亚|Latvia/i, emoji: "🇱🇻" },
+        { reg: /Moldova|摩尔多瓦/i, emoji: "🇲🇩" },
+        { reg: /北马其顿|Macedonia/i, emoji: "🇲慢" },
+        { reg: /蒙古|Монголулс|Mongolia/i, emoji: "🇲🇳" },
+        { reg: /Macao|澳门|\bCTM\b/i, emoji: "🇲🇴" },
+        { reg: /墨西哥|Mico/i, emoji: "🇲🇽" },
+        { reg: /Malaysia|马来|MY/i, emoji: "🇲🇾" },
+        { reg: /尼日利亚|Nigeria/i, emoji: "🇳🇬" },
+        { reg: /\bNL[D]?\b|Netherlands|荷兰|阿姆斯特丹/i, emoji: "🇳🇱" },
+        { reg: /挪威|Norway/i, emoji: "🇳🇴" },
+        { reg: /新西兰|纽西兰|New Zealand/i, emoji: "🇳🇿" },
+        { reg: /Philippines|菲律宾/i, emoji: "🇵🇭" },
+        { reg: /Pakistan|巴基斯坦/i, emoji: "🇵🇰" },
+        { reg: /\bP[O]?L\b|Poland|波兰/i, emoji: "🇵🇱" },
+        { reg: /巴拿马|Panama/i, emoji: "🇵🇦" },
+        { reg: /秘鲁|Peru/i, emoji: "🇵🇪" },
+        { reg: /葡萄牙|Portugal/i, emoji: "🇵🇹" },
+        { reg: /Romania|罗马尼亚/i, emoji: "🇷🇴" },
+        { reg: /塞尔维亚|Serbia/i, emoji: "🇷🇸" },
+        { reg: /\bRU[S]?\b|Russia|Moscow|Petersburg|Siberia|伯力|莫斯科|圣彼得堡|西伯利亚|新西伯利亚|哈巴罗夫斯克|俄罗斯|[^-]俄/i, emoji: "🇷🇺" },
+        { reg: /Arabia|沙特/i, emoji: "🇸🇦" },
+        { reg: /Sweden|瑞典/i, emoji: "🇸🇪" },
+        { reg: /斯洛文尼亚|Slovenia/i, emoji: "🇸🇮" },
+        { reg: /斯洛伐克|Slovensko/i, emoji: "🇸🇰" },
+        { reg: /Thailand|泰国|曼谷/i, emoji: "🇹🇭" },
+        { reg: /突尼斯|Tunisia/i, emoji: "🇹🇳" },
+        { reg: /Turkey|TR|土耳其|伊斯坦布尔/i, emoji: "🇹🇷" },
+        { reg: /乌拉圭|Uruguay/i, emoji: "🇺🇾" },
+        { reg: /Vietnam|越南/i, emoji: "🇻🇳" },
+        { reg: /Africa|南非/i, emoji: "🇿🇦" },
+        { reg: /Ukraine|UA|乌克兰/i, emoji: "🇺🇦" },
+        { reg: /Puerto.*?Rico|波多黎各/i, emoji: "🇵🇷" },
+        { reg: /Ecuador|厄瓜多尔/i, emoji: "🇪🇨" },
+        { reg: /Venezuela|委内瑞拉/i, emoji: "🇻🇪" },
+        { reg: /Morocco|摩洛哥/i, emoji: "🇲🇦" },
+        { reg: /Nepal|尼泊尔/i, emoji: "🇳🇵" },
+        { reg: /Bengal|孟加拉/i, emoji: "🇧🇩" },
+        { reg: /\bC[H]?N\b|China|back|回国|中国[^-]|江苏[^-]|北京[^-]|上海[^-]|广州[^-]|深圳[^-]|杭州[^-]|常州[^-]|徐州[^-]|青岛[^-]|宁波[^-]|镇江[^-]|成都[^-]|河北[^-]|山西[^-]|辽宁[^-]|吉林[^-]|黑龙江[^-]|浙江[^-]|安徽[^-]|福建[^-]|江西[^-]|山东[^-]|河南[^-]|湖北[^-]|湖南[^-]|广东[^-]|海南[^-]|四川[^-]|贵州[^-]|云南[^-]|陕西[^-]|甘肃[^-]|青海[^-]|内蒙古[^-]|广西[^-]|西藏[^-]|宁夏[^-]|新疆[^-]/i, emoji: "🇨🇳" }
     ];
 
     config.proxies.forEach(proxy => {
         for (let rule of emojiRules) {
-            // 如果名稱匹配且尚未包含該 Emoji，則自動添加
             if (rule.reg.test(proxy.name) && !proxy.name.includes(rule.emoji)) {
                 proxy.name = rule.emoji + " " + proxy.name;
                 break; 
@@ -27,10 +109,8 @@ function main(config) {
         }
     });
 
-    // 獲取重新命名後的所有節點名稱
     const proxyNames = config.proxies.map(p => p.name);
 
-    // 輔助函數：透過正則表達式篩選節點，若無匹配則回退至 DIRECT 以防報錯
     function filterNodes(regexStr) {
         try {
             const regex = new RegExp(regexStr);
@@ -121,7 +201,7 @@ function main(config) {
             type: "select",
             proxies: ["🇭🇰 ZHS香港", "🇹🇼 ZHS台湾", "🇸🇬 ZHS星国", "🇯🇵 ZHS日本", "🇺🇸 ZHS美国", "📌 全部节点", "DIRECT"]
         },
-        // --- 以下為正則動態篩選的區域策略組 ---
+        // --- 區域動態篩選策略組 ---
         {
             name: "🇭🇰 香港原生",
             type: "url-test",
