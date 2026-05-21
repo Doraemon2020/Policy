@@ -1,6 +1,5 @@
 DOMAIN-SUFFIX,ulivetv.net
 # > myTV SUPER
-USER-AGENT,mytv*
 DOMAIN-SUFFIX,mytvsuper.com
 DOMAIN-SUFFIX,omtrdc.net
 # > ViuTV
@@ -9,7 +8,6 @@ DOMAIN-SUFFIX,viu.com
 DOMAIN-SUFFIX,now.com
 DOMAIN-SUFFIX,nowe.com
 # > 有线电视
-USER-AGENT,i-cable*
 DOMAIN-SUFFIX,hoy.tv
 DOMAIN-SUFFIX,utvhk.com
 DOMAIN-SUFFIX,hkott.hk
@@ -23,11 +21,8 @@ DOMAIN-SUFFIX,kkbox.com
 DOMAIN-SUFFIX,kkbox.com.tw
 DOMAIN-SUFFIX,kfs.io
 # > JOOX
-USER-AGENT,WeMusic*
-USER-AGENT,JOOX*
 DOMAIN-SUFFIX,joox.com
 # > Spotify
-USER-AGENT,Spotify*
 DOMAIN-SUFFIX,pscdn.co
 DOMAIN-SUFFIX,scdn.co
 DOMAIN-SUFFIX,spotify.com
