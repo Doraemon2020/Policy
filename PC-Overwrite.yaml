@@ -1,6 +1,3 @@
-# PC-Overwrite.yaml
-# 保留原 emoji 分组名；修复 YAML 层级；加入外部控制与 Web UI 自动下载
-
 mixed-port: 7890
 allow-lan: true
 bind-address: '*'
@@ -15,8 +12,6 @@ external-controller-cors:
   allow-origins:
     - '*'
   allow-private-network: true
-
-  
 dns:
   enable: true
   listen: 0.0.0.0:1053
