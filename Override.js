@@ -1,31 +1,43 @@
+// PC-Overwrite-FlClash.js // ClashMi / FlClash / Mihomo 覆写脚本 // FlClash 兼容版：不依赖 include-all-proxies，改为 JS 动态读取 config.proxies 里的真实节点名。
+
 function main(config) { config = config || {};
 
 const TEST_URL = "http://www.gstatic.com/generate_204"; const FAST_INTERVAL = 300; const NORMAL_INTERVAL = 600; const TOLERANCE = 100; const TIMEOUT = 500;
 
-// 建议自行改成复杂一点的密码，尤其是 external-controller 绑定 0.0.0.0 时。 const CONTROLLER_SECRET = "change-me-9090";
+// 外部控制密码；需要修改时，直接改下面 overwrite.secret 的字符串。
 
-const allFilter = "^((?!中国|回国|游戏|限速|结算|流量).)$"; const pinAllFilter = "^((?!流量).)$";
+const proxies = Array.isArray(config.proxies) ? config.proxies : []; const proxyNames = proxies .map((proxy) => proxy && proxy.name) .filter((name) => typeof name === "string" && name.length > 0);
+
+function matchNodes(regex) { return proxyNames.filter((name) => regex.test(name)); }
+
+function excludeNodes(regex) { return proxyNames.filter((name) => !regex.test(name)); }
+
+function safeNodes(nodes) { return nodes.length > 0 ? nodes : ["DIRECT"]; }
+
+const allNodes = safeNodes(excludeNodes(/中国|回国|游戏|限速|结算|流量/i)); const pinAllNodes = safeNodes(excludeNodes(/流量/i));
+
+const hkNativeNodes = safeNodes(matchNodes(/HKT|九龙|铠甲|契约|TVB/i)); const exHkNodes = safeNodes(proxyNames.filter((name) => /香港/i.test(name) && !/深圳|游戏|流量/i.test(name))); const exTwNodes = safeNodes(proxyNames.filter((name) => /台湾/i.test(name) && !/动画|游戏|流量/i.test(name))); const exSgNodes = safeNodes(proxyNames.filter((name) => /新加坡/i.test(name) && !/更新|游戏|流量/i.test(name))); const exJpNodes = safeNodes(proxyNames.filter((name) => /日本/i.test(name) && !/游戏|流量/i.test(name))); const exUsNodes = safeNodes(proxyNames.filter((name) => /美国/i.test(name) && !/游戏|流量/i.test(name)));
+
+const zhsHkNodes = safeNodes(proxyNames.filter((name) => /HK/i.test(name) && !/香港|游戏|流量/i.test(name))); const zhsTwNodes = safeNodes(proxyNames.filter((name) => /TW/i.test(name) && !/游戏|流量/i.test(name))); const zhsSgNodes = safeNodes(proxyNames.filter((name) => /SG/i.test(name) && !/游戏|流量/i.test(name))); const zhsJpNodes = safeNodes(proxyNames.filter((name) => /JP/i.test(name) && !/游戏|流量/i.test(name))); const zhsUsNodes = safeNodes(proxyNames.filter((name) => /US/i.test(name) && !/游戏|流量/i.test(name)));
+
+function ruleProvider(url, path) { return { type: "http", behavior: "classical", format: "text", url, path, interval: 86400 }; }
+
+function selectGroup(name, proxies) { return { name, type: "select", proxies }; }
+
+function urlTestGroup(name, proxies, interval = NORMAL_INTERVAL) { return { name, type: "url-test", url: TEST_URL, interval, tolerance: TOLERANCE, timeout: TIMEOUT, lazy: true, proxies }; }
 
 const regionGroups = [ "🇭🇰 Ex香港", "🇭🇰 ZHS香港", "🇹🇼 Ex台湾", "🇹🇼 ZHS台湾", "🇸🇬 Ex星国", "🇸🇬 ZHS星国", "🇯🇵 Ex日本", "🇯🇵 ZHS日本", "🇺🇸 Ex美国", "🇺🇸 ZHS美国" ];
 
-const mainProxyList = [ "🌍 GFW", "♻️ 自动选择", ...regionGroups, "⚡ 全部节点", "📌 全部节点", "DIRECT", "REJECT" ];
-
-const mediaProxyList = [ "🌍 GFW", "♻️ 自动选择", ...regionGroups, "⚡ 全部节点", "📌 全部节点", "DIRECT", "REJECT" ];
+const commonProxyList = [ "🌍 GFW", "♻️ 自动选择", ...regionGroups, "⚡ 全部节点", "📌 全部节点", "DIRECT", "REJECT" ];
 
 const serviceProxyList = [ "🌍 GFW", "♻️ 自动选择", "⚡ 全部节点", "📌 全部节点", ...regionGroups ];
 
 const aiProxyList = [ "🇹🇼 Ex台湾", "🇹🇼 ZHS台湾", "🇸🇬 Ex星国", "🇸🇬 ZHS星国", "🇯🇵 Ex日本", "🇯🇵 ZHS日本", "🇺🇸 Ex美国", "🇺🇸 ZHS美国", "🌍 GFW", "📌 全部节点" ];
 
-function ruleProvider(name, url, path) { return { type: "http", behavior: "classical", format: "text", url, path, interval: 86400 }; }
-
-function selectGroup(name, proxies) { return { name, type: "select", proxies }; }
-
-function urlTestGroup(name, filter, interval = NORMAL_INTERVAL, tolerance = TOLERANCE) { return { name, type: "url-test", url: TEST_URL, interval, tolerance, timeout: TIMEOUT, lazy: true, "include-all-proxies": true, filter }; }
-
 const overwrite = { "mixed-port": 7890, "allow-lan": true, "bind-address": "*", mode: "rule", "log-level": "info", ipv6: false, "tcp-concurrent": true,
 
 "external-controller": "0.0.0.0:9090",
-secret: 258123,
+secret: "change-me-9090",
 "external-ui": "ui",
 "external-ui-url": "https://fastly.jsdelivr.net/gh/MetaCubeX/metacubexd@gh-pages.zip",
 "external-controller-cors": {
@@ -112,29 +124,29 @@ tun: {
 },
 
 "rule-providers": {
-  lan: ruleProvider("lan", "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list", "./ruleset/lan.list"),
-  unban: ruleProvider("unban", "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list", "./ruleset/unban.list"),
-  china_ip: ruleProvider("china_ip", "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list", "./ruleset/china_ip.list"),
-  china_domain: ruleProvider("china_domain", "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list", "./ruleset/china_domain.list"),
-  china_company: ruleProvider("china_company", "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list", "./ruleset/china_company.list"),
-  download: ruleProvider("download", "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list", "./ruleset/download.list"),
-  direct_list: ruleProvider("direct_list", "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Direct.list", "./ruleset/direct_list.list"),
-  ban: ruleProvider("ban", "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list", "./ruleset/ban.list"),
-  ban_china: ruleProvider("ban_china", "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list", "./ruleset/ban_china.list"),
-  ban_privacy: ruleProvider("ban_privacy", "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list", "./ruleset/ban_privacy.list"),
-  tvb_ad: ruleProvider("tvb_ad", "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list", "./ruleset/tvb_ad.list"),
-  extra: ruleProvider("extra", "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Extra.list", "./ruleset/extra.list"),
-  youtube: ruleProvider("youtube", "https://raw.githubusercontent.com/tindy2013/subconverter/refs/heads/master/base/rules/ACL4SSR/Clash/Ruleset/YouTube.list", "./ruleset/youtube.list"),
-  ai: ruleProvider("ai", "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/AI.list", "./ruleset/ai.list"),
-  netflix: ruleProvider("netflix", "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list", "./ruleset/netflix.list"),
-  telegram: ruleProvider("telegram", "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list", "./ruleset/telegram.list"),
-  apple: ruleProvider("apple", "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list", "./ruleset/apple.list"),
-  gov: ruleProvider("gov", "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/gov.list", "./ruleset/gov.list"),
-  hk_media: ruleProvider("hk_media", "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-Media.list", "./ruleset/hk_media.list"),
-  edgeware: ruleProvider("edgeware", "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/EdgeWare.list", "./ruleset/edgeware.list"),
-  microsoft: ruleProvider("microsoft", "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Microsoft.list", "./ruleset/microsoft.list"),
-  speedtest: ruleProvider("speedtest", "https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list", "./ruleset/speedtest.list"),
-  gfw: ruleProvider("gfw", "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list", "./ruleset/gfw.list")
+  lan: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list", "./ruleset/lan.list"),
+  unban: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list", "./ruleset/unban.list"),
+  china_ip: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list", "./ruleset/china_ip.list"),
+  china_domain: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list", "./ruleset/china_domain.list"),
+  china_company: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list", "./ruleset/china_company.list"),
+  download: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Download.list", "./ruleset/download.list"),
+  direct_list: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Direct.list", "./ruleset/direct_list.list"),
+  ban: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyList.list", "./ruleset/ban.list"),
+  ban_china: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list", "./ruleset/ban_china.list"),
+  ban_privacy: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list", "./ruleset/ban_privacy.list"),
+  tvb_ad: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list", "./ruleset/tvb_ad.list"),
+  extra: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Extra.list", "./ruleset/extra.list"),
+  youtube: ruleProvider("https://raw.githubusercontent.com/tindy2013/subconverter/refs/heads/master/base/rules/ACL4SSR/Clash/Ruleset/YouTube.list", "./ruleset/youtube.list"),
+  ai: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/AI.list", "./ruleset/ai.list"),
+  netflix: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list", "./ruleset/netflix.list"),
+  telegram: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Telegram.list", "./ruleset/telegram.list"),
+  apple: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Apple.list", "./ruleset/apple.list"),
+  gov: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/gov.list", "./ruleset/gov.list"),
+  hk_media: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/HK-Media.list", "./ruleset/hk_media.list"),
+  edgeware: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/EdgeWare.list", "./ruleset/edgeware.list"),
+  microsoft: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Microsoft.list", "./ruleset/microsoft.list"),
+  speedtest: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/SpeedTest.list", "./ruleset/speedtest.list"),
+  gfw: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ProxyGFWlist.list", "./ruleset/gfw.list")
 },
 
 rules: [
@@ -149,8 +161,6 @@ rules: [
   "RULE-SET,china_domain,DIRECT",
   "RULE-SET,china_company,DIRECT,no-resolve",
   "RULE-SET,download,DIRECT",
-
-  // 专项规则放在 GFW 前面，避免被泛规则抢先命中。
   "RULE-SET,youtube,🎞 YouTube",
   "RULE-SET,ai,👾 AI",
   "RULE-SET,telegram,📨 Telegram",
@@ -161,7 +171,6 @@ rules: [
   "RULE-SET,gov,🏛 Gov",
   "RULE-SET,hk_media,🇭🇰 香港串流验证",
   "RULE-SET,edgeware,🇭🇰 EdgeWare",
-
   "RULE-SET,extra,🌍 GFW",
   "RULE-SET,gfw,🌍 GFW",
   "GEOIP,CN,DIRECT,no-resolve",
@@ -185,12 +194,12 @@ rules: [
     "REJECT"
   ]),
 
-  selectGroup("🎞 YouTube", mediaProxyList),
-  selectGroup("📺 Netflix", mediaProxyList),
+  selectGroup("🛑 拦截连接", ["REJECT", "DIRECT"]),
+  selectGroup("🎞 YouTube", commonProxyList),
+  selectGroup("📺 Netflix", commonProxyList),
   selectGroup("📨 Telegram", serviceProxyList),
   selectGroup("🍎 苹果服务", serviceProxyList),
   selectGroup("Ⓜ️ 微软服务", serviceProxyList),
-
   selectGroup("👾 AI", aiProxyList),
 
   selectGroup("📈 SpeedTest", [
@@ -226,31 +235,33 @@ rules: [
     ...regionGroups
   ]),
 
-selectGroup("🛑 拦截连接", [
-  "REJECT",
-  "DIRECT"
-]),
-
-  urlTestGroup("♻️ 自动选择", allFilter, FAST_INTERVAL),
-  urlTestGroup("🇭🇰 香港原生", "(HKT|九龙|铠甲|契约|TVB)", FAST_INTERVAL),
-  urlTestGroup("🇭🇰 Ex香港", "^(?!.*(深圳))(?=.*(?:香港)).*$"),
-  urlTestGroup("🇹🇼 Ex台湾", "^(?=.*台湾)(?!.*(?:动画|游戏)).*$"),
-  urlTestGroup("🇸🇬 Ex星国", "^(?=.*新加坡)(?!.*(?:更新|游戏)).*$"),
-  urlTestGroup("🇯🇵 Ex日本", "^(?=.*日本)(?!.*游戏).*$"),
-  urlTestGroup("🇺🇸 Ex美国", "^(?=.*美国)(?!.*游戏).*$"),
-  urlTestGroup("🇭🇰 ZHS香港", "^(?=.*(?:HK))(?!.*(?:香港|游戏)).*$"),
-  urlTestGroup("🇹🇼 ZHS台湾", "^(?=.*TW)(?!.*游戏).*$"),
-  urlTestGroup("🇸🇬 ZHS星国", "^(?=.*SG)(?!.*游戏).*$"),
-  urlTestGroup("🇯🇵 ZHS日本", "^(?=.*JP)(?!.*游戏).*$"),
-  urlTestGroup("🇺🇸 ZHS美国", "^(?=.*US)(?!.*游戏).*$"),
-  urlTestGroup("⚡ 全部节点", allFilter),
-
-  {
-    name: "📌 全部节点",
-    type: "select",
-    "include-all-proxies": true,
-    filter: pinAllFilter
-  }
+  selectGroup("♻️ 自动选择", [
+    "🇭🇰 香港原生",
+    "🇭🇰 Ex香港",
+    "🇭🇰 ZHS香港",
+    "🇹🇼 Ex台湾",
+    "🇹🇼 ZHS台湾",
+    "🇸🇬 Ex星国",
+    "🇸🇬 ZHS星国",
+    "🇯🇵 Ex日本",
+    "🇯🇵 ZHS日本",
+    "🇺🇸 Ex美国",
+    "🇺🇸 ZHS美国",
+    "⚡ 全部节点"
+  ]),
+  urlTestGroup("🇭🇰 香港原生", hkNativeNodes, FAST_INTERVAL),
+  urlTestGroup("🇭🇰 Ex香港", exHkNodes),
+  urlTestGroup("🇹🇼 Ex台湾", exTwNodes),
+  urlTestGroup("🇸🇬 Ex星国", exSgNodes),
+  urlTestGroup("🇯🇵 Ex日本", exJpNodes),
+  urlTestGroup("🇺🇸 Ex美国", exUsNodes),
+  urlTestGroup("🇭🇰 ZHS香港", zhsHkNodes),
+  urlTestGroup("🇹🇼 ZHS台湾", zhsTwNodes),
+  urlTestGroup("🇸🇬 ZHS星国", zhsSgNodes),
+  urlTestGroup("🇯🇵 ZHS日本", zhsJpNodes),
+  urlTestGroup("🇺🇸 ZHS美国", zhsUsNodes),
+  urlTestGroup("⚡ 全部节点", allNodes),
+  selectGroup("📌 全部节点", pinAllNodes)
 ]
 
 };
