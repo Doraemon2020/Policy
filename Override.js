@@ -1,5 +1,3 @@
-// PC-Overwrite-FlClash.js // ClashMi / FlClash / Mihomo 覆写脚本 // FlClash 兼容版：不依赖 include-all-proxies，改为 JS 动态读取 config.proxies 里的真实节点名。
-
 function main(config) { config = config || {};
 
 const TEST_URL = "http://www.gstatic.com/generate_204"; const FAST_INTERVAL = 300; const NORMAL_INTERVAL = 600; const TOLERANCE = 100; const TIMEOUT = 1000;
