@@ -2,7 +2,7 @@
 
 function main(config) { config = config || {};
 
-const TEST_URL = "http://www.gstatic.com/generate_204"; const FAST_INTERVAL = 300; const NORMAL_INTERVAL = 600; const TOLERANCE = 100; const TIMEOUT = 500;
+const TEST_URL = "http://www.gstatic.com/generate_204"; const FAST_INTERVAL = 300; const NORMAL_INTERVAL = 600; const TOLERANCE = 100; const TIMEOUT = 1000;
 
 // 外部控制密码；需要修改时，直接改下面 overwrite.secret 的字符串。
 
@@ -37,7 +37,7 @@ const aiProxyList = [ "🇹🇼 Ex台湾", "🇹🇼 ZHS台湾", "🇸🇬 Ex星
 const overwrite = { "mixed-port": 7890, "allow-lan": true, "bind-address": "*", mode: "rule", "log-level": "info", ipv6: false, "tcp-concurrent": true,
 
 "external-controller": "0.0.0.0:9090",
-secret: "change-me-9090",
+secret: "12580",
 "external-ui": "ui",
 "external-ui-url": "https://fastly.jsdelivr.net/gh/MetaCubeX/metacubexd@gh-pages.zip",
 "external-controller-cors": {
@@ -235,7 +235,7 @@ rules: [
     ...regionGroups
   ]),
 
-  selectGroup("♻️ 自动选择", [
+  urlTestGroup("♻️ 自动选择", [
     "🇭🇰 香港原生",
     "🇭🇰 Ex香港",
     "🇭🇰 ZHS香港",
@@ -248,7 +248,7 @@ rules: [
     "🇺🇸 Ex美国",
     "🇺🇸 ZHS美国",
     "⚡ 全部节点"
-  ]),
+  ], FAST_INTERVAL),
   urlTestGroup("🇭🇰 香港原生", hkNativeNodes, FAST_INTERVAL),
   urlTestGroup("🇭🇰 Ex香港", exHkNodes),
   urlTestGroup("🇹🇼 Ex台湾", exTwNodes),
