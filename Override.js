@@ -123,6 +123,7 @@ tun: {
 
 "rule-providers": {
   lan: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list", "./ruleset/lan.list"),
+ extra: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Extra.list", "./ruleset/extra.list"),
   unban: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list", "./ruleset/unban.list"),
   china_ip: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list", "./ruleset/china_ip.list"),
   china_domain: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list", "./ruleset/china_domain.list"),
@@ -133,7 +134,6 @@ tun: {
   ban_china: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyListChina.list", "./ruleset/ban_china.list"),
   ban_privacy: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list", "./ruleset/ban_privacy.list"),
   tvb_ad: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/TVB-AD.list", "./ruleset/tvb_ad.list"),
-  extra: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Extra.list", "./ruleset/extra.list"),
   youtube: ruleProvider("https://raw.githubusercontent.com/tindy2013/subconverter/refs/heads/master/base/rules/ACL4SSR/Clash/Ruleset/YouTube.list", "./ruleset/youtube.list"),
   ai: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/AI.list", "./ruleset/ai.list"),
   netflix: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Netflix.list", "./ruleset/netflix.list"),
