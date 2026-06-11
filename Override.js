@@ -148,6 +148,7 @@ tun: {
 },
 
 rules: [
+  "RULE-SET,extra,🌍 GFW",
   "RULE-SET,lan,DIRECT",
   "RULE-SET,unban,DIRECT",
   "RULE-SET,ban,🛑 拦截连接",
@@ -169,7 +170,6 @@ rules: [
   "RULE-SET,gov,🏛 Gov",
   "RULE-SET,hk_media,🇭🇰 香港串流验证",
   "RULE-SET,edgeware,🇭🇰 EdgeWare",
-  "RULE-SET,extra,🌍 GFW",
   "RULE-SET,gfw,🌍 GFW",
   "GEOIP,CN,DIRECT,no-resolve",
   "MATCH,🐟 漏网之鱼"
