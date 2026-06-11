@@ -123,7 +123,7 @@ tun: {
 
 "rule-providers": {
   lan: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list", "./ruleset/lan.list"),
- extra: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Extra.list", "./ruleset/extra.list"),
+  extra: ruleProvider("https://raw.githubusercontent.com/Doraemon2020/Policy/master/Rules/Extra.list", "./ruleset/extra.list"),
   unban: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list", "./ruleset/unban.list"),
   china_ip: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list", "./ruleset/china_ip.list"),
   china_domain: ruleProvider("https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list", "./ruleset/china_domain.list"),
