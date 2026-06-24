@@ -1,4 +1,4 @@
 DOMAIN-SUFFIX,futunn.com
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,googleapis.cn
-DOMAIN-SUFFIX,time*.cloud.tencent.com
+DOMAIN-REGEX,^time[0-9]+\.cloud\.tencent\.com$
