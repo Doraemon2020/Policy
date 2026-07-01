@@ -148,6 +148,7 @@ tun: {
 },
 
 rules: [
+  "RULE-SET,ai,👾 AI",
   "RULE-SET,extra,🌍 GFW",
   "RULE-SET,lan,DIRECT",
   "RULE-SET,unban,DIRECT",
@@ -161,7 +162,6 @@ rules: [
   "RULE-SET,china_company,DIRECT,no-resolve",
   "RULE-SET,download,DIRECT",
   "RULE-SET,youtube,🎞 YouTube",
-  "RULE-SET,ai,👾 AI",
   "RULE-SET,telegram,📨 Telegram",
   "RULE-SET,netflix,📺 Netflix",
   "RULE-SET,apple,🍎 苹果服务",
