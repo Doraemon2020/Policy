@@ -2,3 +2,5 @@ DOMAIN-SUFFIX,futunn.com
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,googleapis.cn
 DOMAIN-REGEX,^time[0-9]+\.cloud\.tencent\.com$
+PROCESS-NAME,com.ftnn.android
+PROCESS-NAME,ftnn.exe
