@@ -1,6 +1,8 @@
+PROCESS-NAME,FTNN.exe
+PROCESS-NAME,cn.futu.trader
 DOMAIN-SUFFIX,futunn.com
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,googleapis.cn
 DOMAIN-REGEX,^time[0-9]+\.cloud\.tencent\.com$
-PROCESS-NAME,com.ftnn.android
-PROCESS-NAME,FTNN.exe
+
+
