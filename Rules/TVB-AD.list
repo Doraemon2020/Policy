@@ -1,6 +1,6 @@
 DOMAIN-SUFFIX,t-mai.tvb.com
 DOMAIN-SUFFIX,pubads.adipolo.co
-DOMAIN-SUFFIX,choices-or.trustarc.com
+IP-CIDR,202.126.53.25
 DOMAIN,ads.cdn.tvb.com
 DOMAIN,adstvb.akamaized.net
 DOMAIN,googleads.g.doubleclick.net
