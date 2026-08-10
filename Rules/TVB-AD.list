@@ -1,5 +1,4 @@
-IP-CIDR,202.126.50.0/24
-IP-CIDR,202.126.53.0/24
+
 DOMAIN,ads.cdn.tvb.com
 DOMAIN,adstvb.akamaized.net
 DOMAIN,googleads.g.doubleclick.net
