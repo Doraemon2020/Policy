@@ -40,5 +40,5 @@ DOMAIN-SUFFIX,graph.facebook.com
 # 图片 DOMAIN-SUFFIX,img.tvb.com
 # DOMAIN-SUFFIX,capi.boss.tvb.com
 DOMAIN-SUFFIX,mobile-sdk-config.gservice.emarsys.net
-DOMAIN-SUFFIX,firestore.googleapis.com
+# DOMAIN-SUFFIX,firestore.googleapis.com
 DOMAIN-SUFFIX,adx.g.doubleclick.net
