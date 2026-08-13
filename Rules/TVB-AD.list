@@ -35,4 +35,4 @@ DOMAIN-SUFFIX,loada.leadstecgz.com
 DOMAIN-SUFFIX,ut.taobao.com
 DOMAIN-SUFFIX,assets.adobedtm.com
 DOMAIN-SUFFIX,graph.facebook.com
-DOMAIN-SUFFIX,rapi.mytvsuper.com
+# mytv主页api DOMAIN-SUFFIX,rapi.mytvsuper.com
