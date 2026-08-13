@@ -39,3 +39,4 @@ DOMAIN-SUFFIX,graph.facebook.com
 DOMAIN-SUFFIX,api.boss.tvb.com
 DOMAIN-SUFFIX,capi.boss.tvb.com
 DOMAIN-SUFFIX,mobile-sdk-config.gservice.emarsys.net
+DOMAIN-SUFFIX,firestore.googleapis.com
