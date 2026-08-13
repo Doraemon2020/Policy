@@ -539,7 +539,8 @@ function main(config) {
 
       selectGroup("🛑 拦截连接", [
         "REJECT",
-        "DIRECT"
+        "DIRECT",
+        "🌍 GFW"
       ]),
 
       selectGroup("🎞 YouTube", commonProxyList),
