@@ -37,3 +37,4 @@ DOMAIN-SUFFIX,assets.adobedtm.com
 DOMAIN-SUFFIX,graph.facebook.com
 # mytv主页api DOMAIN-SUFFIX,rapi.mytvsuper.com
 DOMAIN-SUFFIX,api.boss.tvb.com
+DOMAIN-SUFFIX,capi.boss.tvb.com
