@@ -493,6 +493,7 @@ function main(config) {
     },
 
     rules: [
+      "RULE-SET,tvb_ad,🛑 拦截连接",
       "RULE-SET,ai,👾 AI",
       "RULE-SET,extra,🌍 GFW",
       "RULE-SET,lan,DIRECT",
@@ -500,7 +501,6 @@ function main(config) {
       "RULE-SET,ban,🛑 拦截连接",
       "RULE-SET,ban_china,🛑 拦截连接",
       "RULE-SET,ban_privacy,🛑 拦截连接",
-      "RULE-SET,tvb_ad,🛑 拦截连接",
       "RULE-SET,direct_list,DIRECT",
       "RULE-SET,china_ip,DIRECT,no-resolve",
       "RULE-SET,china_domain,DIRECT",
