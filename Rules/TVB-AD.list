@@ -35,8 +35,9 @@ DOMAIN-SUFFIX,loada.leadstecgz.com
 DOMAIN-SUFFIX,ut.taobao.com
 DOMAIN-SUFFIX,assets.adobedtm.com
 DOMAIN-SUFFIX,graph.facebook.com
-# mytv主页api DOMAIN-SUFFIX,rapi.mytvsuper.com
-#DOMAIN-SUFFIX,api.boss.tvb.com
+# 主页 api DOMAIN-SUFFIX,rapi.mytvsuper.com
+# 必须 api DOMAIN-SUFFIX,api.boss.tvb.com
+DOMAIN-SUFFIX,img.tvb.com
 DOMAIN-SUFFIX,capi.boss.tvb.com
 DOMAIN-SUFFIX,mobile-sdk-config.gservice.emarsys.net
 DOMAIN-SUFFIX,firestore.googleapis.com
