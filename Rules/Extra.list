@@ -3,6 +3,7 @@ IP-CIDR,1.12.12.12/32
 IP-CIDR,119.91.245.213/32
 PROCESS-NAME,FTNN.exe
 PROCESS-NAME,cn.futu.trader
+PROCESS-NAME,CrashReporter.exe
 DOMAIN-SUFFIX,futunn.com
 DOMAIN-SUFFIX,googleapis.com
 DOMAIN-SUFFIX,googleapis.cn
