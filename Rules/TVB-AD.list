@@ -43,4 +43,5 @@ DOMAIN-SUFFIX,mobile-sdk-config.gservice.emarsys.net
 # DOMAIN-SUFFIX,firestore.googleapis.com
 DOMAIN-SUFFIX,adx.g.doubleclick.net
 DOMAIN-SUFFIX,im-ws.tvb.com
+# api.tvb.com 用於檢查更新
 DOMAIN-SUFFIX,api.tvb.com
